@@ -5,3 +5,9 @@
 .container {
   @apply w-full max-w-[1200px] mx-auto
 }
+
+@layer components {
+  .highlight {
+    @apply text-blue-400 font-bold
+  }
+}
