@@ -1,0 +1,30 @@
+{% set link_class = "flex items-center gap-2 text-gray-300 text-xl" %}
+{% set active_link_class = "text-blue-400" %}
+
+{% macro header(active_link_index = 0) %}
+
+<header class="container flex justify-between">
+  <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Petros">
+
+  <nav>
+    <ul class="flex items-center gap-24">
+      <li
+        class="{{ link_class }} {{ 'text-sky-400' if active_link_index == 0 else '' }}">
+        <i class="ph ph-house text-2xl"></i>
+        <a href class>Home</a>
+      </li>
+      <li
+        class="{{ link_class }}  {{ 'text-sky-400' if active_link_index == 1 else '' }}">
+        <i class="ph ph-desktop-tower text-2xl"></i>
+        <a href>Projetos</a>
+      </li>
+      <li
+        class="{{ link_class }} {{ 'text-sky-400' if active_link_index == 2 else '' }}">
+        <i class="ph ph-user text-2xl"></i>
+        <a href>Sobre mim</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+{% endmacro %}
