@@ -4,7 +4,7 @@
 {% macro header(active_link_index = 0) %}
 
 <header class="container flex justify-between">
-  <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Petros">
+  <img src="{{ get_image('logo.svg') }}" alt="Petros">
 
   <nav>
     <ul class="flex items-center gap-24">

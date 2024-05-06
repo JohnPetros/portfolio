@@ -1,0 +1,25 @@
+{% extends "layouts/root.html" %}
+
+{% from "components/header.html" import header %}
+{% from "components/carousel.html" import carousel %}
+
+{% block body %}
+
+{{ header(0) }}
+
+<main class="container mt-24">
+  {% include "pages/home/hero.html" %}
+
+  <div class="space-y-40 mt-24">
+    <div class="grid grid-cols-2 gap-16">
+      {% include "pages/home/techs.html" %}
+      {% include "pages/home/experience.html" %}
+    </div>
+    {% include "pages/home/projects.html" %}
+    {% include "components/contact.html" %}
+  </div>
+
+  {% include "components/footer.html" %}
+</main>
+
+{% endblock body %}

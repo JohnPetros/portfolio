@@ -14,11 +14,12 @@
     </p>
   </div>
 
-  <div class="flex items-center pl-4 w-80 h-80 rounded-full bg-blue-950">
+  <div
+    class="flex items-center pl-4 w-80 h-80 rounded-full bg-blue-950/80 border border-blue-700/70">
     <img
       width="240"
       height="240"
-      src="{{ url_for('static', filename='images/john-petros.jpeg') }}"
+      src="{{ get_image('john-petros.jpeg') }}"
       alt="John Petros"
       class="rounded-full">
   </div>
