@@ -1,0 +1,41 @@
+{% from "components/work.html" import work %}
+
+<section id="experience" class="h-full ">
+  <h2 class="section-title pl-8">💼 Experiência</h2>
+  <ul class="space-y-16 h-full mt-6 border-l-2 border-blue-700 pt-12">
+    <li>
+      {{
+      work(
+      time="2024 - Atual",
+      title="Fatec - São José dos Campos",
+      description=" Curso superior em Desenvolvimento de software
+      Multiplataforma.
+      ")
+      }}
+    </li>
+    <li>
+      {{
+      work(
+      time="2023 - 2024",
+      title="Sertton",
+      description="Trabalho como programador e designer digital freelance.")
+      }}
+    </li>
+    <li>
+      {{
+      work(
+      time="2023 - 2024",
+      title="Extensão acadêmica",
+      description="Trabalho voluntário de 6 meses para o desenvolvimento de um aplicativo voltado para auxiliar o desempenho escolar de crianças portadoras do espectro autista.")
+      }}
+    </li>
+    <li>
+      {{
+      work(
+      time="2022 - 2023",
+      title="Etec - São José dos Campos",
+      description="Curso técnico em Desenvolvimento de sistemas.")
+      }}
+    </li>
+  </ul>
+</section>
