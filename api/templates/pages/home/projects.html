@@ -1,0 +1,59 @@
+{% from "components/project.html" import project %}
+
+<section id="project" class="mt-48">
+  <h2 class="section-title">🖥️ Meus projetos preferidos</h2>
+  <ul class="grid grid-cols-3 gap-3 mt-12">
+    <li>
+      {{
+      project(
+      images=[
+      "project-preview.png",
+      "project-preview-2.png",
+      "project-preview-3.png"
+      ],
+      title="StarDust",
+      description="Aplicação web inspirada no
+      Duolingo voltada para o ensino de lógica de
+      programação.",
+      techs=["React", "NextJs", "TailwindCSS", "Supabase", "Resend"],
+      site_link="#",
+      github_link="#",
+      )
+      }}
+    </li>
+    <li>
+      {{
+      project(
+      images=[
+      "project-preview.png",
+      "project-preview-2.png",
+      "project-preview-3.png"
+      ],
+      title="Smart Farming",
+      description="Aplicação web acoplada a um dashboard que visa auxiliar o monitoraramento da estufa inteligente da Fatec - São José dos Campos",
+      techs=["Python", "Flask", "MySQL", "Docker", "Pandas"],
+      site_link="#",
+      github_link="#",
+      )
+      }}
+    </li>
+    <li>
+      {{
+      project(
+      images=[
+      "project-preview.png",
+      "project-preview-2.png",
+      "project-preview-3.png"
+      ],
+      title="StarDust",
+      description="Aplicação web inspirada no
+      Duolingo voltada para o ensino de lógica de
+      programação.",
+      techs=["React", "NextJs", "TailwindCSS", "Supabase", "Resend"],
+      site_link="#",
+      github_link="#",
+      )
+      }}
+    </li>
+  </ul>
+</section>
