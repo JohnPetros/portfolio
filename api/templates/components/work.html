@@ -1,0 +1,16 @@
+{% macro work(time, title, description) %}
+
+<div class="flex gap-3 w-full">
+  <span class="w-6 h-6 -translate-x-[12px] rounded-full bg-blue-700"></span>
+  <time class="w-28 text-gray-50">{{ time }}</time>
+  <div class="w-96 space-y-3">
+    <h3 class="text-2xl text-blue-400 font-semibold -translate-y-2">{{ title
+      }}</h3>
+    <p
+      class="text-gray-300">
+      {{ description }}
+    </p>
+  </div>
+</div>
+
+{% endmacro %}
