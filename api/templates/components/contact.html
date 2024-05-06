@@ -1,0 +1,61 @@
+{% from "components/tech_badge.html" import tech_badge %}
+
+<section id="contact">
+  <h2 class="section-title">👀 Gostou do que viu?</h2>
+
+  <div class="w-max mx-auto mt-8">
+    <p class="text-xl text-center text-gray-300 font-semibold">
+      Entre em contato comigo.
+    </p>
+    <ul
+      class="flex items-center gap-3 mt-6 pb-6 border-b border-gray-300">
+      <li>
+        {{ tech_badge(icon="github.svg", name="Github") }}
+      </li>
+      <li>
+        {{ tech_badge(icon="linkedin.svg", name="linkedIn") }}
+      </li>
+      <li>
+        {{ tech_badge(icon="discord.svg", name="Discord") }}
+      </li>
+    </ul>
+
+    <form method="post" class="mt-12">
+      <label
+        for="input-group-1"
+        class="block mb-4 text-md font-medium text-gray-100">
+        Seu e-mail
+      </label>
+      <div class="relative mb-6">
+        <div
+          class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+          <svg class="w-4 h-4 text-gray-300 dark:text-gray-400"
+            aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" viewBox="0 0 20 16">
+            <path
+              d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+            <path
+              d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+          </svg>
+        </div>
+        <input
+          id="input-group-1"
+          type="text"
+          placeholder="seuemail@decontato.com"
+          class="border rounded-md block w-full ps-10 p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+      </div>
+
+      <div class="mt-12">
+        <label
+          for="message"
+          class="block mb-4 text-md font-medium text-gray-100">Sua
+          mensagem
+        </label>
+        <textarea id="message" rows="6"
+          class="bg-gray-700 rounded-md w-full p-2.5 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 "
+          placeholder="Escreva sua mensagem aqui..."></textarea>
+      </div>
+      <small class="text-gray-400">Nada de me enviar spam, hein...</small>
+    </form>
+  </div>
+</section>
