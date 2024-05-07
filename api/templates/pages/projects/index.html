@@ -1,0 +1,29 @@
+{% extends "layouts/root.html" %}
+
+{% from "components/header.html" import header %}
+
+{% block body %}
+
+{{ header(1) }}
+
+<main class="container mt-12 flex flex-col items-center">
+  <h1 class="text-3xl">Alguns dos
+    <span class="highlight">projetos</span>
+    que eu desenvolvi
+  </h1>
+
+  <div class="mt-12">
+    {% include "pages/projects/tabs.html" %}
+  </div>
+
+  <div id="projects" data-tabs="container">
+    {% include "pages/projects/professional.html" %}
+    {% include "pages/projects/personal.html" %}
+    {% include "pages/projects/academic.html" %}
+  </div>
+
+</main>
+
+<script src="{{ url_for('static', filename='scripts/tabs.js') }}"></script>
+
+{% endblock body %}
