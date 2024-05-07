@@ -1,27 +1,40 @@
-{% set link_class = "flex items-center gap-2 text-gray-300 text-xl" %}
+{% set link_class =
+"text-gray-300 text-lg cursor-pointer" %}
 {% set active_link_class = "text-blue-400" %}
 
 {% macro header(active_link_index = 0) %}
 
 <header class="container flex justify-between">
-  <img src="{{ get_image('logo.svg') }}" alt="Petros">
+  <img src="{{ get_file('images/logo.svg') }}" alt="Petros">
 
   <nav>
     <ul class="flex items-center gap-24">
       <li
-        class="{{ link_class }} {{ 'text-sky-400' if active_link_index == 0 else '' }}">
-        <i class="ph ph-house text-2xl"></i>
-        <a href class>Home</a>
+        class="{{ link_class }}">
+        <a
+          href="{{ url_for('home') }}"
+          class="flex items-center gap-2 {{ active_link_class if active_link_index == 0 else '' }}">
+          <i class="ph ph-house text-xl"></i>
+          Home
+        </a>
       </li>
       <li
-        class="{{ link_class }}  {{ 'text-sky-400' if active_link_index == 1 else '' }}">
-        <i class="ph ph-desktop-tower text-2xl"></i>
-        <a href>Projetos</a>
+        class="{{ link_class }}">
+        <a
+          href="{{ url_for('projects') }}"
+          class="flex items-center gap-2  {{ active_link_class if active_link_index == 1 else '' }}">
+          <i class="ph ph-desktop-tower text-xl"></i>
+          Projetos
+        </a>
       </li>
       <li
-        class="{{ link_class }} {{ 'text-sky-400' if active_link_index == 2 else '' }}">
-        <i class="ph ph-user text-2xl"></i>
-        <a href>Sobre mim</a>
+        class="{{ link_class }} {{ 'text-blue-500' if active_link_index == 2 else '' }}">
+        <a
+          href="{{ url_for('about') }}"
+          class="flex items-center gap-2  {{ active_link_class if active_link_index == 2 else '' }}">
+          <i class="ph ph-user text-xl"></i>
+          Sobre mim
+        </a>
       </li>
     </ul>
   </nav>
