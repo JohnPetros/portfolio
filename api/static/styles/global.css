@@ -3,11 +3,23 @@
 @tailwind utilities;
 
 .container {
-  @apply w-full max-w-[1200px] mx-auto
+  @apply w-full max-w-[1180px] mx-auto
 }
 
 @layer components {
   .highlight {
-    @apply text-blue-400 font-bold
+    @apply text-blue-400 font-semibold
+  }
+
+  .section-title {
+    @apply text-3xl text-gray-50 tracking-wider font-semibold
+  }
+
+  .active-tab {
+    @apply bg-blue-700 border-gray-100
+  }
+
+  .hidden-tab-content {
+    @apply absolute invisible pointer-events-none
   }
 }
