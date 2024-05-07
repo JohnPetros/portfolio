@@ -1,0 +1,34 @@
+{% set tab_class = "px-4 py-2 text-white w-32 rounded-md border border-blue-900"
+%}
+
+<nav class="flex space-x-8" aria-label="Tabs" role="tablist">
+  <button
+    id="professional-tab"
+    data-tabs="#professional"
+    type="button"
+    aria-controls="professional"
+    role="tab"
+    class="{{ tab_class }}">
+    Profissionais
+  </button>
+
+  <button
+    id="personal-tab"
+    type="button"
+    data-tabs="#personal"
+    aria-controls="personal"
+    role="tab"
+    class="{{ tab_class }}">
+    Pessoais
+  </button>
+
+  <button
+    id="academic-tab"
+    data-tabs="#academic"
+    type="button"
+    aria-controls="academic"
+    role="tab"
+    class="{{ tab_class }}">
+    Acadêmicos
+  </button>
+</nav>

@@ -1,0 +1,22 @@
+{% from "components/project.html" import project %}
+
+<div id="personal" class="hidden-tab-content">
+  <ul class="grid grid-cols-3 gap-3 mt-12">
+    <li>
+      {{
+      project(
+      images=[
+      "project-preview.png",
+      "project-preview-2.png",
+      "project-preview-3.png"
+      ],
+      title="Sertton",
+      description="Aplicação web acoplada a um dashboard que visa auxiliar o monitoraramento da estufa inteligente da Fatec - São José dos Campos",
+      techs=["Python", "Flask", "MySQL", "Docker", "Pandas"],
+      site_link="#",
+      github_link="#",
+      )
+      }}
+    </li>
+  </ul>
+</div>

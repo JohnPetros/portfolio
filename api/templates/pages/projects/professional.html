@@ -1,0 +1,24 @@
+{% from "components/project.html" import project %}
+
+<div id="professional">
+  <ul class="grid grid-cols-3 gap-3 mt-12">
+    <li>
+      {{
+      project(
+      images=[
+      "project-preview.png",
+      "project-preview-2.png",
+      "project-preview-3.png"
+      ],
+      title="StarDust",
+      description="Aplicação web inspirada no
+      Duolingo voltada para o ensino de lógica de
+      programação.",
+      techs=["React", "NextJs", "TailwindCSS", "Supabase", "Resend"],
+      site_link="#",
+      github_link="#",
+      )
+      }}
+    </li>
+  </ul>
+</div>
