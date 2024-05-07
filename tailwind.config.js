@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     "./api/templates/**/*.html",
-    "./api/static/src/**/*.js",
+    "./api/static/**/*.js",
     "./node_modules/flowbite/**/*.js"
   ],
   theme: {
@@ -10,6 +10,7 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-animated'),
+    require('tailwindcss-intersect'),
     require("flowbite/plugin")
-]
+  ]
 }
