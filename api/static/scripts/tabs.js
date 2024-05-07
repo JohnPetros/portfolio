@@ -1,8 +1,9 @@
 class Tabs {
   constructor() {
     const tabs = document.querySelectorAll("[data-tabs]")
+    const contentContainer = document.querySelector("[data-tabs='container']")
 
-    if (!tabs.length) return
+    if (!tabs.length || !contentContainer) return
 
     const firstTab = tabs[0]
     firstTab.classList.add("active-tab")
@@ -13,20 +14,41 @@ class Tabs {
     }
 
     this.tabs = tabs
+    this.delay = 700 // ms
   }
 
   showTabContent(contentId) {
     const tabContent = document.querySelector(contentId)
 
-    if (tabContent)
+    if (!tabContent) return
+    const items = tabContent.querySelectorAll("[data-tabs='item']")
+
+    setTimeout(() => {
+      for (const item of items) {
+        item.classList.add("invisible", "intersect:visible", "intersect:animate-fade-up")
+        item.classList.remove("animate-out", "fade-out", "slide-out-to-bottom-52")
+      }
+
       tabContent.classList.remove("hidden-tab-content")
+    }, this.delay)
+
   }
 
   hideTabContent(contentId) {
     const tabContent = document.querySelector(contentId)
 
-    if (tabContent)
+    if (!tabContent) return
+
+    const items = tabContent.querySelectorAll("[data-tabs='item']")
+
+    for (const item of items) {
+      item.classList.remove("invisible", "intersect:visible", "intersect:animate-fade-up")
+      item.classList.add("animate-out", "fade-out", "slide-out-to-bottom-52")
+    }
+
+    setTimeout(() => {
       tabContent.classList.add("hidden-tab-content")
+    }, this.delay)
   }
 
   toggleTabs(currentTab) {
@@ -41,13 +63,12 @@ class Tabs {
     const tabContentId = currentTab.dataset.tabs
 
     if (this.activeTabContentId !== tabContentId) {
-      this.showTabContent(tabContentId)
       this.hideTabContent(this.activeTabContentId)
+      this.showTabContent(tabContentId)
       this.activeTabContentId = tabContentId
 
       this.toggleTabs(currentTab)
     }
-
   }
 }
 
