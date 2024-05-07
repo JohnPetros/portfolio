@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='build/styles/global.css') }}">
+      href="{{ get_file('build/styles/global.css') }}">
     <title>John Petros 🐼</title>
   </head>
   <body
@@ -14,7 +14,10 @@
     {% endblock body %}
   </body>
 
+  <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script
+    src="https://unpkg.com/tailwindcss-intersect@1.x.x/dist/observer.min.js"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </html>
