@@ -10,8 +10,8 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    require('tailwindcss-animated'),
-    require('tailwindcss-intersect'),
+    require("tailwindcss-animated"),
+    require("tailwindcss-intersect"),
     require("flowbite/plugin")
   ]
 }
