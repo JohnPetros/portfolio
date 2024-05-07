@@ -19,5 +19,10 @@ def projects():
     return render_template("pages/projects/index.html")
 
 
+@app.route("/about")
+def about():
+    return render_template("pages/about/index.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
