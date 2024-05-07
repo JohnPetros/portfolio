@@ -1,9 +1,10 @@
 {% macro tech_badge(icon, name) %}
 
-{% set icon_path = "/techs/{}".format(icon) %}
+{% set icon_path = "images/techs/{}".format(icon) %}
 
-<div class="flex items-center">
-  <img width="88" height="88" src="{{ get_image(icon_path) }}"
+<div
+  class="flex items-center invisible intersect:visible intersect:animate-fade-up">
+  <img width="88" height="88" src="{{ get_file(icon_path) }}"
     alt="{{ name }}">
   <span class="-translate-x-2 text-xl">
     {{ name }}
