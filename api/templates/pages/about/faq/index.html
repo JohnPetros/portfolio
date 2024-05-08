@@ -1,0 +1,84 @@
+
+{% set button_class =
+"justify-between w-full pb-4 border-b font-medium rtl:text-right text-gray-100 rounded-t-xl gap-3"
+%}
+
+{% set active_button_class = "border-gray-100" %}
+
+{% set title_class = "flex items-center justify-between" %}
+
+{% set accordion_item =
+"hidden space-y-6  animate-fade-down pt-3" %}
+
+{% set paragraph_class =
+"text-gray-300 leading-8"
+%}
+
+<div class="w-full ">
+
+  <div
+    id="story"
+    data-accordion="open"
+    data-active-classes="{{ active_button_class }}"
+    class="w-full space-y-12">
+    <div>
+      <button
+        type="button"
+        data-accordion-target="#programing-story"
+        aria-expanded="true"
+        aria-controls="programing-story"
+        class="{{ button_class }} text-gray-100 ">
+        <h2 id="programing-story-title" class="{{ title_class }}">
+          <span class="flex items-center">
+            {% include "components/quotation_mark.html" %}
+            Como conheci a programação
+          </span>
+          <i data-accordion-icon class="ph ph-caret-down"></i>
+        </h2>
+      </button>
+      {% include "pages/about/faq/programing_story.html" %}
+    </div>
+
+    <div>
+      <button
+        type="button"
+        data-accordion-target="#courses-story"
+        aria-expanded="false"
+        aria-controls="courses-story"
+        data-active-classes="{{ active_button_class }}"
+        class="{{ button_class }}">
+        <h2 id="courses-story-title" class="{{ title_class }}">
+          <div class="flex items-center">
+            {% include "components/quotation_mark.html" %}
+
+            Cursos que eu realizei
+          </div>
+          <i data-accordion-icon class="ph ph-caret-down"></i>
+        </h2>
+      </button>
+
+      {% include "pages/about/faq/courses_story.html" %}
+    </div>
+
+    <div>
+      <button
+        type="button"
+        data-accordion-target="#jobs-story"
+        aria-expanded="false"
+        aria-controls="jobs-story"
+        data-active-classes="{{ active_button_class }}"
+        class="{{ button_class }}">
+        <h2 id="jobs-story-title" class="{{ title_class }}">
+          <div class="flex items-center">
+            {% include "components/quotation_mark.html" %}
+            Minha experiência profissional
+          </div>
+          <i data-accordion-icon class="ph ph-caret-down"></i>
+        </h2>
+      </button>
+
+      {% include "pages/about/faq/jobs_story.html" %}
+    </div>
+
+  </div>
+</div>
