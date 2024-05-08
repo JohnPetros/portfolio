@@ -1,0 +1,66 @@
+{% set curiosity_icon_class =
+"grid place-content-center size-12 rounded-full bg-blue-900" %}
+
+<section id="curiosities"
+  class="space-y-4 invisible intersect:visible intersect:animate-fade-up intersect:animate-duration-1000">
+  <h2 class="section-title mb-6">
+    🧑🏻‍🦲 Curiosidades sobre minha pessoa
+  </h2>
+
+  <ul class=" p-6 w-full space-y-8 rounded-md border border-blue-800">
+    <li class="flex items-center gap-4">
+      <div class="{{ curiosity_icon_class }}">
+        <img
+          src="{{ get_file('images/curiosities/panda-face.svg') }}"
+          alt="Rosto de um panda"
+          class="size-10">
+      </div>
+
+      <p class="text-gray-300">
+        Meu animal preferido é o panda (acho que já deu para perceber).
+      </p>
+    </li>
+    <li class="flex items-center gap-4">
+      <div class="{{ curiosity_icon_class }}">
+        <img
+          src="{{ get_file('images/curiosities/duolingo.svg') }}"
+          alt="Duolingo"
+          class="size-8">
+      </div>
+
+      <p class="text-gray-300">
+        Eu tenho 1379 dias no Duolingo.
+      </p>
+    </li>
+
+    <li class="flex items-center gap-4">
+      <div class="{{ curiosity_icon_class }}">
+        <img
+          src="{{ get_file('images/curiosities/spotify.svg') }}"
+          alt="Spotify"
+          class="size-8">
+      </div>
+
+      <div>
+        <p class="text-gray-300">
+          Gosto de escutar Lofi enquanto estou programando. Escute minhas
+          playlists:
+        </p>
+        <div class="flex items-center gap-3 mt-3">
+          <iframe
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/5PF7BiC3sjx8HjH1YTVc6A?utm_source=generator"
+            width="300" height="120" frameBorder="0" allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/artist/0xpssfkWNYfP7qAIyUQIld?utm_source=generator"
+            width="300" height="120" frameBorder="0" allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
+
+      </div>
+    </li>
+  </ul>
+</section>
