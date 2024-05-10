@@ -1,11 +1,26 @@
 {% from "components/carousel.html" import carousel %}
 
-{% macro project(images, title, description, site_link, github_link, techs) %}
+{% macro project(id, images, title, description, site_link, github_link,
+techs) %}
+
+{% set carousel_id = id ~ "carousel-2" %}
+
+<div>
+  <div
+    id="{{ id }}-modal"
+    tabindex="-1"
+    aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 max-h-full bg-black/90 animate-in fade-in zoom-in-50 duration-700 ">
+    <div class="relative p-4 w-full max-w-[58rem] max-h-full">
+      {{ carousel(id, images, class="h-[32rem]") }}
+    </div>
+  </div>
+</div>
 
 <div
   data-tabs="item"
   class="p-6 rounded-md border border-blue-900 bg-slate-900/70 invisible intersect:visible intersect:animate-fade-up intersect-once animate-duration-[750ms]">
-  {{ carousel(images) }}
+  {{ carousel(id, images, class="h-64", has_zoom=True) }}
 
   <div class="flex flex-col justify-between mt-6 h-[18rem]">
     <div class="space-y-4">
@@ -49,7 +64,6 @@
 
     </div>
   </div>
-
 </div>
 
 {% endmacro %}
