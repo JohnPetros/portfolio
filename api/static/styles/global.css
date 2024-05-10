@@ -23,6 +23,10 @@
     @apply absolute invisible pointer-events-none
   }
 
+  .cursor-panda {
+    cursor: url('../../images/pandas/panda-staring.gif'), copy;
+  }
+
   .john-petros-and-panda {
     transform: perspective(1000px) rotateY(13deg) rotateX(5deg) rotate(1deg) scaleY(0.9) scaleX(0.95) translate(3%) translateY(-3%);
     cursor: pointer;

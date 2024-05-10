@@ -1091,6 +1091,10 @@ input:checked + .toggle-bg {
   position: absolute;
 }
 
+.cursor-panda {
+  cursor: url('../../images/pandas/panda-staring.gif'), copy;
+}
+
 .john-petros-and-panda {
   transform: perspective(1000px) rotateY(13deg) rotateX(5deg) rotate(1deg) scaleY(0.9) scaleX(0.95) translate(3%) translateY(-3%);
   cursor: pointer;
@@ -1179,6 +1183,10 @@ input:checked + .toggle-bg {
   right: 0px;
 }
 
+.right-2 {
+  right: 0.5rem;
+}
+
 .start-0 {
   inset-inline-start: 0px;
 }
@@ -1189,6 +1197,10 @@ input:checked + .toggle-bg {
 
 .top-1\/2 {
   top: 50%;
+}
+
+.top-2 {
+  top: 0.5rem;
 }
 
 .z-10 {
@@ -1252,6 +1264,10 @@ input:checked + .toggle-bg {
   margin-top: 6rem;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .mt-32 {
   margin-top: 8rem;
 }
@@ -1270,14 +1286,6 @@ input:checked + .toggle-bg {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
-.mb-12 {
-  margin-bottom: 3rem;
 }
 
 .block {
@@ -1312,11 +1320,6 @@ input:checked + .toggle-bg {
   display: none;
 }
 
-.size-8 {
-  width: 2rem;
-  height: 2rem;
-}
-
 .size-10 {
   width: 2.5rem;
   height: 2.5rem;
@@ -1325,6 +1328,11 @@ input:checked + .toggle-bg {
 .size-12 {
   width: 3rem;
   height: 3rem;
+}
+
+.size-8 {
+  width: 2rem;
+  height: 2rem;
 }
 
 .h-10 {
@@ -1347,12 +1355,12 @@ input:checked + .toggle-bg {
   height: 1.25rem;
 }
 
-.h-52 {
-  height: 13rem;
-}
-
 .h-6 {
   height: 1.5rem;
+}
+
+.h-64 {
+  height: 16rem;
 }
 
 .h-72 {
@@ -1383,8 +1391,8 @@ input:checked + .toggle-bg {
   height: 100%;
 }
 
-.h-8 {
-  height: 2rem;
+.max-h-full {
+  max-height: 100%;
 }
 
 .w-1\/2 {
@@ -1452,12 +1460,12 @@ input:checked + .toggle-bg {
   width: max-content;
 }
 
-.w-8 {
-  width: 2rem;
-}
-
 .max-w-2xl {
   max-width: 42rem;
+}
+
+.max-w-\[58rem\] {
+  max-width: 58rem;
 }
 
 .flex-1 {
@@ -1581,24 +1589,6 @@ input:checked + .toggle-bg {
   animation: fade-right 1s both;
 }
 
-@keyframes jump {
-  0%, 100% {
-    transform: scale(100%);
-  }
-
-  10% {
-    transform: scale(80%);
-  }
-
-  50% {
-    transform: scale(120%);
-  }
-}
-
-.animate-jump {
-  animation: jump .5s both;
-}
-
 .cursor-default {
   cursor: default;
 }
@@ -1609,6 +1599,10 @@ input:checked + .toggle-bg {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.cursor-zoom-in {
+  cursor: zoom-in;
 }
 
 .resize {
@@ -1695,10 +1689,6 @@ input:checked + .toggle-bg {
   gap: 0.75rem;
 }
 
-.gap-6 {
-  gap: 1.5rem;
-}
-
 .gap-4 {
   gap: 1rem;
 }
@@ -1767,12 +1757,6 @@ input:checked + .toggle-bg {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
-.space-y-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}
-
 .space-y-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1781,6 +1765,14 @@ input:checked + .toggle-bg {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .rounded {
@@ -1854,6 +1846,11 @@ input:checked + .toggle-bg {
   border-color: rgb(26 86 219 / 0.7);
 }
 
+.border-blue-800 {
+  --tw-border-opacity: 1;
+  border-color: rgb(30 66 159 / var(--tw-border-opacity));
+}
+
 .border-blue-900 {
   --tw-border-opacity: 1;
   border-color: rgb(35 56 118 / var(--tw-border-opacity));
@@ -1879,9 +1876,8 @@ input:checked + .toggle-bg {
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
-.border-blue-800 {
-  --tw-border-opacity: 1;
-  border-color: rgb(30 66 159 / var(--tw-border-opacity));
+.bg-black\/90 {
+  background-color: rgb(0 0 0 / 0.9);
 }
 
 .bg-blue-700 {
@@ -1889,9 +1885,9 @@ input:checked + .toggle-bg {
   background-color: rgb(26 86 219 / var(--tw-bg-opacity));
 }
 
-.bg-blue-800 {
+.bg-blue-900 {
   --tw-bg-opacity: 1;
-  background-color: rgb(30 66 159 / var(--tw-bg-opacity));
+  background-color: rgb(35 56 118 / var(--tw-bg-opacity));
 }
 
 .bg-blue-950\/80 {
@@ -1948,11 +1944,6 @@ input:checked + .toggle-bg {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-blue-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(35 56 118 / var(--tw-bg-opacity));
-}
-
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -1985,14 +1976,6 @@ input:checked + .toggle-bg {
 
 .p-6 {
   padding: 1.5rem;
-}
-
-.p-12 {
-  padding: 3rem;
-}
-
-.p-8 {
-  padding: 2rem;
 }
 
 .px-2 {
@@ -2295,6 +2278,16 @@ input:checked + .toggle-bg {
   }
 }
 
+.animate-in {
+  animation-name: enter;
+  animation-duration: 150ms;
+  --tw-enter-opacity: initial;
+  --tw-enter-scale: initial;
+  --tw-enter-rotate: initial;
+  --tw-enter-translate-x: initial;
+  --tw-enter-translate-y: initial;
+}
+
 .animate-out {
   animation-name: exit;
   animation-duration: 150ms;
@@ -2305,8 +2298,16 @@ input:checked + .toggle-bg {
   --tw-exit-translate-y: initial;
 }
 
+.fade-in {
+  --tw-enter-opacity: 0;
+}
+
 .fade-out {
   --tw-exit-opacity: 0;
+}
+
+.zoom-in-50 {
+  --tw-enter-scale: .5;
 }
 
 .slide-out-to-bottom-52 {
@@ -2335,10 +2336,6 @@ input:checked + .toggle-bg {
 
 .animate-duration-\[750ms\] {
   animation-duration: 750ms;
-}
-
-.animate-duration-1000 {
-  animation-duration: 1000ms;
 }
 
 .container {
@@ -2494,80 +2491,6 @@ input:checked + .toggle-bg {
   animation: rotate-y 1s both;
 }
 
-@keyframes jump {
-  0%, 100% {
-    transform: scale(100%);
-  }
-
-  10% {
-    transform: scale(80%);
-  }
-
-  50% {
-    transform: scale(120%);
-  }
-}
-
-.intersect\:animate-jump:not([no-intersect]) {
-  animation: jump .5s both;
-}
-
-@keyframes jump-in {
-  0% {
-    transform: scale(0%);
-  }
-
-  80% {
-    transform: scale(120%);
-  }
-
-  100% {
-    transform: scale(100%);
-  }
-}
-
-.intersect\:animate-jump-in:not([no-intersect]) {
-  animation: jump-in .5s both;
-}
-
-@keyframes flip-up {
-  0% {
-    transform: rotateX(90deg);
-    transform-origin: bottom;
-  }
-
-  100% {
-    transform: rotateX(0);
-    transform-origin: bottom;
-  }
-}
-
-.intersect\:animate-flip-up:not([no-intersect]) {
-  animation: flip-up 1s both;
-}
-
-@keyframes shake {
-  0% {
-    transform: translateX(0rem);
-  }
-
-  25% {
-    transform: translateX(-1rem);
-  }
-
-  75% {
-    transform: translateX(1rem);
-  }
-
-  100% {
-    transform: translateX(0rem);
-  }
-}
-
-.intersect\:animate-shake:not([no-intersect]) {
-  animation: shake .5s both;
-}
-
 .intersect\:animate-delay-\[250ms\]:not([no-intersect]) {
   animation-delay: 250ms;
 }
@@ -2683,12 +2606,6 @@ input:checked + .toggle-bg {
 
 .group:focus .dark\:group-focus\:ring-gray-800\/70:is(.dark *) {
   --tw-ring-color: rgb(31 41 55 / 0.7);
-}
-
-@media (min-width: 768px) {
-  .md\:h-52 {
-    height: 13rem;
-  }
 }
 
 .rtl\:rotate-180:where([dir="rtl"], [dir="rtl"] *) {
