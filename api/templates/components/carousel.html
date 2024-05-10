@@ -1,15 +1,27 @@
-{% macro carousel(images) %}
+{% macro carousel(id, images, class, has_zoom=False) %}
 
-<div id="default-carousel" class="relative w-full" data-carousel="slide">
+<div id="{{ id }}-carousel" class="relative" data-carousel="slide">
+  {% if has_zoom %}
+  <p class="absolute right-2 top-2 z-40 text-sm text-gray-100">
+    <i class="ph ph-magnifying-glass-plus"></i>
+    Zoom
+  </p>
+  {% endif %}
+
   <!-- Carousel wrapper -->
-  <div class="relative h-52 overflow-hidden rounded-lg md:h-52">
+  <div class="relative overflow-hidden rounded-lg {{ class }}">
+
     {% for image in images %}
-    <div class="hidden h-52 duration-700 ease-in-out" data-carousel-item>
+    <button
+      data-modal-target="{{ id }}-modal"
+      data-modal-toggle="{{ id }}-modal"
+      data-carousel-item
+      class="cursor-zoom-in hidden duration-700 ease-in-out">
       <img
         src="{{ get_file('images/' ~ image) }}"
-        class="absolute block h-52 w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+        class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         alt="...">
-    </div>
+    </button>
     {% endfor %}
 
     <!-- Slider indicators -->
