@@ -6,7 +6,7 @@
 
 {{ header(1) }}
 
-<main class="container mt-12 flex flex-col items-center">
+<main class="container mt-24 flex flex-col items-center">
   <div class="animate-fade-down animate-delay-[250ms]">
     <h1 class="text-3xl">Alguns dos
       <span class="highlight">Projetos</span>
@@ -25,6 +25,6 @@
   </div>
 </main>
 
-<script src="{{ url_for('static', filename='scripts/tabs.js') }}"></script>
+<script src="{{ get_file('scripts/tabs.js') }}"></script>
 
 {% endblock body %}
