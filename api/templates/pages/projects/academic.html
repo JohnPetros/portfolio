@@ -1,22 +1,286 @@
 {% from "components/project.html" import project %}
 
-<div id="academic" class="hidden-tab-content">
-  <ul class="grid grid-cols-3 gap-3 mt-12">
-    <li>
-      {{
-      project(
-      images=[
-      "project-preview.png",
-      "project-preview-2.png",
-      "project-preview-3.png"
-      ],
-      title="Smart Farming",
-      description="Aplicação web acoplada a um dashboard que visa auxiliar o monitoraramento da estufa inteligente da Fatec - São José dos Campos",
-      techs=["Python", "Flask", "MySQL", "Docker", "Pandas"],
-      site_link="#",
-      github_link="#",
-      )
-      }}
-    </li>
-  </ul>
+<div id="academic">
+  <div class="hidden">
+    <ul class="grid grid-cols-3 gap-3 mt-12">
+      <li>
+        {{
+        project(
+        id="stardust",
+        images=[
+        "projects/stardust/space-page.png",
+        "projects/stardust/challenge-page.png",
+        "projects/stardust/challenges-page.png",
+        "projects/stardust/lesson-page.png",
+        "projects/stardust/quiz-stage.png",
+        "projects/stardust/congratulations-stage.png",
+        "projects/stardust/profile-page.png",
+        "projects/stardust/shop-avatars-page.png",
+        "projects/stardust/shop-rockets-page.png",
+        ],
+        title="StarDust",
+        description="Aplicação web inspirada no
+        Duolingo voltada para o ensino de lógica de
+        programação.",
+        techs=["React", "NextJs", "TailwindCSS", "Supabase", "Resend"],
+        github_link="https://github.com/JohnPetros/stardust",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="smart-farming",
+        images=[
+        "projects/smart-farming/last-sensors-record-page.png",
+        "projects/smart-farming/sensors-records-dashboard-page.png",
+        "projects/smart-farming/sensors-records-table-page.png",
+        "projects/smart-farming/checklist-records-dashboard-page.png",
+        "projects/smart-farming/checklist-records-form.png",
+        ],
+        title="Smart Farming",
+        description="Dashboard web que visa auxiliar o monitoramento da estufa inteligente mantida na Fatec - São José dos Campos",
+        techs=[
+        "Python",
+        "Flask",
+        "MySQL",
+        "HTMX",
+        "ApexChart.js",
+        "HTML",
+        "CSS",
+        "JavaScript"
+        ],
+        github_link="https://github.com/CtrI-Alt-Del/smart-farming",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="unipetros",
+        images=[
+        "projects/unipetros/home.png",
+        "projects/unipetros/contact.png",
+        "projects/unipetros/about.png",
+        "projects/unipetros/dashboard.png",
+        "projects/unipetros/table.png",
+        "projects/unipetros/form.png",
+        ],
+        title="Unipetros",
+        description="Aplicação web para apresentar e gerenciar a Unipetros, uma universidade de tecnologia além da compreensão",
+        techs=[
+        "Python",
+        "Flask",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "HTMX",
+        "ApexCharts.js",
+        "Docker",
+        ],
+        github_link="https://github.com/JohnPetros/unipetros",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="vinos-del-valle",
+        images=[
+        "projects/vinos-del-valle/login.png",
+        "projects/vinos-del-valle/dashboard.png",
+        "projects/vinos-del-valle/wines-page.png",
+        "projects/vinos-del-valle/grapes-page.png",
+        "projects/vinos-del-valle/regions-page.png",
+        "projects/vinos-del-valle/users-page.png",
+        "projects/vinos-del-valle/profile-page.png",
+        "projects/vinos-del-valle/wine-form-page.png",
+        ],
+        title="Vinos Del Valle",
+        description="Aplicação web para gerenciar uma adega de vinhos fictícia localizada no Vale do Paraíba",
+        techs=[
+        "PHP",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "ApexCharts.js",
+        ],
+        github_link="https://github.com/JohnPetros/vinos-del-valle",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="memory-game",
+        images=[
+        "projects/memory-game/login-page.png",
+        "projects/memory-game/signup-page.png",
+        "projects/memory-game/cards.png",
+        "projects/memory-game/game.png",
+        "projects/memory-game/leaderboard.png",
+        "projects/memory-game/profile.png",
+        ],
+        title="Weather Crud",
+        description="Jogo da memória com customização de cartas e leaderboard de usuários",
+        techs=[
+        "PHP",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        ],
+        github_link="https://github.com/JohnPetros/memory-game",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="weather-crud",
+        images=[
+        "projects/weather-crud/cities.png",
+        "projects/weather-crud/change-city.png",
+        ],
+        title="Weather Crud",
+        description="CRUD web que mostra dados do clima a respeito de qualquer cidade no mundo",
+        techs=[
+        "PHP",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        ],
+        github_link="https://github.com/JohnPetros/weather-php",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="clash-royale-top-trumps-game",
+        images=[
+        "projects/clash-royale/start.png",
+        "projects/clash-royale/win.png",
+        "projects/clash-royale/lose.png",
+        ],
+        title="Clash Royale Top Trumps Game",
+        description="Jogo Super Trunfo utilizando as cartas do jogo Clash Royale",
+        techs=[
+        "JavaScript",
+        "HTML",
+        "CSS",
+        ],
+        site_link="https://johnpetros.github.io/super-trunfo-clash-royale/",
+        github_link="https://github.com/JohnPetros/super-trunfo-clash-royale",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="multi-calculator",
+        images=[
+        "projects/multi-calculator/home.jpeg",
+        "projects/multi-calculator/calculator.jpeg",
+        "projects/multi-calculator/length-converter.jpeg",
+        "projects/multi-calculator/currency-converter.jpeg",
+        ],
+        title="Multi Calculator",
+        description="Aplicativo que calcula expressões matemáticas e que converte diversas unidades de medida diferentes, bem como diversas moedas diferentes",
+        techs=[
+        "React Native",
+        "Expo",
+        ],
+        site_link="https://snack.expo.dev/@joaopcarvalho/multi-calculator?platform=android",
+        github_link="https://github.com/JohnPetros/multi-calculator",
+        is_mobile=True
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="solar-system",
+        images=[
+        "projects/solar-system/solar-system-1.jpg",
+        "projects/solar-system/solar-system-2.jpg",
+        "projects/solar-system/solar-system-3.jpg",
+        "projects/solar-system/solar-system-4.jpg",
+        "projects/solar-system/solar-system-5.jpg",
+        "projects/solar-system/solar-system-6.jpg",
+        "projects/solar-system/solar-system-7.jpg",
+        ],
+        title="Solar System",
+        description="Aplicativo que exibe informações a respeito de cada planta do nosso sistema solar",
+        techs=[
+        "React Native",
+        "Expo",
+        "JavaScript",
+        ],
+        site_link="https://snack.expo.dev/@joaopcarvalho/solar-system?platform=android",
+        github_link="https://github.com/JohnPetros/solar-system",
+        is_mobile=True
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="brazil-national-team-2022",
+        images=[
+        "projects/brazil-national-team-2022/home.jpeg",
+        "projects/brazil-national-team-2022/team.jpeg",
+        ],
+        title="Brazil National Team 2022",
+        description="Aplicativo que exibe informações a respeito da Seleção Brasileira de 2022",
+        techs=[
+        "React Native",
+        "Expo",
+        "JavaScript",
+        ],
+        site_link="https://snack.expo.dev/@joaopcarvalho/brazil-national-team-2022?platform=android",
+        github_link="https://github.com/JohnPetros/brazil-national-team-2022",
+        is_mobile=True
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="pirates-of-the-caribbean",
+        images=[
+        "projects/pirates-of-the-caribbean/pirates-of-the-caribbean-1.jpg",
+        "projects/pirates-of-the-caribbean/pirates-of-the-caribbean-2.jpg",
+        "projects/pirates-of-the-caribbean/pirates-of-the-caribbean-3.jpg",
+        "projects/pirates-of-the-caribbean/pirates-of-the-caribbean-4.jpg",
+        "projects/pirates-of-the-caribbean/pirates-of-the-caribbean-5.jpg",
+        ],
+        title="Brazil National Team 2022",
+        description="Aplicativo que exibe informações a respeito de cada filme dos Piratas do Caribe",
+        techs=[
+        "React Native",
+        "Expo",
+        "JavaScript",
+        ],
+        site_link="https://snack.expo.dev/@joaopcarvalho/github.com-johnpetros-piratas-do-caribe-filmes",
+        github_link="https://github.com/JohnPetros/piratas-do-caribe-filmes",
+        is_mobile=True
+        )
+        }}
+      </li>
+    </ul>
+  </div>
 </div>
