@@ -1,14 +1,17 @@
-{% macro work(time, title, description) %}
+{% macro work(time, title, i18n_title, description, i18n_description) %}
 
 <div
   class="flex gap-3 w-full invisible intersect:visible intersect:animate-fade-left intersect:animate-delay-[250ms]">
   <span class="w-6 h-6 -translate-x-[12px] rounded-full bg-blue-700"></span>
   <time class="w-28 text-gray-50">{{ time }}</time>
   <div class="w-96 space-y-3">
-    <h3 class="text-2xl text-blue-400 font-semibold -translate-y-2">
+    <h3
+      data-i18n="{{ i18n_title }}"
+      class="text-2xl text-blue-400 font-semibold -translate-y-2">
       {{ title }}
     </h3>
     <p
+      data-i18n="{{ i18n_description }}"
       class="text-gray-300">
       {{ description }}
     </p>

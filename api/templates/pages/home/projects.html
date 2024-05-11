@@ -1,7 +1,11 @@
 {% from "components/project.html" import project %}
 
 <section id="project" class="mt-48">
-  <h2 class="section-title">🖥️ Meus projetos preferidos</h2>
+  <h2
+    data-i18n="🖥️ My best projects"
+    class="section-title">
+    🖥️ Meus projetos preferidos
+  </h2>
   <ul class="grid grid-cols-3 gap-3 mt-12">
     <li>
       {{
@@ -22,6 +26,7 @@
       description="Aplicação web inspirada no
       Duolingo voltada para o ensino de lógica de
       programação.",
+      i18n="Web application inspired by Duolingo for teaching programming logic",
       techs=["React", "NextJs", "TailwindCSS", "Supabase", "Resend"],
       github_link="https://github.com/JohnPetros/stardust",
       )
@@ -40,6 +45,7 @@
       ],
       title="Smart Farming",
       description="Dashboard web que visa auxiliar o monitoramento da estufa inteligente mantida na Fatec - São José dos Campos",
+      i18n="Web dashboard for monitoring the smart greenhouse maintained at Fatec - São José dos Campos",
       techs=[
       "Python",
       "Flask",
@@ -67,6 +73,7 @@
       ],
       title="Sertton",
       description="Aplicativo e-commerce voltado para o nicho de peças de carroceria para veículos de transporte de grande porte.",
+      i18n="E-commerce mobile app for niche of body parts of large commercial vehicles",
       techs=[
       "React Native",
       "Expo",
