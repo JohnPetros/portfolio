@@ -1,20 +1,25 @@
 class Tabs {
   constructor() {
-    const tabs = document.querySelectorAll("[data-tabs]")
+    const tabs = document.querySelectorAll("button[data-tabs]")
     const contentContainer = document.querySelector("[data-tabs='container']")
 
     if (!tabs.length || !contentContainer) return
 
     const firstTab = tabs[0]
     firstTab.classList.add("active-tab")
+
     this.activeTabContentId = firstTab.dataset.tabs
-
-    for (const tab of tabs) {
-      tab.addEventListener("click", (event) => this.handleTabClick(event))
-    }
-
     this.tabs = tabs
     this.delay = 700 // ms
+
+    for (const tab of this.tabs) {
+      tab.addEventListener("click", (event) => this.handleTabClick(event))
+
+      const contentId = tab.dataset.tabs
+      if (contentId != this.activeTabContentId) {
+        this.hideTabContent(contentId)
+      }
+    }
   }
 
   showTabContent(contentId) {
@@ -29,7 +34,7 @@ class Tabs {
         item.classList.remove("animate-out", "fade-out", "slide-out-to-bottom-52")
       }
 
-      tabContent.classList.remove("hidden-tab-content")
+      tabContent.childNodes[1].classList.remove("hidden")
     }, this.delay)
 
   }
@@ -47,7 +52,7 @@ class Tabs {
     }
 
     setTimeout(() => {
-      tabContent.classList.add("hidden-tab-content")
+      tabContent.childNodes[1].classList.add("hidden")
     }, this.delay)
   }
 
