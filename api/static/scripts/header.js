@@ -1,5 +1,5 @@
 class Header {
-  activeClass = "bg-gray-900 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-70 shadow-lg translate-y-0.5"
+  activeClass = "bg-gray-900 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-70 shadow-lg translate-y-1"
 
   constructor() {
     const container = document.querySelector('[data-header="container"]')
