@@ -1,0 +1,23 @@
+<button
+  data-i18n="toggle"
+  class="flex items-center gap-2 py-1 px-2 rounded-md border border-gray-600">
+  <img
+    id="br"
+    data-i18n="language"
+    width="32"
+    height="32"
+    src="{{ get_file('images/flags/br.svg') }}" alt="Português do Brasil">
+
+  <div class="block w-0.5 h-8 bg-gray-600"></div>
+
+  <img
+    id="en"
+    data-i18n="language"
+    width="32"
+    height="32"
+    src="{{ get_file('images/flags/us.svg') }}"
+    alt="English"
+    class="brightness-50">
+</button>
+
+<script defer src="{{ get_file('scripts/i18n.js') }}"></script>
