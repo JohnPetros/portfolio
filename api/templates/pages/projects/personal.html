@@ -1,22 +1,293 @@
 {% from "components/project.html" import project %}
 
-<div id="personal" class="hidden-tab-content">
-  <ul class="grid grid-cols-3 gap-3 mt-12">
-    <li>
-      {{
-      project(
-      images=[
-      "project-preview.png",
-      "project-preview-2.png",
-      "project-preview-3.png"
-      ],
-      title="Sertton",
-      description="Aplicação web acoplada a um dashboard que visa auxiliar o monitoraramento da estufa inteligente da Fatec - São José dos Campos",
-      techs=["Python", "Flask", "MySQL", "Docker", "Pandas"],
-      site_link="#",
-      github_link="#",
-      )
-      }}
-    </li>
-  </ul>
+<div id="personal">
+  <div class="hidden">
+    <ul class="grid grid-cols-3 gap-3 mt-12">
+      <li>
+        {{
+        project(
+        id="tekken",
+        images=[
+        "projects/tekken/selecting.png",
+        "projects/tekken/lose.png",
+        "projects/tekken/win.png",
+        ],
+        title="Tekken Top Trumps",
+        description="Jogo super trunfo com os personagens do jogo de luta Tekken",
+        techs=[
+        "React",
+        "Styled Components",
+        "Framer Motion",
+        "TypeScript",
+        "Lottie",
+        ],
+        site_link="https://tekken-top-trumps-game.vercel.app/",
+        github_link="https://github.com/JohnPetros/tekken-top-trumps-game",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="marvel-website",
+        images=[
+        "projects/marvel-website/home.png",
+        "projects/marvel-website/heroes-showcase.png",
+        "projects/marvel-website/character-details.png",
+        "projects/marvel-website/comic-details.png",
+        "projects/marvel-website/comics.png",
+        ],
+        title="Marvel Website",
+        description="Site institucional que consome a API oficial da Marvel Comics",
+        techs=[
+        "Next.js",
+        "React",
+        "TailwindCSS",
+        "Radix",
+        "Framer Motion",
+        "Lottie",
+        "TypeScript",
+        ],
+        site_link="https://marvel-comics-website.vercel.app/",
+        github_link="https://github.com/JohnPetros/marvel-comics-website",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="urna-eletronica",
+        images=[
+        "projects/urna-eletronica/voting.png",
+        "projects/urna-eletronica/form.png",
+        "projects/urna-eletronica/result.png",
+        ],
+        title="Eletronic voting machine",
+        description="Urna eletrónica web para ser usada nas eleições 2022 com foco nas figuras presentes na cultura brasileira",
+        techs=[
+        "Next.js",
+        "React",
+        "TailwindCSS",
+        "Radix",
+        "Framer Motion",
+        "Lottie",
+        "TypeScript",
+        "JSON Server",
+        ],
+        site_link="https://urna-eletronica-john-petros.vercel.app/",
+        github_link="https://github.com/JohnPetros/urna-eletronica",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="alienator",
+        images=[
+        "projects/alienator/gaming.png",
+        "projects/alienator/finishing.png",
+        ],
+        title="Alienator",
+        description="Jogo web de adivinhação de personagem utilizando o Gemini AI.",
+        techs=[
+        "Python",
+        "Flask",
+        "Gemini AI",
+        "HTMX",
+        "Hyperscript",
+        "TailwindCSS",
+        "Flowbite UI",
+        ],
+        site_link="https://alienator.onrender.com/",
+        github_link="https://github.com/JohnPetros/alienator",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="github-finder",
+        images=[
+        "projects/github-finder/app.png",
+        ],
+        title="Github Finder",
+        description="Aplicação web que busca informações a respeito de qualquer usuário do Github.",
+        techs=[
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "GIthub API"
+        ],
+        site_link="https://johnpetros.github.io/github-finder/",
+        github_link="https://github.com/JohnPetros/github-finder",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="http-pandas",
+        images=[
+        "projects/http-pandas/home.png",
+        "projects/http-pandas/201.png",
+        "projects/http-pandas/404.png",
+        "projects/http-pandas/500.png",
+        ],
+        title="HTTP Pandas",
+        description="Aplicação web que retorna a foto de um pandinha para cada HTTP Status Code",
+        techs=[
+        "Bun",
+        "Elysia",
+        "HTMX",
+        "Redis",
+        "Zod",
+        "TailwindCSS",
+        "Preline UI",
+        ],
+        site_link="https://johnpetros.github.io/github-finder/",
+        github_link="https://github.com/JohnPetros/github-finder",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="tic-tac-toe",
+        images=[
+        "projects/tic-tac-toe/settings.png",
+        "projects/tic-tac-toe/end.png",
+        "projects/tic-tac-toe/game.png",
+        ],
+        title="Tic Tac Toe",
+        description="Jogo da velha web com modo single e multiplayer, bem como modo easy e hard",
+        techs=[
+        "ReactJs",
+        "TypeScript",
+        "Framer Motion",
+        "Phosphor Icons",
+        ],
+        site_link="https://tic-tac-toe-game-pearl.vercel.app/",
+        github_link="https://github.com/JohnPetros/tic-tac-toe-game",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="hangman",
+        images=[
+        "projects/hangman-game/settings.png",
+        "projects/hangman-game/game.png",
+        "projects/hangman-game/win.png",
+        "projects/hangman-game/lost.png",
+        ],
+        title="Hangman",
+        description="Jogo da forca web com múltiplos temas",
+        techs=[
+        "ReactJs",
+        "TypeScript",
+        ],
+        site_link="https://hangman-game-murex.vercel.app/",
+        github_link="https://github.com/JohnPetros/hangman-game",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="tech-guardian",
+        images=[
+        "projects/tech-guardian/open-orders-page.png",
+        "projects/tech-guardian/opening-order-page.png",
+        "projects/tech-guardian/profile-page.png",
+        "projects/tech-guardian/sign-up-page.png",
+        ],
+        title="Hangman",
+        description="Aplicação web Help Desk, em que o usuário pode ter uma de três funções no sistema: Tech, Guardian ou Admin",
+        techs=[
+        "NodeJs",
+        "Knex",
+        "PostgreSQL",
+        "EJS",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Phosphor Icons",
+        ],
+        site_link="https://tech-guardian-app.onrender.com/",
+        github_link="https://github.com/JohnPetros/tech-guardian",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="qr-code-generator",
+        images=[
+        "projects/qr-code-generator/app.png",
+        ],
+        title="QR Code Generator",
+        description="Gerador de QR Code utilizando como base um link web",
+        techs=[
+        "JavaScript",
+        "CSS",
+        "HTML",
+        ],
+        site_link="https://github.com/JohnPetros/qr-code-generator",
+        github_link="https://johnpetros.github.io/qr-code-generator/",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="random-user-generator",
+        images=[
+        "projects/random-user-generator/app.png",
+        ],
+        title="Random User Generator",
+        description="Gerador de dados de uma pessoa aleatória ",
+        techs=[
+        "JavaScript",
+        "CSS",
+        "HTML",
+        ],
+        site_link="https://johnpetros.github.io/random-user-generator/",
+        github_link="https://github.com/JohnPetros/random-user-generator",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="bmi-calculator",
+        images=[
+        "projects/bmi-calculator/healthy.png",
+        "projects/bmi-calculator/obese.png",
+        ],
+        title="Bmi Calculator",
+        description="Calculador de índice de massa corporal",
+        techs=[
+        "JavaScript",
+        "CSS",
+        "HTML",
+        ],
+        site_link="https://johnpetros.github.io/bmi-calculator/",
+        github_link="https://github.com/JohnPetros/bmi-calculator",
+        )
+        }}
+      </li>
+    </ul>
+  </div>
 </div>
