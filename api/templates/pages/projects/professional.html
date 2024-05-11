@@ -1,24 +1,71 @@
 {% from "components/project.html" import project %}
 
 <div id="professional">
-  <ul class="grid grid-cols-3 gap-3 mt-12">
-    <li>
-      {{
-      project(
-      images=[
-      "project-preview.png",
-      "project-preview-2.png",
-      "project-preview-3.png"
-      ],
-      title="StarDust",
-      description="Aplicação web inspirada no
-      Duolingo voltada para o ensino de lógica de
-      programação.",
-      techs=["React", "NextJs", "TailwindCSS", "Supabase", "Resend"],
-      site_link="#",
-      github_link="#",
-      )
-      }}
-    </li>
-  </ul>
+  <div>
+    <ul class="grid grid-cols-3 gap-3 mt-12">
+      <li>
+        {{
+        project(
+        id="sertton-industrial",
+        images=[
+        "projects/sertton-industrial/home-page.png",
+        "projects/sertton-industrial/comments-section.png",
+        "projects/sertton-industrial/products-page.png",
+        "projects/sertton-industrial/product-details-page.png",
+        "projects/sertton-industrial/checkout-page.png",
+        ],
+        title="Sertton Industrial",
+        description="Site e-commerce voltado para o nicho de peças de carroceria para veículos de transporte de grande porte.",
+        techs=["Low-code"],
+        site_link="https://sertton-industrial.com.br/",
+        )
+        }}
+      </li>
+      <li>
+        {{
+        project(
+        id="sertton",
+        images=[
+        "projects/sertton/cart-screen.jpeg",
+        "projects/sertton/home-screen.jpeg",
+        "projects/sertton/product-details-screen.jpeg",
+        "projects/sertton/products-list-screen.jpeg",
+        "projects/sertton/orders-list-screen.jpeg",
+        ],
+        title="Sertton",
+        description="Aplicativo e-commerce voltado para o nicho de peças de carroceria para veículos de transporte de grande porte.",
+        techs=[
+        "React Native",
+        "Expo",
+        "Tamagui",
+        "TypeScript"
+        ],
+        github_link="https://github.com/JohnPetros/sertton",
+        is_mobile=True
+        )
+        }}
+      </li>
+      <li>
+        {{
+        project(
+        id="shipment-service",
+        images=[
+        "projects/shipment-service/calculator.png",
+        "projects/shipment-service/authorization.jpeg",
+        ],
+        title="Shipment Service",
+        description="API Rest que calcula o preço dos serviços de frete com base no CEP e as dimensões dos produtos selecionados pelo cliente",
+        techs=[
+        "NodeJs",
+        "Fastify",
+        "Redis",
+        "Docker",
+        "TypeScript"
+        ],
+        github_link="https://github.com/JohnPetros/shipment-service",
+        )
+        }}
+      </li>
+    </ul>
+  </div>
 </div>
