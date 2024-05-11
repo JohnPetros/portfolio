@@ -7,12 +7,16 @@
 <header
   data-header="container"
   class="container fixed top-8 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-700 z-40 flex items-center justify-between py-3 px-6 w-full">
-  <a href="{{ url_for('home') }}">
-    <img src="{{ get_file('images/logo.svg') }}" alt="Petros">
-  </a>
+  <div class="flex items-center gap-3 animate-fade-down">
+    <a href="{{ url_for('home') }}">
+      <img src="{{ get_file('images/logo.svg') }}" alt="Petros">
+    </a>
+
+    {% include "components/language_toggle.html" %}
+  </div>
 
   <nav>
-    <ul class="flex items-center gap-24">
+    <ul class="flex items-center gap-24 animate-fade-down">
       <li
         class="{{ link_class }}">
         <a
@@ -28,7 +32,9 @@
           href="{{ url_for('projects') }}"
           class="flex items-center gap-2  {{ active_link_class if active_link_index == 1 else '' }}">
           <i class="ph ph-desktop-tower text-xl"></i>
-          Projetos
+          <span data-i18n="Projects">
+            Projetos
+          </span>
         </a>
       </li>
       <li
@@ -37,7 +43,9 @@
           href="{{ url_for('about') }}"
           class="flex items-center gap-2  {{ active_link_class if active_link_index == 2 else '' }}">
           <i class="ph ph-user text-xl"></i>
-          Sobre mim
+          <span data-i18n="About me">
+            Sobre mim
+          </span>
         </a>
       </li>
     </ul>
