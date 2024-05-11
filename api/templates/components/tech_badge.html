@@ -2,7 +2,8 @@
 
 {% set icon_path = "images/techs/{}".format(icon) %}
 
-<div
+<a
+  href="{{ link }}"
   target="_blank"
   class="flex items-center invisible intersect:visible intersect:animate-fade-up">
   <img width="88" height="88" src="{{ get_file(icon_path) }}"
@@ -10,6 +11,6 @@
   <span class="-translate-x-2 text-xl">
     {{ name }}
   </span>
-</div>
+</a>
 
 {% endmacro %}
