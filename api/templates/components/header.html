@@ -4,7 +4,9 @@
 
 {% macro header(active_link_index = 0) %}
 
-<header class="container flex justify-between">
+<header
+  data-header="container"
+  class="container fixed top-8 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-700 z-40 flex items-center justify-between py-3 px-6 w-full">
   <a href="{{ url_for('home') }}">
     <img src="{{ get_file('images/logo.svg') }}" alt="Petros">
   </a>
@@ -41,5 +43,11 @@
     </ul>
   </nav>
 </header>
+
+<div
+  data-header="trigger"
+  class="absolute invisible -bottom-2 w-[99%] h-1"></div>
+
+<script src="{{ get_file('scripts/header.js') }}"></script>
 
 {% endmacro %}
