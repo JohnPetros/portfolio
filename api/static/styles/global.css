@@ -19,12 +19,8 @@
     @apply bg-blue-700 border-gray-100
   }
 
-  .hidden-tab-content {
-    @apply absolute invisible pointer-events-none
-  }
-
   .cursor-panda {
-    cursor: url('../../images/pandas/panda-staring.gif'), copy;
+    cursor: url('../../images/pandas/panda-staring.gif');
   }
 
   .john-petros-and-panda {
