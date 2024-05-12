@@ -3,11 +3,11 @@
 
 <section id="curiosities"
   class="space-y-4 invisible intersect:visible intersect:animate-fade-up intersect:animate-duration-1000">
-  <h2 class="section-title mb-6">
+  <h2 data-i18n="🧑🏻‍🦲 Curiosities about me" class="section-title mb-6">
     🧑🏻‍🦲 Curiosidades sobre minha pessoa
   </h2>
 
-  <ul class="p-6 pt-12 w-full space-y-8 rounded-md border border-blue-800">
+  <ul class="p-6 w-full space-y-8 rounded-md border border-blue-800">
     <li class="flex items-center gap-4">
       <div class="{{ curiosity_icon_class }}">
         <img
@@ -16,10 +16,43 @@
           class="size-10">
       </div>
 
-      <p class="text-gray-300">
+      <p
+        data-i18n="My favorite animal is the panda (I think it is obvious by now)"
+        class="text-gray-300">
         Meu animal preferido é o panda (acho que já deu para perceber).
       </p>
     </li>
+
+    <li class="flex items-center gap-4">
+      <div class="{{ curiosity_icon_class }}">
+        <img
+          src="{{ get_file('images/curiosities/school.svg') }}"
+          alt="Escola"
+          class="size-8">
+      </div>
+
+      <p
+        data-i18n="I have 100% of attendance since my first year of high school"
+        class="text-gray-300">
+        Eu tenho 100% de presença desde o meu 1º ano ensino médio.
+      </p>
+    </li>
+
+    <li class="flex items-center gap-4">
+      <div class="{{ curiosity_icon_class }}">
+        <img
+          src="{{ get_file('images/curiosities/grade.svg') }}"
+          alt="Nota A+"
+          class="size-10">
+      </div>
+
+      <p
+        data-i18n="I achieved the highest grade in all subjects of my technical course."
+        class="text-gray-300">
+        Adquiri nota máxima em todas as disciplinas do meu curso técnico.
+      </p>
+    </li>
+
     <li class="flex items-center gap-4">
       <div class="{{ curiosity_icon_class }}">
         <img
@@ -28,8 +61,11 @@
           class="size-8">
       </div>
 
-      <p class="text-gray-300">
-        Eu tenho 1379 dias no Duolingo (inglês e espanhol).
+      <p
+        data-i18n="My Streak on Duolingo is {{ duolingo_streak }} days (English and Spanish)"
+        class="text-gray-300">
+        Eu tenho {{ duolingo_streak.days }} dias no Duolingo (inglês e
+        espanhol).
       </p>
     </li>
 
@@ -42,7 +78,9 @@
       </div>
 
       <div>
-        <p class="text-gray-300">
+        <p
+          data-i18n="I like listening to Lofi songs while I am programming. Check out some of my playlists"
+          class="text-gray-300">
           Gosto de escutar Lofi enquanto estou programando. Escute minhas
           playlists:
         </p>
