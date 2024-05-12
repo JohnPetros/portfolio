@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./mgt/foto.jpeg" align="center" width="280" height="280" style="border-radius: 50%; object-fit: cover;" />
+  <img src="./mgt/petros.jpeg" align="center" width="280" height="280" style="border-radius: 50%; object-fit: cover;" />
 </div>
 
 # Portfolio digital de João Pedro Carvalho dos Santos
@@ -50,6 +50,8 @@ $ docker compose up --build
 
 Acesso no navegador o endereço http://localhost:5000 para ver a aplicação funcionando.
 
+## Wireframe da versão mobile
 
+Acesse esse [link](https://github.com/JohnPetros/portfolio_digital/blob/main/mgt/mobile-wireframe.pdf) para ver e baixar o pdf que contém o wireframe das telas da versão mobile.
 
 Validação do orientador. Fabrício Galende Marques de Carvalho 2024/01
