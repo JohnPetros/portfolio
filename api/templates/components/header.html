@@ -21,7 +21,7 @@
         class="{{ link_class }}">
         <a
           href="{{ url_for('home') }}"
-          class="flex items-center gap-2 {{ active_link_class if active_link_index == 0 else '' }}">
+          class="flex items-center gap-2 p-2 {{ active_link_class if active_link_index == 0 else '' }}">
           <i class="ph ph-house text-xl"></i>
           Home
         </a>
@@ -30,7 +30,7 @@
         class="{{ link_class }}">
         <a
           href="{{ url_for('projects') }}"
-          class="flex items-center gap-2  {{ active_link_class if active_link_index == 1 else '' }}">
+          class="flex items-center gap-2 p-2  {{ active_link_class if active_link_index == 1 else '' }}">
           <i class="ph ph-desktop-tower text-xl"></i>
           <span data-i18n="Projects">
             Projetos
@@ -41,7 +41,7 @@
         class="{{ link_class }} {{ 'text-blue-500' if active_link_index == 2 else '' }}">
         <a
           href="{{ url_for('about') }}"
-          class="flex items-center gap-2  {{ active_link_class if active_link_index == 2 else '' }}">
+          class="flex items-center gap-2 p-2  {{ active_link_class if active_link_index == 2 else '' }}">
           <i class="ph ph-user text-xl"></i>
           <span data-i18n="About me">
             Sobre mim
