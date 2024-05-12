@@ -2454,6 +2454,10 @@ input:checked + .toggle-bg {
   animation-duration: 750ms;
 }
 
+body {
+  font-family: "Inter", sans-serif;
+}
+
 button:hover,
 a:hover {
   opacity: 0.8;

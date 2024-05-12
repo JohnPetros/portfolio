@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Inter", sans-serif;
+}
+
 button:hover,
 a:hover {
   @apply opacity-80 transition-opacity duration-200
