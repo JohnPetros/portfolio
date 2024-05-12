@@ -2,10 +2,13 @@
 
 <div id="{{ id }}-carousel" class="relative" data-carousel="slide">
   {% if has_zoom %}
-  <p class="absolute right-2 top-2 z-40 text-sm text-gray-100">
+  <button
+    data-modal-target="{{ id }}-modal"
+    data-modal-toggle="{{ id }}-modal"
+    class="absolute right-2 top-2 z-40 text-sm text-gray-100">
     <i class="ph ph-magnifying-glass-plus"></i>
     Zoom
-  </p>
+  </button>
   {% endif %}
 
   <!-- Carousel wrapper -->
@@ -16,7 +19,8 @@
       data-modal-target="{{ id }}-modal"
       data-modal-toggle="{{ id }}-modal"
       data-carousel-item
-      class="hidden duration-700 ease-in-out {{ 'cursor-zoom-in' if has_zoom else '' }}">
+      class="hidden duration-700 ease-in-out 
+      {{ 'cursor-zoom-in' if has_zoom else 'pointer-events-none' }}">
       <img
         src="{{ get_file('images/' ~ image) }}"
         class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
