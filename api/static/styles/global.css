@@ -6,6 +6,11 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+button,
+a {
+  @apply outline-none
+}
+
 button:hover,
 a:hover {
   @apply opacity-80 transition-opacity duration-200
@@ -13,7 +18,7 @@ a:hover {
 
 button:focus-visible,
 a:focus-visible {
-  @apply ring-2 ring-blue-700 outline-none rounded-md
+  @apply ring-2 ring-blue-700 rounded-md
 }
 
 @layer components {
