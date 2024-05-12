@@ -1,10 +1,13 @@
 {% from "components/tech_badge.html" import tech_badge %}
 
 <section id="contact">
-  <h2 class="section-title">👀 Gostou do que viu?</h2>
+  <h2 data-i18n="👀 Did you like what you saw" class="section-title">
+    👀 Gostou do que viu?
+  </h2>
 
   <div class="w-max mx-auto mt-8">
-    <p class="text-xl text-center text-gray-300 font-semibold">
+    <p data-i18n="Please contact me."
+      class="text-xl text-center text-gray-300 font-semibold">
       Entre em contato comigo.
     </p>
     <ul
@@ -36,6 +39,7 @@
 
     <form method="post" class="mt-12">
       <label
+        data-i18n="Your email"
         for="input-group-1"
         class="block mb-4 text-md font-medium text-gray-100">
         Seu e-mail
@@ -61,15 +65,22 @@
 
       <div class="mt-12">
         <label
+          data-i18n="message"
           for="message"
           class="block mb-4 text-md font-medium text-gray-100">Sua
           mensagem
         </label>
-        <textarea id="message" rows="6"
-          class="bg-gray-700 rounded-md w-full p-2.5 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 "
-          placeholder="Escreva sua mensagem aqui..."></textarea>
+        <textarea
+          id="message"
+          rows="6"
+          placeholder="Escreva sua mensagem aqui..."
+          class="bg-gray-700 rounded-md w-full p-2.5 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 "></textarea>
       </div>
-      <small class="text-gray-400">Nada de me enviar spam, hein...</small>
+      <small
+        data-i18n="No spamming me, ok..."
+        class="text-gray-400">
+        Nada de me enviar spam, hein...
+      </small>
     </form>
   </div>
 </section>
