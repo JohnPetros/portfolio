@@ -20,7 +20,7 @@
 - [Markdown](https://www.markdownguide.org/)
 
 ## Acesse a aplicação funcionando diretamente pelo link
-O Deploy do projeto foi realizado na [Vercel](https://vercel.com/home), uma plataforma de serviços de nuvem, o que implica dizer que você pode ver a aplicação funcionando por esse [link](https://portfolio-digital-p26h8fv4b-johnpetros-projects.vercel.app/).
+O Deploy do projeto foi realizado na [Vercel](https://vercel.com/home), uma plataforma de serviços de nuvem, o que implica dizer que você pode ver a aplicação funcionando por esse [link](https://portfolio-digital-501pu7ryi-johnpetros-projects.vercel.app/).
 
 ## Como rodar a aplicação localmente na sua máquina
 
