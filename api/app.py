@@ -1,3 +1,4 @@
+from datetime import date
 from flask import Flask, render_template, url_for
 
 
@@ -21,7 +22,8 @@ def projects():
 
 @app.route("/about")
 def about():
-    return render_template("pages/about/index.html")
+    duolingo_streak = date.today() - date(day=28, month=7, year=2020)
+    return render_template("pages/about/index.html", duolingo_streak=duolingo_streak)
 
 
 if __name__ == "__main__":
