@@ -2,11 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
-  @apply w-full max-w-[1180px] mx-auto
+button:hover,
+a:hover {
+  @apply opacity-80 transition-opacity duration-200
+}
+
+button:focus-visible,
+a:focus-visible {
+  @apply ring-2 ring-blue-700 outline-none rounded-md
 }
 
 @layer components {
+  .container {
+    @apply w-full max-w-[1180px] mx-auto
+  }
+
   .highlight {
     @apply text-blue-400 font-semibold
   }
