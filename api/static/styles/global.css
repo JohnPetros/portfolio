@@ -20,7 +20,7 @@
   }
 
   .cursor-panda {
-    cursor: url('../../images/pandas/panda-staring.gif');
+    cursor: url('../../images/pandas/panda-staring.gif'), copy;
   }
 
   .john-petros-and-panda {
