@@ -13,9 +13,13 @@
       href="{{ get_file('build/styles/global.css') }}">
     <link rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🐼</text></svg>" />
+    <script src="https://unpkg.com/htmx.org@1.9.11"></script>
+    <script
+      src="https://unpkg.com/htmx.org@1.9.11/dist/ext/loading-states.js"></script>
     <title>John Petros</title>
   </head>
   <body
+    hx-ext="loading-states"
     class="py-4 bg-gradient-to-r from-gray-950 to-slate-900 text-gray-100">
     {% block body %}
     {% endblock body %}
