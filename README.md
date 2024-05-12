@@ -14,6 +14,7 @@
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Flowbite](https://flowbite.com/)
+- [HTMX](https://htmx.org/)
 - [Python](https://www.python.org/)
 - [Flask](https://flask.palletsprojects.com/en/3.0.x/)
 - [Markdown](https://www.markdownguide.org/)
