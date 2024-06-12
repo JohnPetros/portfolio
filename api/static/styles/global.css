@@ -8,7 +8,7 @@ body {
 
 button,
 a {
-  @apply outline-none
+  outline: none;
 }
 
 button:hover,
@@ -23,7 +23,10 @@ a:focus-visible {
 
 @layer components {
   .container {
-    @apply w-full max-w-[1180px] mx-auto
+    width: 100%;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .highlight {
