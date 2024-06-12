@@ -1,4 +1,8 @@
-{% macro navigation(class) %}
+{% set link_class =
+"text-gray-300 text-lg cursor-pointer" %}
+{% set active_link_class = "text-blue-400" %}
+
+{% macro navigation(class, active_link_index) %}
 
 <nav>
   <ul

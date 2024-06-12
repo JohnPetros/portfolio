@@ -1,6 +1,4 @@
-{% set link_class =
-"text-gray-300 text-lg cursor-pointer" %}
-{% set active_link_class = "text-blue-400" %}
+
 
 {% from "components/drawer.html" import drawer %}
 {% from "components/navigation.html" import navigation %}
@@ -20,12 +18,12 @@
 
   <div class="md:hidden">
     {% call drawer() %}
-    {{ navigation(class="flex-col") }}
+    {{ navigation(class="flex-col", active_link_index=active_link_index) }}
     {% endcall %}
   </div>
 
   <div class="hidden md:block">
-    {{ navigation() }}
+    {{ navigation(active_link_index=active_link_index) }}
   </div>
 
 </header>
