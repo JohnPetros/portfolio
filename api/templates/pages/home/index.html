@@ -5,13 +5,18 @@
 
 {% block body %}
 
+{% include "pages/home/panda.html" %}
+
 {{ header(0) }}
 
-<main class="container mt-24">
+<main
+  data-panda="page-content"
+  class="container sr-only mt-24 px-6 xl:px-0 ">
   {% include "pages/home/hero.html" %}
 
-  <div class="space-y-40 mt-64">
-    <div class="grid grid-cols-2 gap-16">
+  <div class="space-y-40 mt-32 md:mt-64">
+    <div
+      class="grid grid-cols-1 xl:grid-cols-2 gap-16">
       {% include "pages/home/techs.html" %}
       {% include "pages/home/experience.html" %}
     </div>
@@ -19,7 +24,6 @@
     {% include "components/contact.html" %}
   </div>
 
-  {% include "components/footer.html" %}
 </main>
 
 {% endblock body %}
