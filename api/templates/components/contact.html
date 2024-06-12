@@ -5,14 +5,14 @@
     👀 Gostou do que viu?
   </h2>
 
-  <div class="w-max mx-auto mt-8">
+  <div class="w-full max-w-lg mx-auto mt-8">
     <p data-i18n="Please contact me."
       class="text-xl text-center text-gray-300 font-semibold">
       Entre em contato comigo.
     </p>
     <ul
-      class="flex items-center gap-3 mt-3 pb-3 border-b border-gray-300">
-      <li>
+      class="flex items-center justify-between pr-6 gap-1 md:gap-3 mt-3 pb-3 border-b border-gray-300">
+      <li class="size-20 sm:size-auto">
         {{
         tech_badge(
         icon="github.svg",
@@ -20,14 +20,14 @@
         link="https://github.com/JohnPetros")
         }}
       </li>
-      <li>
+      <li class="size-20 sm:size-auto">
         {{ tech_badge(
         icon="linkedin.svg",
         name="linkedIn",
         link="https://www.linkedin.com/in/jo%C3%A3o-pedro-carvalho-dos-santos-42a0ab222/")
         }}
       </li>
-      <li>
+      <li class="size-20 sm:size-auto">
         {{
         tech_badge(
         icon="discord.svg",
