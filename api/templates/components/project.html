@@ -13,8 +13,9 @@ techs, is_mobile=False) %}
     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 max-h-full bg-black/90 animate-in fade-in zoom-in-50 duration-700">
     <button
       data-modal-hide="{{ id }}-modal"
-      class="absolute top-12 right-12 grid place-content-center">
+      class="absolute top-3 right-12 grid place-content-center">
       <i class="ph ph-x text-gray-50 text-2xl"></i>
+      <span class="sr-only">Fechar carrousel</span>
     </button>
 
     <span
@@ -52,7 +53,7 @@ techs, is_mobile=False) %}
   <div class="flex flex-col justify-between mt-6 h-[16rem]">
     <div class="space-y-3">
       <h3 class="text-2xl text-gray-50 font-bold text-center">{{ title }}</h3>
-      <p data-i18n="{{ i18n }}" class="text-lg text-gray-300">
+      <p data-i18n="{{ i18n }}" class="text-md sm:text-lg text-gray-300">
         {{ description }}
       </p>
 
@@ -75,7 +76,7 @@ techs, is_mobile=False) %}
       <a
         href="{{ site_link }}"
         target="_blank"
-        class="flex items-center gap-1 px-8 py-2 rounded-md bg-blue-700 text-gray-50 font-semibold">
+        class="flex items-center gap-1 px-8 py-2 rounded-md bg-blue-700 text-gray-50 text-xs lg:text-base font-semibold">
         <i class="ph ph-rocket-launch text-2xl"></i>
         Site
       </a>
@@ -85,7 +86,7 @@ techs, is_mobile=False) %}
       <a
         href="{{ github_link }}"
         target="_blank"
-        class="flex items-center gap-1 rounded-md px-8 py-2 border border-gray-50 bg-transparent text-gray-100 font-semibold">
+        class="flex items-center gap-1 rounded-md px-8 py-2 border border-gray-50 text-xs lg:text-base bg-transparent text-gray-100 font-semibold">
         <i class="ph ph-github-logo text-2xl"></i>
         <span data-i18n="Source code">
           Código-fonte
