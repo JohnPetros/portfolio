@@ -12,7 +12,9 @@
   {% endif %}
 
   <!-- Carousel wrapper -->
-  <div class="relative overflow-hidden rounded-lg {{ class }}">
+
+  <div
+    class="relative overflow-hidden rounded-lg border-black ring-4 ring-gray-400 {{ 'border-[12px]' if has_zoom else 'border-[18px]' }} {{ class }}">
 
     {% for image in images %}
     <button
@@ -23,7 +25,7 @@
       {{ 'cursor-zoom-in' if has_zoom else 'pointer-events-none' }}">
       <img
         src="{{ get_file('images/' ~ image) }}"
-        class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+        class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 "
         alt="...">
     </button>
     {% endfor %}
@@ -71,6 +73,7 @@
         <span class="sr-only">Próximo Slide</span>
       </span>
     </button>
+
   </div>
 
   {% endmacro %}
