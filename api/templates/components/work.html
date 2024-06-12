@@ -2,17 +2,18 @@
 
 <div
   class="flex gap-3 w-full invisible intersect:visible intersect:animate-fade-left intersect:animate-delay-[250ms]">
-  <span class="w-6 h-6 -translate-x-[12px] rounded-full bg-blue-700"></span>
-  <time class="w-28 text-gray-50">{{ time }}</time>
+  <span
+    class="w-6 h-6 -translate-x-[8px] sm:-translate-x-[12px] rounded-full bg-blue-700"></span>
+  <time class="w-40 sm:w-28 text-gray-50 text-sm">{{ time }}</time>
   <div class="w-96 space-y-3">
     <h3
       data-i18n="{{ i18n_title }}"
-      class="text-2xl text-blue-400 font-semibold -translate-y-2">
+      class="text-lg sm:text-2xl text-blue-400 font-semibold -translate-y-1">
       {{ title }}
     </h3>
     <p
       data-i18n="{{ i18n_description }}"
-      class="text-gray-300">
+      class="text-sm sm:text-base text-gray-300">
       {{ description }}
     </p>
   </div>

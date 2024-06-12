@@ -1,6 +1,17 @@
-<div class="flex items-center gap-16">
-  <div class="max-w-2xl animate-fade-right animate-delay-[250ms]">
-    <h1 class="text-4xl tracking-wide leading-10">
+{% set petros_smiling_image_280 =
+get_file('images/petros/petros-smiling-280.jpg')
+%}
+
+{% set petros_smiling_image_180 =
+get_file('images/petros/petros-smiling-180.jpg')
+%}
+
+<div
+  class="flex flex-col-reverse md:flex-row items-center gap-12 xl:gap-16">
+  <div
+    data-panda="hero-left"
+    class="max-w-2xl opacity-0">
+    <h1 class="text-xl sm:text-2xl xl:text-4xl tracking-wide leading-10">
       <span
         data-i18n="Hello People! 👋🏻 <span class=highlight>John Petros</span> here.">
         Olá, pessoas! 👋🏻 <span class="highlight">John Petros</span> aqui.
@@ -17,7 +28,8 @@
         🐼.
       </strong>
     </h1>
-    <p class="text-gray-300 mt-6 leading-8 text-lg">
+    <p
+      class="text-gray-300 mt-6 leading-8 text-sm sm:text-md xl:text-lg max-w-lg lg:max-w-xl">
       <span
         data-i18n="My name is João Pedro, I am a">
         Meu nome é João Pedro, sou um
@@ -40,15 +52,28 @@
         e dedicado criar soluções que me instiguem a aprender mais.
       </span>
     </p>
+
+    <div class="mt-6">
+      <button
+        data-panda="button-in"
+        data-i18n="See my panda"
+        class="bg-blue-700 w-max mx-auto p-3 rounded-lg font-medium text-sm">
+        Veja meu panda
+      </button>
+    </div>
   </div>
 
   <div
-    class="cursor-panda flex items-center pl-4 w-80 h-80 rounded-full bg-blue-950/80 border border-blue-700/70 animate-fade animate-delay-500">
+    data-panda="hero-right"
+    class="cursor-panda flex items-center p-6 rounded-full bg-blue-950/80 border border-blue-700/70 opacity-0">
     <img
-      width="240"
-      height="240"
-      src="{{ get_file('images/petros/petros-smiling.jpeg') }}"
+      srcset="
+        {{ petros_smiling_image_180 }} 180w,
+        {{ petros_smiling_image_280 }} 280w"
+      sizes="(max-width: 768px) 180px, 280px"
       alt="John Petros"
-      class="rounded-full">
+      class="rounded-full -translate-x-2">
   </div>
 </div>
+
+<!-- 640,  -->
