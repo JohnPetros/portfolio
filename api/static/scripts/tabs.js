@@ -31,7 +31,7 @@ class Tabs {
     setTimeout(() => {
       for (const item of items) {
         item.classList.add("invisible", "intersect:visible", "intersect:animate-fade-up")
-        item.classList.remove("animate-out", "fade-out", "slide-out-to-bottom-52")
+        item.classList.remove("animate-fade-out-down")
       }
 
       tabContent.childNodes[1].classList.remove("hidden")
@@ -48,7 +48,7 @@ class Tabs {
 
     for (const item of items) {
       item.classList.remove("invisible", "intersect:visible", "intersect:animate-fade-up")
-      item.classList.add("animate-out", "fade-out", "slide-out-to-bottom-52")
+      item.classList.add("animate-fade-out-down")
     }
 
     setTimeout(() => {
