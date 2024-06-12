@@ -1,0 +1,40 @@
+{% macro navigation(class) %}
+
+<nav>
+  <ul
+    class="flex items-center gap-6 lg:gap-24 animate-fade-down {{ class }}">
+    <li
+      class="{{ link_class }}">
+      <a
+        href="{{ url_for('home') }}"
+        class="flex items-center gap-2 p-2 {{ active_link_class if active_link_index == 0 else '' }}">
+        <i class="ph ph-house text-xl"></i>
+        Home
+      </a>
+    </li>
+    <li
+      class="{{ link_class }}">
+      <a
+        href="{{ url_for('projects') }}"
+        class="flex items-center gap-2 p-2  {{ active_link_class if active_link_index == 1 else '' }}">
+        <i class="ph ph-desktop-tower text-xl"></i>
+        <span data-i18n="Projects">
+          Projetos
+        </span>
+      </a>
+    </li>
+    <li
+      class="{{ link_class }} {{ 'text-blue-500' if active_link_index == 2 else '' }}">
+      <a
+        href="{{ url_for('about') }}"
+        class="flex items-center gap-2 p-2  {{ active_link_class if active_link_index == 2 else '' }}">
+        <i class="ph ph-user text-xl"></i>
+        <span data-i18n="About me">
+          Sobre mim
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+{% endmacro %}
