@@ -12,6 +12,7 @@ module.exports = {
     require("tailwindcss-animate"),
     require("tailwindcss-animated"),
     require("tailwindcss-intersect"),
+    require("@midudev/tailwind-animations"),
     require("flowbite/plugin")
   ]
 }
