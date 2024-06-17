@@ -1,5 +1,5 @@
 {% set curiosity_icon_class =
-"grid place-content-center size-12 rounded-full bg-blue-900" %}
+"shrink-0 grid place-content-center size-12 rounded-full bg-blue-900" %}
 
 <section id="curiosities"
   class="space-y-4 invisible intersect:visible intersect:animate-fade-up intersect:animate-duration-1000">
@@ -69,7 +69,7 @@
       </p>
     </li>
 
-    <li class="flex items-center gap-4">
+    <li class="flex gap-4">
       <div class="{{ curiosity_icon_class }}">
         <img
           src="{{ get_file('images/curiosities/spotify.svg') }}"
@@ -84,17 +84,17 @@
           Gosto de escutar Lofi enquanto estou programando. Escute minhas
           playlists:
         </p>
-        <div class="flex items-center gap-3 mt-3">
+        <div class="flex flex-col md:flex-row items-center md:gap-3 mt-3">
           <iframe style="border-radius:12px"
             src="https://open.spotify.com/embed/playlist/0AmUOdM7Wg039lyG1vAwRG?utm_source=generator"
             width="300" height="120" frameBorder="0" allowfullscreen
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
+            loading="lazy" class="w-full"></iframe>
           <iframe style="border-radius:12px"
             src="https://open.spotify.com/embed/artist/0xpssfkWNYfP7qAIyUQIld?utm_source=generator"
             width="300" height="120" frameBorder="0" allowfullscreen
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"></iframe>
+            loading="lazy" class="w-full"></iframe>
         </div>
 
       </div>
