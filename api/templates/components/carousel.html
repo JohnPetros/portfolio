@@ -25,7 +25,8 @@
       {{ 'cursor-zoom-in' if has_zoom else 'pointer-events-none' }}">
       <img
         src="{{ get_file('images/' ~ image) }}"
-        class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 "
+        class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+        loading="lazy"
         alt="...">
     </button>
     {% endfor %}
