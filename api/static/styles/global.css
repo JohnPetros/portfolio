@@ -34,7 +34,7 @@ a:focus-visible {
   }
 
   .section-title {
-    @apply text-3xl text-gray-50 tracking-wider font-semibold
+    @apply text-xl sm:text-3xl text-gray-50 tracking-wider font-semibold
   }
 
   .active-tab {

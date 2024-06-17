@@ -28,8 +28,6 @@ class Panda {
 
     this.shouldAnimate = JSON.parse(localStorage.getItem("john-petros@panda-animation")) ?? true
 
-    console.log(this.shouldAnimate)
-
     if (this.shouldAnimate) {
       this.showButton()
 
@@ -84,7 +82,7 @@ class Panda {
   }
 
   hideHero() {
-    this.heroLeft.classList.remove("animate-fade-in-right", "animate-delay-[250ms]")
+    this.heroLeft.classList.remove("animate-fade-in-right")
     this.heroRight.classList.remove("animate-fade", "animate-delay-500")
 
     this.heroLeft.classList.add("animate-fade-out-left")
@@ -95,7 +93,7 @@ class Panda {
     this.heroLeft.classList.remove("animate-fade-out-left")
     this.heroRight.classList.remove("animate-fade-out")
 
-    this.heroLeft.classList.add("animate-fade-in-right", "animate-delay-[250ms]")
+    this.heroLeft.classList.add("animate-fade-in-right")
     this.heroRight.classList.add("animate-fade", "animate-delay-500")
   }
 
@@ -129,7 +127,9 @@ class Panda {
     this.pageContent.classList.add("sr-only")
   }
 
-  handleButtonOutClick() {
+  async handleButtonOutClick() {
+    await this.wait(1)
+
     this.buttonOut.classList.add("invisible")
 
     this.animateOut()
