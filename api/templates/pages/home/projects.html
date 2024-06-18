@@ -10,86 +10,21 @@
     i18n="🖥️ My best projects")
     }}
   </h2>
-
-  <ul
-    class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center gap-3 mt-12">
+  <ul class="grid grid-cols-3 gap-3 mt-12">
+    {% for favorite_project in favorite_projects %}
     <li>
       {{
       project(
-      id="stardust",
-      images=[
-      "projects/stardust/space-page.png",
-      "projects/stardust/challenge-page.png",
-      "projects/stardust/challenges-page.png",
-      "projects/stardust/lesson-page.png",
-      "projects/stardust/quiz-stage.png",
-      "projects/stardust/congratulations-stage.png",
-      "projects/stardust/profile-page.png",
-      "projects/stardust/shop-avatars-page.png",
-      "projects/stardust/shop-rockets-page.png",
-      ],
-      title="StarDust",
-      description="Aplicação web inspirada no
-      Duolingo voltada para o ensino de lógica de
-      programação.",
-      i18n="Web application inspired by Duolingo for teaching programming logic",
-      techs=["React", "NextJs", "TailwindCSS", "Supabase", "Resend"],
-      github_link="https://github.com/JohnPetros/stardust",
+      id=favorite_project["id"],
+      images=favorite_project["images"],
+      title=favorite_project["title"],
+      description=favorite_project["description"],
+      i18n=favorite_project["i18n"],
+      techs=favorite_project["techs"],
+      github_link=favorite_project["github_link"],
       )
       }}
     </li>
-    <li>
-      {{
-      project(
-      id="smart-farming",
-      images=[
-      "projects/smart-farming/last-sensors-record-page.png",
-      "projects/smart-farming/sensors-records-dashboard-page.png",
-      "projects/smart-farming/sensors-records-table-page.png",
-      "projects/smart-farming/checklist-records-dashboard-page.png",
-      "projects/smart-farming/checklist-records-form.png",
-      ],
-      title="Smart Farming",
-      description="Dashboard web que visa auxiliar o monitoramento da estufa inteligente mantida na minha faculdade",
-      i18n="Web dashboard for monitoring the smart greenhouse maintained at Fatec - São José dos Campos",
-      techs=[
-      "Python",
-      "Flask",
-      "MySQL",
-      "HTMX",
-      "ApexChart.js",
-      "HTML",
-      "CSS",
-      "JavaScript"
-      ],
-      github_link="https://github.com/CtrI-Alt-Del/smart-farming",
-      )
-      }}
-    </li>
-    <li>
-      {{
-      project(
-      id="sertton",
-      images=[
-      "projects/sertton/cart-screen.jpeg",
-      "projects/sertton/home-screen.jpeg",
-      "projects/sertton/product-details-screen.jpeg",
-      "projects/sertton/products-list-screen.jpeg",
-      "projects/sertton/orders-list-screen.jpeg",
-      ],
-      title="Sertton",
-      description="Aplicativo e-commerce voltado para o nicho de peças de carroceria para veículos de transporte de grande porte.",
-      i18n="E-commerce mobile app for niche of body parts of large commercial vehicles",
-      techs=[
-      "React Native",
-      "Expo",
-      "Tamagui",
-      "TypeScript"
-      ],
-      github_link="https://github.com/JohnPetros/sertton",
-      is_mobile=True
-      )
-      }}
-    </li>
+    {% endfor %}
   </ul>
 </section>
