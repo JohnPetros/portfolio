@@ -1,8 +1,13 @@
+{% from "components/animated_title.html" import animated_title %}
 {% from "components/tech_badge.html" import tech_badge %}
 
 <section id="contact">
   <h2 data-i18n="👀 Did you like it?" class="section-title">
-    👀 Gostou do que viu?
+    {{
+    animated_title(
+    original="👀 Gostou do que viu?",
+    i18n="👀 Did you like it?")
+    }}
   </h2>
 
   <div class="w-full max-w-lg mx-auto mt-8">
@@ -11,7 +16,7 @@
       Entre em contato comigo.
     </p>
     <ul
-      class="flex items-center justify-between pr-6 gap-1 md:gap-3 mt-3 pb-3 border-b border-gray-300">
+      class="flex items-center justify-between pr-6 gap-1 md:gap-3 mt-3 border-b border-gray-300">
       <li class="size-20 sm:size-auto">
         {{
         tech_badge(

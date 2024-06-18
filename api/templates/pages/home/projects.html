@@ -1,11 +1,16 @@
+{% from "components/animated_title.html" import animated_title %}
 {% from "components/project.html" import project %}
 
 <section id="project" class="mt-48">
   <h2
-    data-i18n="🖥️ My best projects"
     class="section-title">
-    🖥️ Meus projetos preferidos
+    {{
+    animated_title(
+    original="🖥️ Meus projetos preferidos",
+    i18n="🖥️ My best projects")
+    }}
   </h2>
+
   <ul
     class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-center gap-3 mt-12">
     <li>
