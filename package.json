@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "app": "flask --app ./api/app.py run --debug -p 5001 --host 0.0.0.0",
+    "app": "flask --app ./api/app.py run --debug -p 5000 --host 0.0.0.0",
     "style": "tailwindcss -i ./api/static/styles/global.css -o ./api/static/build/styles/global.css",
     "style:watch": "tailwindcss -i ./api/static/styles/global.css -o ./api/static/build/styles/global.css --watch",
     "start": "concurrently 'npm run app' 'npm run style:watch'"

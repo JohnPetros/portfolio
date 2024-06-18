@@ -87,20 +87,21 @@ def send_email():
         return
 
     try:
+        sender = email
+        reciever = "joaopcarvalho.cds@gmail.com"
+
         message = Message()
-        message["Subject"] = "Contato do Portifólio 🐼"
-        message["From"] = email
-        message["To"] = "joaopcarvalho.cds@gmail.com"
+        message["Subject"] = f"Contato do Portifólio 🐼 - {sender}"
+        message["From"] = sender
+        message["To"] = reciever
         message.add_header("Content-Type", "text/html")
         message.set_payload(f"<p>{body}</p>")
         password = "ggxdpqdbllijoymj"
 
         smtp = SMTP("smtp.gmail.com: 587")
         smtp.starttls()
-        smtp.login(message["From"], password)
-        smtp.sendmail(
-            message["From"], [message["To"]], message.as_string().encode("utf-8")
-        )
+        smtp.login(reciever, password)
+        smtp.sendmail(sender, [reciever], message.as_string().encode("utf-8"))
         return render_template(
             "components/toast.html",
             message="Seu e-mail foi enviado com sucesso 😁",
