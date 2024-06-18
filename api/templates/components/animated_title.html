@@ -1,0 +1,17 @@
+{% macro animated_title(original, i18n) %}
+
+<div class="relative w-max">
+  <span data-i18n="{{ i18n }}" class="section-title mb-6 w-max">
+    {{ original }}
+  </span>
+
+  <div
+    data-animated-title="container"
+    class="absolute top-0 left-0 w-full h-full bg-slate-950 shadow-none">
+    <div
+      data-animated-title="fade"
+      class="w-12 h-full bg-gray-200 opacity-0 blur-md -translate-x-12"></div>
+  </div>
+</div>
+
+{% endmacro %}
