@@ -37,8 +37,8 @@ class AnimatedTitle {
         { x: container.offsetWidth + 48, duration: 2, delay: .5, ease: "ease-in-out" },
         { opacity: 0, duration: .25, },
       ],
-    });
-
+      onComplete: () => container.remove()
+    })
   }
 }
 

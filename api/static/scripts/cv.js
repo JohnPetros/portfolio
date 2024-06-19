@@ -29,7 +29,6 @@ class CV {
   }
 
   setCVLink(pdfLanguage) {
-    console.log({ pdfLanguage })
     this.link.href = `static/pdf/petros-cv-${pdfLanguage}.pdf`
   }
 }
