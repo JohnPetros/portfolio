@@ -1,17 +1,11 @@
-{% from "components/animated_title.html" import animated_title %}
-
 {% set curiosity_icon_class =
 "shrink-0 grid place-content-center size-12 rounded-full bg-blue-900" %}
 
 <section id="curiosities"
   class="space-y-4 invisible intersect:visible intersect:animate-fade-up intersect:animate-duration-1000">
 
-  <h2 class="section-title mb-6">
-    {{
-    animated_title(
-    original="🧑🏻‍🦲 Curiosidades sobre minha pessoa",
-    i18n="🧑🏻‍🦲 Curiosities about me")
-    }}
+  <h2 i18n="🧑🏻‍🦲 Curiosities about me" class="section-title mb-6">
+    🧑🏻‍🦲 Curiosidades sobre minha pessoa
   </h2>
 
   <ul class="p-6 w-full space-y-8 rounded-md border border-blue-800">
