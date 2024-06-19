@@ -1230,12 +1230,12 @@ input:checked + .toggle-bg {
   right: 0px;
 }
 
-.right-12 {
-  right: 3rem;
-}
-
 .right-2 {
   right: 0.5rem;
+}
+
+.right-6 {
+  right: 1.5rem;
 }
 
 .start-0 {
@@ -1262,8 +1262,8 @@ input:checked + .toggle-bg {
   top: 5rem;
 }
 
-.top-3 {
-  top: 0.75rem;
+.top-4 {
+  top: 1rem;
 }
 
 .top-6 {
@@ -1412,11 +1412,6 @@ input:checked + .toggle-bg {
   height: 2rem;
 }
 
-.size-\[28rem\] {
-  width: 28rem;
-  height: 28rem;
-}
-
 .size-\[36rem\] {
   width: 36rem;
   height: 36rem;
@@ -1474,16 +1469,24 @@ input:checked + .toggle-bg {
   height: 16rem;
 }
 
+.h-\[18rem\] {
+  height: 18rem;
+}
+
 .h-\[24rem\] {
   height: 24rem;
+}
+
+.h-\[32rem\] {
+  height: 32rem;
 }
 
 .h-\[36rem\] {
   height: 36rem;
 }
 
-.h-\[40rem\] {
-  height: 40rem;
+.h-\[95\%\] {
+  height: 95%;
 }
 
 .h-full {
@@ -1564,6 +1567,10 @@ input:checked + .toggle-bg {
 
 .w-\[20rem\] {
   width: 20rem;
+}
+
+.w-\[28rem\] {
+  width: 28rem;
 }
 
 .w-\[64rem\] {
@@ -1672,23 +1679,8 @@ input:checked + .toggle-bg {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-y-10 {
-  --tw-translate-y: 2.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .translate-y-full {
   --tw-translate-y: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-y-12 {
-  --tw-translate-y: 3rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-y-16 {
-  --tw-translate-y: 4rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1940,10 +1932,6 @@ input:checked + .toggle-bg {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-cols-4 {
@@ -2419,10 +2407,6 @@ input:checked + .toggle-bg {
 
 .pb-4 {
   padding-bottom: 1rem;
-}
-
-.pl-8 {
-  padding-left: 2rem;
 }
 
 .pr-6 {
@@ -3075,6 +3059,10 @@ a:focus-visible {
     height: auto;
   }
 
+  .sm\:h-full {
+    height: 100%;
+  }
+
   .sm\:w-28 {
     width: 7rem;
   }
@@ -3083,17 +3071,21 @@ a:focus-visible {
     width: 8rem;
   }
 
+  .sm\:w-full {
+    width: 100%;
+  }
+
   .sm\:-translate-x-\[12px\] {
     --tw-translate-x: -12px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
-  .sm\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .sm\:gap-6 {
@@ -3157,10 +3149,6 @@ a:focus-visible {
 
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:flex-row {

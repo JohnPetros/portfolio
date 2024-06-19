@@ -25,7 +25,7 @@
       {{ 'cursor-zoom-in' if has_zoom else 'pointer-events-none' }}">
       <img
         src="{{ get_file('images/' ~ image) }}"
-        class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+        class="absolute block {{ 'h-[95%] w-full' if is_mobile else 'h-[18rem] w-[28rem] sm:h-full sm:w-full' if not has_zoom else '' }} -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         loading="lazy"
         alt="...">
     </button>
@@ -49,7 +49,7 @@
       type="button"
       class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
       <span
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-700/30 group-hover:bg-blue-700/50  group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-700/30 group-hover:bg-blue-700/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
         <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
           aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
           viewBox="0 0 6 10">

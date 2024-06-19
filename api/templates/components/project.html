@@ -10,23 +10,23 @@ techs, is_mobile=False) %}
     id="{{ id }}-modal"
     tabindex="-1"
     aria-hidden="true"
-    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 max-h-full bg-black/90 animate-in fade-in zoom-in-50 duration-700">
+    class="hidden overflow-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 max-h-full bg-black/90 animate-in fade-in zoom-in-50 duration-700">
     <button
       data-modal-hide="{{ id }}-modal"
-      class="absolute top-3 right-12 grid place-content-center">
+      class="absolute top-2 right-6 grid place-content-center">
       <i class="ph ph-x text-gray-50 text-2xl"></i>
       <span class="sr-only">Fechar carrousel</span>
     </button>
 
     <span
-      class="absolute {{ 'top-12' if is_mobile else 'top-20' }} z-50 block size-3 rounded-full bg-gray-600"></span>
+      class="absolute {{ 'top-12' if is_mobile else 'top-4' }} z-50 block size-3 rounded-full bg-gray-600"></span>
 
     <div class="relative p-4 w-full max-w-[58rem] max-h-full">
       {{
       carousel(
       id,
       images,
-      class="h-[40rem] w-80 mx-auto" if is_mobile else "h-[36rem] w-full"
+      class="h-[32rem] w-80 mx-auto" if is_mobile else "h-[36rem] w-full"
       )
       }}
     </div>
