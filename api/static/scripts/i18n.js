@@ -24,6 +24,11 @@ class I18n {
     }
   }
 
+  dispatchEvent() {
+    const event = new Event("i18n:toggle")
+    document.dispatchEvent(event)
+  }
+
   toggleTextsLanguage() {
     for (const text of this.texts) {
       const translation = text.dataset.i18n
@@ -36,6 +41,8 @@ class I18n {
       text.innerHTML = translation
       text.setAttribute("data-i18n", currentContent)
     }
+
+    this.dispatchEvent()
   }
 
   handleToggleClick() {
@@ -55,4 +62,4 @@ class I18n {
   }
 }
 
-window.addEventListener('load', new I18n())
+window.addEventListener("load", new I18n())

@@ -13,8 +13,6 @@ class AnimatedTitle {
         (entries) => this.handleIntersectObserver(entries[0], container)
       )
 
-      console.log({ container })
-
       intersectObserver.observe(container)
     }
   }

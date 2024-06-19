@@ -53,11 +53,18 @@ get_file('images/petros/petros-smiling-180.jpg')
       </span>
     </p>
 
-    <div class="mt-6">
+    <div class="flex items-center gap-3 mt-6">
+      <a
+        data-cv="link"
+        data-i18n="Download CV"
+        download="petros-cv.pdf"
+        class="bg-blue-700 w-max p-3 rounded-lg font-medium text-sm">
+        Baixar CV
+      </a>
       <button
         data-panda="button-in"
         data-i18n="See my panda"
-        class="bg-blue-700 w-max mx-auto p-3 rounded-lg font-medium text-sm">
+        class="bg-blue-700 w-max p-3 rounded-lg font-medium text-sm">
         Veja meu panda
       </button>
     </div>
@@ -75,3 +82,5 @@ get_file('images/petros/petros-smiling-180.jpg')
       class="rounded-full -translate-x-2">
   </div>
 </div>
+
+<script src="{{ get_file('scripts/cv.js') }}"></script>
