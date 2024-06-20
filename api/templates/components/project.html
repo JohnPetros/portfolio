@@ -18,15 +18,12 @@ techs, is_mobile=False) %}
       <span class="sr-only">Fechar carrousel</span>
     </button>
 
-    <span
-      class="absolute {{ 'top-12' if is_mobile else 'top-20' }} z-50 block size-3 rounded-full bg-gray-600"></span>
-
     <div class="relative p-4 w-full max-w-[58rem] max-h-full">
       {{
       carousel(
       id,
       images,
-      class="h-[40rem] w-80 mx-auto" if is_mobile else "h-[36rem] w-full"
+      class="h-[36rem] w-80 mx-auto" if is_mobile else "h-[36rem] w-full"
       )
       }}
     </div>
