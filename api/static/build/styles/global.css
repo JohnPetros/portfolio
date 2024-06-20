@@ -1246,10 +1246,6 @@ input:checked + .toggle-bg {
   top: 0px;
 }
 
-.top-1\/2 {
-  top: 50%;
-}
-
 .top-2 {
   top: 0.5rem;
 }
@@ -1264,6 +1260,10 @@ input:checked + .toggle-bg {
 
 .top-8 {
   top: 2rem;
+}
+
+.top-1\/2 {
+  top: 50%;
 }
 
 .z-10 {
@@ -1548,10 +1548,6 @@ input:checked + .toggle-bg {
   width: 20rem;
 }
 
-.w-\[28rem\] {
-  width: 28rem;
-}
-
 .w-\[64rem\] {
   width: 64rem;
 }
@@ -1567,6 +1563,10 @@ input:checked + .toggle-bg {
 .w-max {
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-\[28rem\] {
+  width: 28rem;
 }
 
 .max-w-2xl {
