@@ -1,4 +1,4 @@
-{% macro carousel(id, images, class, has_zoom=False) %}
+{% macro carousel(id, images, class, has_zoom=False, is_mobile=False) %}
 
 <div id="{{ id }}-carousel" class="relative" data-carousel="slide">
   {% if has_zoom %}

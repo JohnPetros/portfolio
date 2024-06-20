@@ -23,7 +23,8 @@ techs, is_mobile=False) %}
       carousel(
       id,
       images,
-      class="h-[32rem] w-80 mx-auto" if is_mobile else "h-[40rem] w-full"
+      class="h-[32rem] w-80 mx-auto" if is_mobile else "h-[40rem] w-full",
+      is_mobile=is_mobile
       )
       }}
     </div>
@@ -43,7 +44,8 @@ techs, is_mobile=False) %}
   id,
   images,
   class="h-64 w-48 mx-auto" if is_mobile else "h-64 w-full",
-  has_zoom=True
+  has_zoom=True,
+  is_mobile=is_mobile
   )
   }}
 
