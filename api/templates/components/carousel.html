@@ -1,4 +1,4 @@
-{% macro carousel(id, images, class, has_zoom=False ,is_mobile=False) %}
+{% macro carousel(id, images, class, has_zoom=False) %}
 
 <div id="{{ id }}-carousel" class="relative" data-carousel="slide">
   {% if has_zoom %}
@@ -25,7 +25,7 @@
       {{ 'cursor-zoom-in' if has_zoom else 'pointer-events-none' }}">
       <img
         src="{{ get_file('images/' ~ image) }}"
-        class="absolute block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 {{ 'h-full w-full' if is_mobile else 'h-[18rem] w-[24rem] sm:h-full sm:w-full' }}"
+        class="absolute block h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         loading="lazy"
         alt="...">
     </button>

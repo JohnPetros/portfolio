@@ -1270,6 +1270,10 @@ input:checked + .toggle-bg {
   top: 2rem;
 }
 
+.top-12 {
+  top: 3rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1406,6 +1410,11 @@ input:checked + .toggle-bg {
 .size-\[36rem\] {
   width: 36rem;
   height: 36rem;
+}
+
+.size-3 {
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
 .h-1 {
@@ -1575,6 +1584,14 @@ input:checked + .toggle-bg {
 .w-max {
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-\[28rem\] {
+  width: 28rem;
+}
+
+.w-48 {
+  width: 12rem;
 }
 
 .max-w-2xl {
