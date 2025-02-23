@@ -6,22 +6,29 @@
       <li>
         {{
         project(
-        id="sertton-industrial",
+        id="pulo-do-gato-news",
         images=[
-        "projects/sertton-industrial/home-page.png",
-        "projects/sertton-industrial/comments-section.png",
-        "projects/sertton-industrial/products-page.png",
-        "projects/sertton-industrial/product-details-page.png",
-        "projects/sertton-industrial/checkout-page.png",
+        "projects/pulo-do-gato-news/home-page.png",
+        "projects/pulo-do-gato-news/posts-page.jpg",
+        "projects/pulo-do-gato-news/about-page.jpg",
+        "projects/pulo-do-gato-news/columns-section-page.jpg",
         ],
-        title="Sertton Industrial",
-        description="Site e-commerce voltado para o nicho de peças de carroceria para veículos de transporte de grande porte.",
-        i18n="E-commerce Web app for niche of body parts of large commercial vehicles",
-        techs=["Low-code"],
-        site_link="https://sertton-industrial.com.br/",
+        title="Pulo do Gato News",
+        description="Blog de notícias otimizado para SEO",
+        i18n="SEO-Optimized News Blog",
+        techs=[
+        "Astro.js",
+        "Sanity", "TypeScript",
+        "React",
+        "FlowBite",
+        "BuildShip"
+        ],
+        site_link="https://pulodogatonews.com.br/",
+        github_link="https://github.com/JohnPetros/pulo-do-gato-news",
         )
         }}
       </li>
+
       <li>
         {{
         project(
@@ -42,30 +49,53 @@
         "Tamagui",
         "TypeScript"
         ],
+        site_link="https://play.google.com/store/apps/details?id=com.joaopcarvalho.sertton",
         github_link="https://github.com/JohnPetros/sertton",
         is_mobile=True
         )
         }}
       </li>
+
       <li>
         {{
         project(
-        id="shipment-service",
+        id="serverless-shipping",
         images=[
         "projects/shipment-service/calculator.png",
         "projects/shipment-service/authorization.jpeg",
         ],
-        title="Shipment Service",
-        description="API Rest que calcula o preço dos serviços de frete com base no CEP e as dimensões dos produtos selecionados pelo cliente",
-        i18n="API Rest for calculating shipping costs based on customer-selected ZIP code and product dimensions",
+        title="Serverless Shipping",
+        description="Aplicação serverless que calcula o preço dos serviços de frete com base no CEP e nas dimensões de produtos",
+        i18n="Serverless App for calculating shipping costs based on customer-selected ZIP code and product dimensions",
         techs=[
+        "AWS Lambda",
         "NodeJs",
-        "Fastify",
-        "Redis",
-        "Docker",
+        "Serverless Framework",
+        "Melhor Envio",
+        "Middify",
         "TypeScript"
         ],
         github_link="https://github.com/JohnPetros/shipment-service",
+        )
+        }}
+      </li>
+
+      <li>
+        {{
+        project(
+        id="sertton-industrial",
+        images=[
+        "projects/sertton-industrial/home-page.png",
+        "projects/sertton-industrial/comments-section.png",
+        "projects/sertton-industrial/products-page.png",
+        "projects/sertton-industrial/product-details-page.png",
+        "projects/sertton-industrial/checkout-page.png",
+        ],
+        title="Sertton Industrial",
+        description="Site e-commerce voltado para o nicho de peças de carroceria para veículos de transporte de grande porte.",
+        i18n="E-commerce Web app for niche of body parts of large commercial vehicles",
+        techs=["Low-code"],
+        site_link="https://sertton-industrial.com.br/",
         )
         }}
       </li>
