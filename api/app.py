@@ -127,6 +127,11 @@ def projects():
     return render_template("pages/projects/index.html")
 
 
+@app.route("/projects/stardust")
+def stardust_project():
+    return render_template("pages/projects/stardust/index.html")
+
+
 @app.route("/about")
 def about():
     duolingo_streak = date.today() - date(day=28, month=7, year=2020)

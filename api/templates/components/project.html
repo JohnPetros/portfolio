@@ -6,14 +6,9 @@ techs, is_mobile=False) %}
 {% set carousel_id = id ~ "-carousel-2" %}
 
 <div>
-  <div
-    id="{{ id }}-modal"
-    tabindex="-1"
-    aria-hidden="true"
+  <div id="{{ id }}-modal" tabindex="-1" aria-hidden="true"
     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 max-h-full bg-black/90 animate-in fade-in zoom-in-50 duration-700">
-    <button
-      data-modal-hide="{{ id }}-modal"
-      class="absolute top-3 right-12 grid place-content-center">
+    <button data-modal-hide="{{ id }}-modal" class="absolute top-3 right-12 grid place-content-center">
       <i class="ph ph-x text-gray-50 text-2xl"></i>
       <span class="sr-only">Fechar carrousel</span>
     </button>
@@ -30,13 +25,13 @@ techs, is_mobile=False) %}
 
     {% if not is_mobile %}
     <div
-      class="absolute bottom-0 w-[64rem] -translate-x-16 h-6 bg-gray-200 border-t-4 border-t-gray-400 border-b-4 border-gray-400 rounded-b-lg z-50"></div>
+      class="absolute bottom-0 w-[64rem] -translate-x-16 h-6 bg-gray-200 border-t-4 border-t-gray-400 border-b-4 border-gray-400 rounded-b-lg z-50">
+    </div>
     {% endif %}
   </div>
 </div>
 
-<div
-  data-tabs="item"
+<div data-tabs="item"
   class="md:max-w-lg p-6 rounded-md border border-blue-900 bg-slate-900/70 invisible intersect:visible intersect:animate-fade-up intersect-once animate-duration-750">
   {{
   carousel(
@@ -48,7 +43,7 @@ techs, is_mobile=False) %}
   }}
 
   <div class="flex flex-col justify-between mt-6 h-[16rem]">
-    <div class="space-y-3">
+    <div class="space-y-2">
       <h3 class="text-2xl text-gray-50 font-bold text-center">{{ title }}</h3>
       <p data-i18n="{{ i18n }}" class="text-md sm:text-lg text-gray-300">
         {{ description }}
@@ -58,33 +53,34 @@ techs, is_mobile=False) %}
       <ul class="flex flex-wrap items-center gap-1">
         {% for tech in techs %}
         <li>
-          <span
-            class="block px-2 py-1 w-max rounded bg-slate-950 text-gray-100 text-xs">
+          <span class="block px-2 py-1 w-max rounded bg-slate-950 text-gray-100 text-xs">
             {{ tech }}
           </span>
         </li>
         {% endfor %}
       </ul>
       {% endif %}
+
+      <a href="{{ url_for('stardust_project') }}"
+        class="flex items-center gap-1 p-3 text-gray-50 text-xs lg:text-base font-medium">
+        <i class="ph ph-caret-double-right text-lg"></i>
+        Saiba mais sobre o projeto
+      </a>
     </div>
 
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-3 translate-y-1">
       {% if site_link %}
-      <a
-        href="{{ site_link }}"
-        target="_blank"
-        class="flex items-center gap-1 px-8 py-2 rounded-md bg-blue-700 text-gray-50 text-xs lg:text-base font-semibold">
-        <i class="ph ph-rocket-launch text-2xl"></i>
+      <a href="{{ site_link }}" target="_blank"
+        class="flex items-center gap-1 px-8 py-2 rounded-md bg-blue-700 text-gray-50 text-xs lg:text-base font-medium">
+        <i class="ph ph-rocket-launch text-lg"></i>
         Site
       </a>
       {% endif %}
 
       {% if github_link %}
-      <a
-        href="{{ github_link }}"
-        target="_blank"
-        class="flex items-center gap-1 rounded-md px-8 py-2 border border-gray-50 text-xs lg:text-base bg-transparent text-gray-100 font-semibold">
-        <i class="ph ph-github-logo text-2xl"></i>
+      <a href="{{ github_link }}" target="_blank"
+        class="flex items-center gap-1 rounded-md px-8 py-2 border border-gray-50 text-xs lg:text-base bg-transparent text-gray-100 font-medium">
+        <i class="ph ph-github-logo text-lg"></i>
         <span data-i18n="Source code">
           Código-fonte
         </span>

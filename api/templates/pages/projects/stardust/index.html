@@ -1,0 +1,125 @@
+{% extends "layouts/root.html" %}
+
+{% from "components/header.html" import header %}
+
+{% block body %}
+
+{{ header() }}
+
+<main class="container mt-24 flex flex-col items-center px-6 lg:px-0">
+  <h1>StarDust</h1>
+
+  <p>
+    StarDust é um projeto desenvolvido para o meu TCC do meu curso técnico de Desenvolvimento de Software
+    Multiplataforma. Ele tem como objetivo ser uma aplicação educativa interativa criada com o propósito de ensinar
+    lógica de programação de forma lúdica, acessível e envolvente. Seu principal diferencial está na utilização da
+    gamificação como estratégia pedagógica — ou seja, o uso de elementos e dinâmicas comuns em jogos para promover o
+    engajamento, a motivação e o aprendizado contínuo dos usuários.
+  </p>
+
+  <p>
+    Após a conclusão do TCC, o projeto ficou parado por alguns meses. Em seguida, foi tomada a decisão de reestruturar
+    completamente o aplicativo, adotando o uso de TypeScript e melhores práticas de arquitetura de software, com o
+    objetivo de torná-lo mais escalável, manutenível e resistente às atualizações constantes do ecossistema JavaScript —
+    que frequentemente quebram compatibilidades em projetos mal estruturados.
+  </p>
+
+  <p>
+    Inicialmente, o Stardust não permitiria a escrita ou execução de código. Os usuários apenas responderiam perguntas
+    de múltipla escolha ou leitura. Posteriormente, surgiu a ideia de incluir a possibilidade de executar código
+    diretamente no app, utilizando Portugol, uma linguagem pseudocodificada muito acessível para iniciantes.
+
+    No entanto, não foi possível encontrar bibliotecas que interpretassem Portugol integradas ao JavaScript — até que a
+    equipe descobriu o projeto Delégua, uma linguagem interpretada em português, mantida por uma equipe brasileira
+    extremamente competente e ativa no open source. A colaboração com os desenvolvedores do Delégua foi essencial para
+    integrar essa funcionalidade ao aplicativo.
+  </p>
+
+  <h2>Contribuições pessoais</h2>
+
+  <p>
+    Fui responsável pelo embasamento teórico do projeto, que foi desenvolvido por meio de uma pesquisa literária extensa
+    sobre a gamificação e sua aplicação em projetos educativos com base em autores renomados sobre o tema, como
+    <a href="https://www.researchgate.net/publication/376400001_Gamification_in_Education_A_Literature_Review"
+      target="_blank">
+      Yu-Kai Chou
+    </a>,
+    <a href="https://www.researchgate.net/publication/376400001_Gamification_in_Education_A_Literature_Review"
+      target="_blank">
+      Brian Burke
+    </a>,
+    <a href="https://www.researchgate.net/publication/376400001_Gamification_in_Education_A_Literature_Review"
+      target="_blank">
+      Raul Inácio Bussarelo
+    </a>. Dessa forma, fui responsável pela escrita do TCC do início ao fim. Desempenheio o papel de criação de
+    wireframes e prototipação das telas, aplicando conhecimentos sólidos de design digital. Atuei como o único
+    desenvolvedor do projeto, implementando todas as funcionalidades, testes, correções necessárias e sua implamnatação
+    em produção na nuvem. Sendo um projeto relativamente complexo, tive papel bastante ativo na obtenção de conhecimento
+    técnico que não era disponiblizado pelo meu curso. No seu perído de reformulção refiz o projeto inteiro, desde a
+    estrutura do projeto, a
+    arquitetura, como também algumas interfaces e funcionalidades foram aprimoradas.
+    correções. No processo de integração com a linguagem Delégua, tive partipação ativa na comunidade gerida pelos
+    mantenedores, na qual fui axiliado, bem como apresentei problemas e sugeri correções de erros técnicos na linguagem
+    para eles.
+  </p>
+
+  <h2>Hard skills adquiridas</h2>
+
+  <ul>
+    <li>
+      Experiência em como lidar e escrever projetos acadêmicos seguindo as
+      normas ABNT.
+    </li>
+    <li>Desenvolvimento básico de aplicativos móveis para Android e iOS com React Native</li>
+    <li>Prototipação de interfaces de usuário com Figma</li>
+    <li>Modelagem e normalização de banco de dados relacionais</li>
+    <li>Instalação e configuração de bibliotecas de terceiros em projetos JavaScript</li>
+    <li>Uso do Git e GitHub para versionar projetos</li>
+    <li>Publicação de aplicações mobile na Google Play Store</li>
+    <li>Autenticação com JWT</li>
+    <li>Criação de sites web com interfaces interativas com React.js</li>
+    <li>Provisão de arquivos estáticos em projetos web e mobile de forma eficiente</li>
+    <li>Funcionamento de um servidor SMTP para envio de e-mails</li>
+    <li>Criação de animações criativas com framer motion</li>
+    <li>Aplicação dos princípios SOLID</li>
+    <li>Execução de DDD para modelar um projeto de software</li>
+    <li>Aplicação da arquitetura limpa</li>
+    <li>Uso de utilitários avançados do TypeScript</li>
+  </ul>
+
+  <h2>Soft skills desenvolvidas</h2>
+
+  <ul>
+    <li>
+      Como lidar com a pressão de entrega de um projeto acadêmico de TCC, que é um projeto que demanda muito tempo e
+      esforço.
+    </li>
+    <li>Como ter uma visão mais ampla sobre o desenvolvimento de software</li>
+    <li>Boa comunicação para explicar ideias complexas de forma clara e objetiva</li>
+    <li>Planejamento e organização de tarefas</li>
+    <li>Como estudar e aprender de forma eficiente</li>
+    <li>Como lidar com a ansiedade e o estresse</li>
+    <li>Como lidar com a crítica construtiva e o feedback</li>
+  </ul>
+
+  <ul>
+    <li>
+      Experiência em como lidar e escrever projetos acadêmicos seguindo as
+      normas ABNT.
+    </li>
+    <li>Desenvolvimento básico de aplicativos móveis para Android e iOS com React Native</li>
+    <li>Prototipação de interfaces de usuário com Figma</li>
+    <li>Modelagem e normalização de banco de dados relacionais</li>
+    <li>Como instalar e configurar bibliotecas de terceiros em projetos JavaScript</li>
+    <li>Como usar o Git e GitHub para versionar projetos</li>
+    <li>Como publicar aplicações mobile na Google Play Store</li>
+    <li>Como implementar autenticação com JWT</li>
+    <li>Como criar sites web com interfaces interativas com React.js</li>
+    <li>Como prover arquivos estáticos em projetos web e mobile de forma eficiente</li>
+    <li>Como funcionar um servidor SMTP para envio de e-mails</li>
+    <li>Como criar animações criativas com framer motion</li>
+  </ul>
+
+</main>
+
+{% endblock body %}
