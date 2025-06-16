@@ -50,7 +50,7 @@ techs, is_mobile=False) %}
       </p>
 
       {% if techs | length > 0 %}
-      <ul class="flex flex-wrap items-center gap-1">
+      <ul class="flex flex-wrap items-center gap-1 mt-3">
         {% for tech in techs %}
         <li>
           <span class="block px-2 py-1 w-max rounded bg-slate-950 text-gray-100 text-xs">
@@ -60,12 +60,6 @@ techs, is_mobile=False) %}
         {% endfor %}
       </ul>
       {% endif %}
-
-      <a href="{{ url_for('stardust_project') }}"
-        class="flex items-center gap-1 p-3 text-gray-50 text-xs lg:text-base font-medium">
-        <i class="ph ph-caret-double-right text-lg"></i>
-        Saiba mais sobre o projeto
-      </a>
     </div>
 
     <div class="flex items-center gap-3 translate-y-1">
