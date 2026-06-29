@@ -1,3 +1,4 @@
+export { BambooIndicator } from './BambooIndicator'
 export { Brand } from './Brand'
 export { Button } from './Button'
 export { Card } from './Card'
