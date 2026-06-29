@@ -1,17 +1,17 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
+import { About } from '@/components/sections/About'
+import { Footer } from '@/components/sections/Footer'
 import { Header } from '@/components/sections/Header'
 import { Hero } from '@/components/sections/Hero'
-import { Trajectory } from '@/components/sections/Trajectory'
-import { Stack } from '@/components/sections/Stack'
+import { Projects } from '@/components/sections/Projects'
 import { Services } from '@/components/sections/Services'
-import { Footer } from '@/components/sections/Footer'
+import { Stack } from '@/components/sections/Stack'
+import { Trajectory } from '@/components/sections/Trajectory'
 
 export const Route = createFileRoute('/')({ component: App })
 
-// Sections still to be built (Phase 3/4) — kept as labeled anchors so the
-// Header scroll-spy + in-page links resolve.
-const PLACEHOLDERS = ['projects', 'about', 'contact'] as const
+const PLACEHOLDERS = ['contact'] as const
 
 function App() {
   const { t } = useTranslation()
@@ -29,6 +29,8 @@ function App() {
         <Trajectory />
         <Stack />
         <Services />
+        <Projects />
+        <About />
         {PLACEHOLDERS.map((id) => (
           <section
             key={id}
