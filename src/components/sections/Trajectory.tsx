@@ -61,7 +61,7 @@ function EntryCard({ entry }: { entry: TrajectoryEntry }) {
             <Tooltip label={localize(entry.info)}>
               <button
                 type='button'
-                aria-label={localize(entry.info)}
+                aria-label={t('trajectory.infoLabel')}
                 className='flex size-5 items-center justify-center rounded-pill text-text-faint hover:text-accent'
               >
                 <IconInfoCircle size={15} stroke={1.5} aria-hidden />

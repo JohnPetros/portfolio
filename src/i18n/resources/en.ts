@@ -50,6 +50,7 @@ const en: UIStrings = {
     expand: '+ {{count}} PREVIOUS ENTRIES',
     collapse: '− SHOW LESS',
     present: 'present',
+    infoLabel: 'More information',
   },
   stack: {
     eyebrow: 'STACK',

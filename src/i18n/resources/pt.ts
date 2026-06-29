@@ -48,6 +48,7 @@ const pt = {
     expand: '+ {{count}} ENTRADAS ANTERIORES',
     collapse: '− MOSTRAR MENOS',
     present: 'atual',
+    infoLabel: 'Mais informações',
   },
   stack: {
     eyebrow: 'STACK',
