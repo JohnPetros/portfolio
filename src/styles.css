@@ -102,6 +102,9 @@
   --animate-petros-pulse: petros-pulse var(--dur-loop) ease-in-out infinite;
   --animate-petros-fade-up: petros-fade-up var(--dur-entrance) var(--ease-spring) both;
   --animate-petros-swing: petros-swing 1600ms ease-in-out infinite;
+  --animate-petros-fade-left: petros-fade-left var(--dur-entrance) ease-out both;
+  --animate-petros-fade-right: petros-fade-right var(--dur-entrance) ease-out both;
+  --animate-petros-equalizer: petros-equalizer var(--dur-loop) ease-in-out infinite;
 }
 
 @layer base {
