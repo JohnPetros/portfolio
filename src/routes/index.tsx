@@ -1,19 +1,39 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Button } from '@/components/ui/button'
+import { useTranslation } from 'react-i18next'
+import { Header } from '@/components/sections/Header'
 
 export const Route = createFileRoute('/')({ component: App })
 
+const SECTIONS = ['home', 'about', 'stack', 'projects', 'trajectory'] as const
+
 function App() {
+  const { t } = useTranslation()
   return (
-    <div className='flex min-h-svh p-6'>
-      <div className='flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose'>
-        <div>
-          <h1 className='font-medium'>Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className='mt-2'>Button</Button>
-        </div>
-      </div>
-    </div>
+    <>
+      <a
+        href='#main'
+        className='sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-sm focus:bg-accent focus:px-4 focus:py-2 focus:text-[#0a0a0a]'
+      >
+        {t('skipToContent')}
+      </a>
+      <Header />
+      <main id='main'>
+        {SECTIONS.map((id) => (
+          <section
+            key={id}
+            id={id}
+            aria-labelledby={`${id}-label`}
+            className='flex min-h-screen items-center justify-center px-section-pad-sm'
+          >
+            <h2
+              id={`${id}-label`}
+              className='font-mono text-eyebrow tracking-eyebrow uppercase text-text-faint'
+            >
+              {id}
+            </h2>
+          </section>
+        ))}
+      </main>
+    </>
   )
 }
