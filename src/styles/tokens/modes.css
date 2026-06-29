@@ -1,0 +1,41 @@
+[data-mode="dark"] {
+  color-scheme: dark;
+  --bg-base: #0a0a0a;
+  --bg-card: #0d0d0c;
+  --bg-input: #0f0f0e;
+  --bg-elevated: #111110;
+  --border: #2a2a2a;
+  --border-strong: #3a3a3a;
+  --text-primary: #f5f0e8;
+  --text-secondary: #a8a59d;
+  --text-muted: #888888;
+  --text-faint: #666666;
+  --card-shadow: none;
+  --border-hair: 0.5px solid var(--border);
+  --border-tint: 0.5px solid var(--accent-tint-20);
+}
+
+[data-mode="light"] {
+  color-scheme: light;
+  --bg-base: #eae3d6;
+  --bg-card: #f1ebe0;
+  --bg-input: #f6f1e8;
+  --bg-elevated: #fbf7f0;
+  --border: #d6cdbd;
+  --border-strong: #c2b8a4;
+  --text-primary: #1a1712;
+  --text-secondary: #514c42;
+  --text-muted: #6e6857;
+  --text-faint: #8c8675;
+  --card-shadow: 0 1px 3px rgb(0 0 0 / 0.04);
+  --border-hair: 0.5px solid var(--border);
+  --border-tint: 0.5px solid var(--accent-tint-20);
+}
+
+/* prefers-contrast: thicken hairlines */
+@media (prefers-contrast: more) {
+  [data-mode] {
+    --border-hair: 1px solid var(--border);
+    --border-tint: 1px solid var(--accent-tint-20);
+  }
+}

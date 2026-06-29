@@ -1,0 +1,76 @@
+/* Animatable theme colors so scheme/mode swaps interpolate */
+@property --accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #5b8c3e;
+}
+@property --accent-italic {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #8fb872;
+}
+@property --panda-from {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #1a2818;
+}
+@property --panda-to {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #2a3d24;
+}
+
+@keyframes petros-stalk-in {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+}
+@keyframes petros-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+@keyframes petros-fade-up {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes petros-swing {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+/* Transitions enabled only after hydration (html.theme-ready) to avoid FOUC flash */
+html.theme-ready {
+  transition:
+    --accent var(--dur-theme) var(--ease-spring),
+    --accent-italic var(--dur-theme) var(--ease-spring),
+    --panda-from var(--dur-theme) var(--ease-spring),
+    --panda-to var(--dur-theme) var(--ease-spring);
+}
+html.theme-ready body,
+html.theme-ready [data-themed] {
+  transition:
+    background-color var(--dur-theme) var(--ease-spring),
+    color var(--dur-theme) var(--ease-spring),
+    border-color var(--dur-theme) var(--ease-spring);
+}

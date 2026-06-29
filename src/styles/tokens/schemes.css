@@ -1,0 +1,115 @@
+/* ---- BAMBUZAL (default) ---- */
+[data-scheme="bambuzal"] {
+  --accent: #5b8c3e;
+  --accent-italic: #8fb872;
+  --accent-tint-06: rgb(91 140 62 / 0.06);
+  --accent-tint-12: rgb(91 140 62 / 0.12);
+  --accent-tint-20: rgb(91 140 62 / 0.2);
+  --accent-glow: rgb(91 140 62 / 0.55);
+  --panda-from: #1a2818;
+  --panda-to: #2a3d24;
+}
+[data-mode="light"][data-scheme="bambuzal"] {
+  --accent: #4a7330;
+  --accent-italic: #5b8c3e;
+  --accent-tint-06: rgb(74 115 48 / 0.08);
+  --accent-tint-12: rgb(74 115 48 / 0.14);
+  --accent-tint-20: rgb(74 115 48 / 0.24);
+  --accent-glow: rgb(74 115 48 / 0.18);
+  --panda-from: #d6e0cc;
+  --panda-to: #b8cba8;
+}
+
+/* ---- SAKURA ---- */
+[data-scheme="sakura"] {
+  --accent: #d9608a;
+  --accent-italic: #e89ab5;
+  --accent-tint-06: rgb(217 96 138 / 0.06);
+  --accent-tint-12: rgb(217 96 138 / 0.12);
+  --accent-tint-20: rgb(217 96 138 / 0.2);
+  --accent-glow: rgb(217 96 138 / 0.55);
+  --panda-from: #2a1820;
+  --panda-to: #3d2430;
+}
+[data-mode="light"][data-scheme="sakura"] {
+  --accent: #c24472;
+  --accent-italic: #d9608a;
+  --accent-tint-06: rgb(194 68 114 / 0.08);
+  --accent-tint-12: rgb(194 68 114 / 0.14);
+  --accent-tint-20: rgb(194 68 114 / 0.24);
+  --accent-glow: rgb(194 68 114 / 0.18);
+  --panda-from: #f0d6e0;
+  --panda-to: #e0b8cb;
+}
+
+/* ---- GLACIAR ---- */
+[data-scheme="glaciar"] {
+  --accent: #5bb5d9;
+  --accent-italic: #8fccdf;
+  --accent-tint-06: rgb(91 181 217 / 0.06);
+  --accent-tint-12: rgb(91 181 217 / 0.12);
+  --accent-tint-20: rgb(91 181 217 / 0.2);
+  --accent-glow: rgb(91 181 217 / 0.55);
+  --panda-from: #16242a;
+  --panda-to: #22363d;
+}
+[data-mode="light"][data-scheme="glaciar"] {
+  --accent: #2f7c9e;
+  --accent-italic: #4a9bbf;
+  --accent-tint-06: rgb(47 124 158 / 0.08);
+  --accent-tint-12: rgb(47 124 158 / 0.14);
+  --accent-tint-20: rgb(47 124 158 / 0.24);
+  --accent-glow: rgb(47 124 158 / 0.18);
+  --panda-from: #ccdee6;
+  --panda-to: #a8c7d4;
+}
+
+/* ---- CREPÚSCULO ---- */
+[data-scheme="crepusculo"] {
+  --accent: #9b5bd9;
+  --accent-italic: #b889e5;
+  --accent-tint-06: rgb(155 91 217 / 0.06);
+  --accent-tint-12: rgb(155 91 217 / 0.12);
+  --accent-tint-20: rgb(155 91 217 / 0.2);
+  --accent-glow: rgb(155 91 217 / 0.55);
+  --panda-from: #221830;
+  --panda-to: #332445;
+}
+[data-mode="light"][data-scheme="crepusculo"] {
+  --accent: #7e40ba;
+  --accent-italic: #9b5bd9;
+  --accent-tint-06: rgb(126 64 186 / 0.08);
+  --accent-tint-12: rgb(126 64 186 / 0.14);
+  --accent-tint-20: rgb(126 64 186 / 0.24);
+  --accent-glow: rgb(126 64 186 / 0.18);
+  --panda-from: #e0d6f0;
+  --panda-to: #cbb8e0;
+}
+
+/* ---- PELAGEM ---- */
+[data-scheme="pelagem"] {
+  --accent: #d9a05b;
+  --accent-italic: #e5bb7e;
+  --accent-tint-06: rgb(217 160 91 / 0.06);
+  --accent-tint-12: rgb(217 160 91 / 0.12);
+  --accent-tint-20: rgb(217 160 91 / 0.2);
+  --accent-glow: rgb(217 160 91 / 0.55);
+  --panda-from: #2a2418;
+  --panda-to: #3d3424;
+}
+[data-mode="light"][data-scheme="pelagem"] {
+  --accent: #9a6b28;
+  --accent-italic: #bc842f;
+  --accent-tint-06: rgb(154 107 40 / 0.08);
+  --accent-tint-12: rgb(154 107 40 / 0.14);
+  --accent-tint-20: rgb(154 107 40 / 0.24);
+  --accent-glow: rgb(154 107 40 / 0.18);
+  --panda-from: #f0e6cc;
+  --panda-to: #e0d0a8;
+}
+
+/* Legacy alias: data-theme="x" without data-mode == dark + that scheme */
+[data-theme="bambuzal"] {
+  --accent: #5b8c3e;
+  --accent-italic: #8fb872;
+}

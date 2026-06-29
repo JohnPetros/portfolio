@@ -1,13 +1,14 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display:ital@1&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "./styles/tokens/modes.css";
+@import "./styles/tokens/schemes.css";
+@import "./styles/tokens/animations.css";
 
 @theme inline {
   /* Tipografia */
   --font-sans: "Inter", system-ui, sans-serif;
   --font-serif: "DM Serif Display", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-
-  /* Pesos */
   --font-weight-body: 400;
   --font-weight-display: 500;
 
@@ -39,31 +40,25 @@
   --leading-tight: 1.1;
   --leading-body: 1.6;
 
-  /* Superfícies (constantes) */
+  /* Superfícies / texto / borda (trocados por data-mode) */
   --color-bg-base: var(--bg-base);
   --color-bg-card: var(--bg-card);
   --color-bg-input: var(--bg-input);
   --color-bg-elevated: var(--bg-elevated);
-
-  /* Bordas */
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
-
-  /* Texto */
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
   --color-text-faint: var(--text-faint);
 
-  /* Accent (trocado por tema) */
+  /* Accent / panda (trocados por data-scheme) */
   --color-accent: var(--accent);
   --color-accent-italic: var(--accent-italic);
   --color-accent-tint-06: var(--accent-tint-06);
   --color-accent-tint-12: var(--accent-tint-12);
   --color-accent-tint-20: var(--accent-tint-20);
   --color-accent-glow: var(--accent-glow);
-
-  /* Gradiente do panda (trocado por tema) */
   --color-panda-from: var(--panda-from);
   --color-panda-to: var(--panda-to);
 
@@ -92,9 +87,10 @@
   --radius-lg: 14px;
   --radius-pill: 9999px;
 
-  /* Sombras — apenas glow do accent */
+  /* Sombras — glow (dark) + card-shadow (light) */
   --shadow-glow-dot: 0 0 5px var(--accent-glow);
   --shadow-glow-soft: 0 0 12px var(--accent-tint-20);
+  --shadow-card: var(--card-shadow);
 
   /* Motion */
   --ease-spring: cubic-bezier(0.2, 1, 0.3, 1);
@@ -102,180 +98,18 @@
   --dur-theme: 400ms;
   --dur-entrance: 600ms;
   --dur-loop: 2400ms;
-
-  /* Animações */
   --animate-petros-stalk-in: petros-stalk-in var(--dur-entrance) var(--ease-spring) both;
   --animate-petros-pulse: petros-pulse var(--dur-loop) ease-in-out infinite;
   --animate-petros-fade-up: petros-fade-up var(--dur-entrance) var(--ease-spring) both;
   --animate-petros-swing: petros-swing 1600ms ease-in-out infinite;
 }
 
-:root,
-[data-theme="bambuzal"] {
-  /* Superfícies — constantes em todos os temas */
-  --bg-base: #0a0a0a;
-  --bg-card: #0d0d0c;
-  --bg-input: #0f0f0e;
-  --bg-elevated: #111110;
-
-  /* Bordas — hairlines */
-  --border: #2a2a2a;
-  --border-strong: #3a3a3a;
-
-  /* Texto — rampa quente */
-  --text-primary: #f5f0e8;
-  --text-secondary: #a8a59d;
-  --text-muted: #888888;
-  --text-faint: #666666;
-
-  /* Accent — Bambuzal (default) */
-  --accent: #5b8c3e;
-  --accent-italic: #8fb872;
-  --accent-tint-06: rgb(91 140 62 / 0.06);
-  --accent-tint-12: rgb(91 140 62 / 0.12);
-  --accent-tint-20: rgb(91 140 62 / 0.2);
-  --accent-glow: rgb(91 140 62 / 0.55);
-
-  /* Gradiente do panda — Bambuzal */
-  --panda-from: #1a2818;
-  --panda-to: #2a3d24;
-
-  /* Sombras / glow */
-  --glow-dot: 0 0 5px var(--accent-glow);
-  --glow-soft: 0 0 12px var(--accent-tint-20);
-
-  /* Borda com tinge accent — hover de cards interativos */
-  --border-tint: 0.5px solid var(--accent-tint-20);
-  --border-hair: 0.5px solid var(--border);
-}
-
-[data-theme="sakura"] {
-  --accent: #d9608a;
-  --accent-italic: #e89ab5;
-  --accent-tint-06: rgb(217 96 138 / 0.06);
-  --accent-tint-12: rgb(217 96 138 / 0.12);
-  --accent-tint-20: rgb(217 96 138 / 0.2);
-  --accent-glow: rgb(217 96 138 / 0.55);
-  --panda-from: #2a1820;
-  --panda-to: #3d2430;
-}
-
-[data-theme="glaciar"] {
-  --accent: #5bb5d9;
-  --accent-italic: #8fccdf;
-  --accent-tint-06: rgb(91 181 217 / 0.06);
-  --accent-tint-12: rgb(91 181 217 / 0.12);
-  --accent-tint-20: rgb(91 181 217 / 0.2);
-  --accent-glow: rgb(91 181 217 / 0.55);
-  --panda-from: #182328;
-  --panda-to: #24343d;
-}
-
-[data-theme="crepusculo"] {
-  --accent: #9b5bd9;
-  --accent-italic: #b889e5;
-  --accent-tint-06: rgb(155 91 217 / 0.06);
-  --accent-tint-12: rgb(155 91 217 / 0.12);
-  --accent-tint-20: rgb(155 91 217 / 0.2);
-  --accent-glow: rgb(155 91 217 / 0.55);
-  --panda-from: #1f182a;
-  --panda-to: #2e243d;
-}
-
-[data-theme="pelagem"] {
-  --accent: #d9a05b;
-  --accent-italic: #e5bb7e;
-  --accent-tint-06: rgb(217 160 91 / 0.06);
-  --accent-tint-12: rgb(217 160 91 / 0.12);
-  --accent-tint-20: rgb(217 160 91 / 0.2);
-  --accent-glow: rgb(217 160 91 / 0.55);
-  --panda-from: #281f18;
-  --panda-to: #3d2f24;
-}
-
-/* Registrar accent como cor animável para que a troca de tema interpole */
-@property --accent {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: #5b8c3e;
-}
-
-@property --accent-italic {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: #8fb872;
-}
-
-@property --panda-from {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: #1a2818;
-}
-
-@property --panda-to {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: #2a3d24;
-}
-
-@keyframes petros-stalk-in {
-  from {
-    transform: scaleY(0);
-    transform-origin: bottom;
-  }
-  to {
-    transform: scaleY(1);
-    transform-origin: bottom;
-  }
-}
-
-@keyframes petros-pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.55;
-  }
-}
-
-@keyframes petros-fade-up {
-  from {
-    transform: translateY(16px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes petros-swing {
-  0%,
-  100% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(4deg);
-  }
-}
-
 @layer base {
-  :root {
-    color-scheme: dark;
-    transition:
-      --accent var(--dur-theme) var(--ease-spring),
-      --accent-italic var(--dur-theme) var(--ease-spring),
-      --panda-from var(--dur-theme) var(--ease-spring),
-      --panda-to var(--dur-theme) var(--ease-spring);
-  }
-
   html {
     font-family: var(--font-sans);
     background-color: var(--bg-base);
     color: var(--text-primary);
   }
-
   body {
     background-color: var(--bg-base);
     color: var(--text-primary);
@@ -283,15 +117,16 @@
     line-height: var(--leading-body);
     font-weight: 400;
   }
-
-  /* Hairlines de estrutura */
   hr,
   [role="separator"] {
     border: 0;
-    border-top: 0.5px solid var(--border);
+    border-top: var(--border-hair);
   }
-
-  /* Acessibilidade — reduce motion */
+  /* Visible accent focus everywhere */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
