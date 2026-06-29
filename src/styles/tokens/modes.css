@@ -11,6 +11,7 @@
   --text-muted: #888888;
   --text-faint: #666666;
   --card-shadow: none;
+  --dialog-overlay: rgba(10, 10, 10, 0.92);
   --border-hair: 0.5px solid var(--border);
   --border-tint: 0.5px solid var(--accent-tint-20);
 }
@@ -28,6 +29,7 @@
   --text-muted: #6e6857;
   --text-faint: #8c8675;
   --card-shadow: 0 1px 3px rgb(0 0 0 / 0.04);
+  --dialog-overlay: rgba(245, 240, 232, 0.92);
   --border-hair: 0.5px solid var(--border);
   --border-tint: 0.5px solid var(--accent-tint-20);
 }
