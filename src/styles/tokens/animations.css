@@ -74,3 +74,13 @@ html.theme-ready [data-themed] {
     color var(--dur-theme) var(--ease-spring),
     border-color var(--dur-theme) var(--ease-spring);
 }
+
+/* Reveal-on-scroll: hide pending items only after hydration (avoids no-JS hiding) */
+html.theme-ready [data-reveal="pending"] {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.theme-ready [data-reveal="pending"] {
+    opacity: 1;
+  }
+}
