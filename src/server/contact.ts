@@ -8,15 +8,12 @@ import {
   isHoneypot,
   isRateLimited,
 } from './contact.schema'
+import { resolveMailConfig } from './mail.config'
 
 export type ContactResult = { ok: true } | { ok: false; reason: 'rate' | 'server' }
 
 // Per-instance memory store. TODO(petros): swap for Vercel KV in production.
 const hits = new Map<string, number[]>()
-
-const RECIPIENT = 'joaopcarvalho.cds@gmail.com'
-// TODO(petros): use a verified Resend domain sender before launch.
-const SENDER = 'Petros Portfolio <onboarding@resend.dev>'
 
 export const sendContact = createServerFn({ method: 'POST' })
   .validator(contactSchema)
@@ -34,11 +31,13 @@ export const sendContact = createServerFn({ method: 'POST' })
     const apiKey = process.env.RESEND_API_KEY
     if (!apiKey) return { ok: false, reason: 'server' }
 
+    const mail = resolveMailConfig(process.env)
+
     try {
       const resend = new Resend(apiKey)
       const { error } = await resend.emails.send({
-        from: SENDER,
-        to: RECIPIENT,
+        from: mail.from,
+        to: mail.to,
         replyTo: data.email,
         subject: `Portfolio contact — ${data.name}`,
         text: `From: ${data.name} <${data.email}>\n\n${data.message}`,
