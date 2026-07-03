@@ -12,7 +12,8 @@ import { resolveMailConfig } from './mail.config'
 
 export type ContactResult = { ok: true } | { ok: false; reason: 'rate' | 'server' }
 
-// Per-instance memory store. TODO(petros): swap for Vercel KV in production.
+// Per-instance in-memory store; best-effort on serverless. Upgrade path
+// (durable store) documented in DEPLOY.md § Known limitation.
 const hits = new Map<string, number[]>()
 
 export const sendContact = createServerFn({ method: 'POST' })
