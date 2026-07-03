@@ -4,6 +4,7 @@ import { BambooIndicator, Brand } from '@/components/primitives'
 import { SettingsPopover } from '@/theme/SettingsPopover'
 import { useScrollSpy } from '@/hooks/useScrollSpy'
 import { cn } from '@/lib/utils'
+import { LanyardPill } from './LanyardPill'
 
 const NAV = [
   { id: 'home', key: 'nav.home' },
@@ -57,8 +58,7 @@ export function Header() {
       </nav>
 
       <div className='flex items-center gap-3'>
-        {/* TODO Phase 4: Lanyard live-status pill */}
-        {/* TODO later: mobile hamburger + drawer nav */}
+        <LanyardPill />
         <SettingsPopover />
       </div>
     </header>

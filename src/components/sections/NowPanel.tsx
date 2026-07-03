@@ -1,10 +1,12 @@
 import { useTranslation } from 'react-i18next'
+import { ACTIVITY_COLOR, type ActivityKind, useLanyard } from '@/hooks/useLanyard'
 import { cn } from '@/lib/utils'
+import { ACTIVITY_ICON } from './LanyardPill'
 
-const ROWS: { key: string }[] = [
-  { key: 'now.coding' },
-  { key: 'now.playing' },
-  { key: 'now.listening' },
+const ROWS: { kind: Exclude<ActivityKind, 'offline'>; key: string }[] = [
+  { kind: 'coding', key: 'now.coding' },
+  { kind: 'playing', key: 'now.playing' },
+  { kind: 'listening', key: 'now.listening' },
 ]
 
 function Equalizer() {
@@ -23,6 +25,8 @@ function Equalizer() {
 
 export function NowPanel() {
   const { t } = useTranslation()
+  const { activity } = useLanyard()
+
   return (
     <div className='rounded-md border-[0.5px] border-border bg-accent-tint-06 p-5 shadow-[var(--shadow-card)]'>
       <p className='font-mono text-meta tracking-meta uppercase text-text-muted'>
@@ -32,22 +36,39 @@ export function NowPanel() {
         />
         {t('now.title')}
       </p>
-      <ul className='mt-4 flex flex-col gap-3'>
-        {ROWS.map((row) => (
-          <li key={row.key} className='flex items-center justify-between gap-3'>
-            <span className='font-sans text-body-sm text-text-secondary'>
-              {t(row.key)}
-            </span>
-            <span
-              className={cn(
-                'flex items-center gap-2 font-mono text-micro tracking-meta uppercase text-text-faint',
-              )}
-            >
-              {row.key === 'now.listening' ? <Equalizer /> : null}
-              {t('now.offline')}
-            </span>
-          </li>
-        ))}
+      <ul aria-live='polite' className='mt-4 flex flex-col gap-3'>
+        {ROWS.map((row) => {
+          const isLive = activity.kind === row.kind
+          const Icon = ACTIVITY_ICON[row.kind]
+          return (
+            <li key={row.kind} className='flex items-center justify-between gap-3'>
+              <span className='flex items-center gap-2 font-sans text-body-sm text-text-secondary'>
+                <Icon
+                  size={16}
+                  stroke={1.5}
+                  aria-hidden
+                  style={{ color: isLive ? ACTIVITY_COLOR[row.kind] : undefined }}
+                />
+                {t(row.key)}
+              </span>
+              <span
+                className={cn(
+                  'flex items-center gap-2 font-mono text-micro tracking-meta uppercase',
+                  isLive ? 'text-text-secondary' : 'text-text-faint',
+                )}
+              >
+                {row.kind === 'listening' && isLive ? <Equalizer /> : null}
+                {isLive && activity.detail ? (
+                  <span className='max-w-[160px] truncate normal-case'>
+                    {activity.detail}
+                  </span>
+                ) : (
+                  t('now.offline')
+                )}
+              </span>
+            </li>
+          )
+        })}
       </ul>
     </div>
   )
