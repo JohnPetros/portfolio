@@ -1,6 +1,9 @@
 import { useTranslation } from 'react-i18next'
+import { Tooltip } from '@/components/common/Tooltip'
 import { Brand, Button, StatusPill, Tag } from '@/components/primitives'
+import { cvFilename, cvHref, isCvFallback } from '@/data/cv'
 import { useBrtClock } from '@/hooks/useBrtClock'
+import { useTheme } from '@/theme/ThemeProvider'
 
 const TECH_LINE = ['TS', 'PYTHON', 'REACT', 'NEXT.JS', 'FLUTTER', 'AWS']
 
@@ -15,6 +18,9 @@ function PhotoFallback() {
 export function Hero() {
   const { t } = useTranslation()
   const clock = useBrtClock()
+  const { state } = useTheme()
+  const { lang } = state
+  const cvFallback = isCvFallback(lang)
 
   return (
     <section
@@ -62,17 +68,28 @@ export function Hero() {
               {t('hero.description')}
             </p>
             <div className='mt-8 flex flex-wrap gap-3'>
-              {/* Phase 4: a server fn will serve the per-language PDF; for now a
-                  static placeholder path. Styled as the primary button — the
-                  Phase 1 Button renders a <button>, so the CTA is an <a> that
-                  mirrors its classes (no <a> nested in <button>). */}
-              <a
-                href='/petros-cv-pt.pdf'
-                download
-                className='inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-accent px-5 font-sans text-body font-medium text-[#0a0a0a] transition-all duration-[var(--dur-micro)] hover:brightness-110 max-sm:w-full'
-              >
-                {t('hero.downloadCv')}
-              </a>
+              {/* Styled as the primary button — the Phase 1 Button renders a
+                  <button>, so the CTA is an <a> that mirrors its classes (no <a>
+                  nested in <button>). href/download follow the active language. */}
+              {cvFallback ? (
+                <Tooltip label={t('cv.fallbackTooltip')}>
+                  <a
+                    href={cvHref(lang)}
+                    download={cvFilename(lang)}
+                    className='inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-accent px-5 font-sans text-body font-medium text-[#0a0a0a] transition-all duration-[var(--dur-micro)] hover:brightness-110 max-sm:w-full'
+                  >
+                    {t('hero.downloadCv')}
+                  </a>
+                </Tooltip>
+              ) : (
+                <a
+                  href={cvHref(lang)}
+                  download={cvFilename(lang)}
+                  className='inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-accent px-5 font-sans text-body font-medium text-[#0a0a0a] transition-all duration-[var(--dur-micro)] hover:brightness-110 max-sm:w-full'
+                >
+                  {t('hero.downloadCv')}
+                </a>
+              )}
               {/* TODO Phase 4: open EasterEgg dialog */}
               <Button variant='secondary' className='max-sm:w-full'>
                 {t('hero.seePanda')}
