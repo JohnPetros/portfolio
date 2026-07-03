@@ -6,6 +6,7 @@ const pt = {
     stack: 'Stack',
     projects: 'Projetos',
     trajectory: 'Trajetória',
+    menu: 'Menu',
   },
   settings: {
     title: 'Configurações',

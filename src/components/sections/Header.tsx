@@ -5,6 +5,7 @@ import { SettingsPopover } from '@/theme/SettingsPopover'
 import { useScrollSpy } from '@/hooks/useScrollSpy'
 import { cn } from '@/lib/utils'
 import { LanyardPill } from './LanyardPill'
+import { MobileNav } from './MobileNav'
 
 const NAV = [
   { id: 'home', key: 'nav.home' },
@@ -60,6 +61,7 @@ export function Header() {
       <div className='flex items-center gap-3'>
         <LanyardPill />
         <SettingsPopover />
+        <MobileNav items={NAV} active={active} />
       </div>
     </header>
   )

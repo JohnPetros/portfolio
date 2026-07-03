@@ -8,6 +8,7 @@ const en: UIStrings = {
     stack: 'Stack',
     projects: 'Projects',
     trajectory: 'Trajectory',
+    menu: 'Menu',
   },
   settings: {
     title: 'Settings',
