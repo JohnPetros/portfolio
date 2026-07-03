@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Tooltip } from '@/components/common/Tooltip'
 import { Brand, Button, StatusPill, Tag } from '@/components/primitives'
 import { cvFilename, cvHref, isCvFallback } from '@/data/cv'
 import { useBrtClock } from '@/hooks/useBrtClock'
 import { useTheme } from '@/theme/ThemeProvider'
+import { EasterEgg } from './EasterEgg'
 
 const TECH_LINE = ['TS', 'PYTHON', 'REACT', 'NEXT.JS', 'FLUTTER', 'AWS']
 
@@ -21,6 +23,7 @@ export function Hero() {
   const { state } = useTheme()
   const { lang } = state
   const cvFallback = isCvFallback(lang)
+  const [pandaOpen, setPandaOpen] = useState(false)
 
   return (
     <section
@@ -90,8 +93,11 @@ export function Hero() {
                   {t('hero.downloadCv')}
                 </a>
               )}
-              {/* TODO Phase 4: open EasterEgg dialog */}
-              <Button variant='secondary' className='max-sm:w-full'>
+              <Button
+                variant='secondary'
+                className='max-sm:w-full'
+                onClick={() => setPandaOpen(true)}
+              >
                 {t('hero.seePanda')}
               </Button>
             </div>
@@ -135,6 +141,8 @@ export function Hero() {
           ))}
         </div>
       </div>
+
+      <EasterEgg open={pandaOpen} onOpenChange={setPandaOpen} />
     </section>
   )
 }
