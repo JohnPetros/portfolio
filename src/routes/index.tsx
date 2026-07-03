@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useTranslation } from 'react-i18next'
 import { About } from '@/components/sections/About'
+import { Contact } from '@/components/sections/Contact'
 import { Footer } from '@/components/sections/Footer'
 import { Header } from '@/components/sections/Header'
 import { Hero } from '@/components/sections/Hero'
@@ -10,8 +11,6 @@ import { Stack } from '@/components/sections/Stack'
 import { Trajectory } from '@/components/sections/Trajectory'
 
 export const Route = createFileRoute('/')({ component: App })
-
-const PLACEHOLDERS = ['contact'] as const
 
 function App() {
   const { t } = useTranslation()
@@ -31,21 +30,7 @@ function App() {
         <Services />
         <Projects />
         <About />
-        {PLACEHOLDERS.map((id) => (
-          <section
-            key={id}
-            id={id}
-            aria-labelledby={`${id}-label`}
-            className='flex min-h-screen items-center justify-center px-section-pad-sm'
-          >
-            <h2
-              id={`${id}-label`}
-              className='font-mono text-eyebrow tracking-eyebrow uppercase text-text-faint'
-            >
-              {id}
-            </h2>
-          </section>
-        ))}
+        <Contact />
       </main>
       <Footer />
     </>
