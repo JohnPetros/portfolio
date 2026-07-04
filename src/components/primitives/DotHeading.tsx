@@ -5,7 +5,7 @@ export function DotHeading({ className, children, ...props }: ComponentProps<'h2
   return (
     <h2
       className={cn(
-        'font-sans font-medium text-h1 tracking-h1 text-text-primary',
+        'font-sans font-medium text-6xl tracking-h1 text-text-primary',
         className,
       )}
       {...props}

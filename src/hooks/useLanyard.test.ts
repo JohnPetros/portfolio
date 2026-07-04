@@ -33,7 +33,8 @@ describe('deriveActivity', () => {
       activities: [],
     })
     expect(r.kind).toBe('listening')
-    expect(r.detail).toBe('Song — Artist')
+    expect(r.detail).toBe('Song')
+    expect(r.subtitle).toBe('Artist')
   })
   it('exposes a fixed color for each kind', () => {
     expect(ACTIVITY_COLOR.coding).toBe('#4A8FE7')

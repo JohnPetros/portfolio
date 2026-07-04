@@ -67,7 +67,7 @@ export const SERVICES: Service[] = [
       en: 'Intelligent agents with vector search and LLM-driven automations.',
       es: 'Agentes inteligentes con búsqueda vectorial y automatizaciones con LLM.',
     },
-    techIds: ['gemini', 'agno', 'qdrant'],
+    techIds: ['qdrant', 'python', 'fastapi'],
   },
   {
     id: 'technical-seo',

@@ -10,13 +10,17 @@ export function Eyebrow({
   return (
     <span
       className={cn(
-        'inline-flex items-center gap-2 font-mono text-eyebrow tracking-eyebrow text-text-faint uppercase',
+        'inline-flex items-center gap-3 font-mono text-eyebrow text-sm tracking-eyebrow uppercase',
+        bullet ? 'text-accent' : 'text-text-faint',
         className,
       )}
       {...props}
     >
       {bullet && (
-        <span aria-hidden className='size-1.5 rounded-pill bg-accent shadow-glow-dot' />
+        <span
+          aria-hidden
+          className='h-px w-8 bg-accent shadow-[0_0_5px_var(--accent-glow)]'
+        />
       )}
       {children}
     </span>

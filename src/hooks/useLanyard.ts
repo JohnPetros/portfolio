@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 export type ActivityKind = 'coding' | 'playing' | 'listening' | 'offline'
-export type Activity = { kind: ActivityKind; detail?: string }
+export type Activity = { kind: ActivityKind; detail?: string; subtitle?: string }
 
 export type LanyardData = {
   discord_status?: string
@@ -22,60 +22,123 @@ export const ACTIVITY_COLOR: Record<ActivityKind, string> = {
 const DISCORD_ID =
   (import.meta.env?.VITE_DISCORD_ID as string | undefined) || '000000000000000000'
 const POLL_MS = 30_000
-const CODE_RE = /visual studio code|vscode|^code$/i
+const CODE_RE = /visual studio code|vscode|cursor|^code$/i
 
-export function deriveActivity(data: LanyardData | null): Activity {
-  if (!data) return { kind: 'offline' }
-  const activities = data.activities ?? []
-  const coding = activities.find((a) => a.name && CODE_RE.test(a.name))
-  if (coding) return { kind: 'coding', detail: coding.details ?? coding.name }
-  const playing = activities.find((a) => a.type === 0)
-  if (playing) return { kind: 'playing', detail: playing.name }
-  if (data.listening_to_spotify && data.spotify) {
-    const { song, artist } = data.spotify
-    const detail = [song, artist].filter(Boolean).join(' — ') || undefined
-    return { kind: 'listening', detail }
-  }
-  return { kind: 'offline' }
+export type LanyardStatus = {
+  coding: Activity | null
+  playing: Activity | null
+  listening: Activity | null
+  primary: Activity
 }
 
-export function useLanyard(): { activity: Activity; lastOnlineAt: number | null } {
-  const [activity, setActivity] = useState<Activity>({ kind: 'offline' })
-  const [lastOnlineAt, setLastOnlineAt] = useState<number | null>(null)
-  const lastGood = useRef<Activity | null>(null)
+export function deriveStatus(data: LanyardData | null): LanyardStatus {
+  const offline: Activity = { kind: 'offline' }
+  if (!data)
+    return { coding: null, playing: null, listening: null, primary: offline }
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    let alive = true
-
-    const poll = async () => {
-      try {
-        const res = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`)
-        if (!res.ok) throw new Error(String(res.status))
-        const json = (await res.json()) as { data?: LanyardData }
-        if (!alive) return
-        const next = deriveActivity(json.data ?? null)
-        if (next.kind === 'offline') {
-          // keep the last non-offline state rather than flashing offline
-          setActivity(lastGood.current ?? next)
-        } else {
-          lastGood.current = next
-          setActivity(next)
-          setLastOnlineAt(Date.now())
-        }
-      } catch {
-        if (!alive) return
-        setActivity(lastGood.current ?? { kind: 'offline' })
+  const activities = data.activities ?? []
+  const codingRaw = activities.find((a) => a.name && CODE_RE.test(a.name))
+  const coding: Activity | null = codingRaw
+    ? {
+        kind: 'coding',
+        detail: codingRaw.details ?? codingRaw.name,
+        subtitle: codingRaw.state,
       }
-    }
+    : null
 
-    poll()
-    const id = setInterval(poll, POLL_MS)
-    return () => {
-      alive = false
-      clearInterval(id)
+  // A "playing" activity is any type-0 that isn't already claimed as coding.
+  const playingRaw = activities.find(
+    (a) => a.type === 0 && (!a.name || !CODE_RE.test(a.name)),
+  )
+  const playing: Activity | null = playingRaw
+    ? {
+        kind: 'playing',
+        detail: playingRaw.name,
+        subtitle: playingRaw.state ?? playingRaw.details,
+      }
+    : null
+
+  const listening: Activity | null =
+    data.listening_to_spotify && data.spotify
+      ? {
+          kind: 'listening',
+          detail: data.spotify.song || undefined,
+          subtitle: data.spotify.artist || undefined,
+        }
+      : null
+
+  const primary = coding ?? playing ?? listening ?? offline
+  return { coding, playing, listening, primary }
+}
+
+export function deriveActivity(data: LanyardData | null): Activity {
+  return deriveStatus(data).primary
+}
+
+const OFFLINE_STATUS: LanyardStatus = {
+  coding: null,
+  playing: null,
+  listening: null,
+  primary: { kind: 'offline' },
+}
+
+export function useLanyard(): {
+  activity: Activity
+  status: LanyardStatus
+  lastOnlineAt: number | null
+  isRefreshing: boolean
+  refresh: () => void
+} {
+  const [status, setStatus] = useState<LanyardStatus>(OFFLINE_STATUS)
+  const [lastOnlineAt, setLastOnlineAt] = useState<number | null>(null)
+  const [isRefreshing, setIsRefreshing] = useState(false)
+  const lastGood = useRef<LanyardStatus | null>(null)
+  const aliveRef = useRef(true)
+
+  const poll = useCallback(async () => {
+    setIsRefreshing(true)
+    try {
+      const res = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`)
+      if (!res.ok) throw new Error(String(res.status))
+      const json = (await res.json()) as { data?: LanyardData }
+      if (!aliveRef.current) return
+      const next = deriveStatus(json.data ?? null)
+      if (next.primary.kind === 'offline') {
+        setStatus(lastGood.current ?? next)
+      } else {
+        lastGood.current = next
+        setStatus(next)
+        setLastOnlineAt(Date.now())
+      }
+    } catch {
+      if (!aliveRef.current) return
+      setStatus(lastGood.current ?? OFFLINE_STATUS)
+    } finally {
+      if (aliveRef.current) setIsRefreshing(false)
     }
   }, [])
 
-  return { activity, lastOnlineAt }
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    aliveRef.current = true
+    poll()
+    const id = setInterval(poll, POLL_MS)
+    return () => {
+      aliveRef.current = false
+      clearInterval(id)
+    }
+  }, [poll])
+
+  const refresh = useCallback(() => {
+    if (isRefreshing) return
+    poll()
+  }, [isRefreshing, poll])
+
+  return {
+    activity: status.primary,
+    status,
+    lastOnlineAt,
+    isRefreshing,
+    refresh,
+  }
 }

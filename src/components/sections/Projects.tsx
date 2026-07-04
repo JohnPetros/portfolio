@@ -1,8 +1,8 @@
 import { Tabs } from 'radix-ui'
 import { useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { Reveal } from '@/components/common/Reveal'
-import { DotHeading, Eyebrow } from '@/components/primitives'
+import { BambooIndicator, DotHeading, Eyebrow } from '@/components/primitives'
 import { type Project, type ProjectKind, projectsByKind } from '@/data/projects'
 import { cn } from '@/lib/utils'
 import { ProjectCard } from './ProjectCard'
@@ -39,37 +39,47 @@ export function Projects() {
             {t('projects.titleAccent')}
           </span>
         </DotHeading>
+        <p className='mt-4 max-w-2xl font-sans text-body leading-body text-text-secondary'>
+          <Trans
+            i18nKey='projects.subtitle'
+            components={{ b: <strong className='font-semibold text-text-primary' /> }}
+          />
+        </p>
       </Reveal>
 
       <Tabs.Root
         value={tab}
         onValueChange={(v) => setTab(v as ProjectKind)}
-        className='mt-8'
+        className='mt-10'
       >
         <Tabs.List
           aria-label={t('projects.eyebrow')}
-          className='flex gap-2 overflow-x-auto'
+          className='flex gap-8 overflow-x-auto'
         >
           {TABS.map((tabDef) => {
             const isActive = tab === tabDef.kind
+            const count = projectsByKind(tabDef.kind).length
             return (
               <Tabs.Trigger
                 key={tabDef.kind}
                 value={tabDef.kind}
                 className={cn(
-                  'relative inline-flex min-h-11 items-center rounded-pill border-[0.5px] px-4 font-mono text-meta tracking-meta uppercase transition-all duration-[var(--dur-micro)]',
-                  isActive
-                    ? 'border-accent-tint-20 bg-accent-tint-12 text-text-primary'
-                    : 'border-border text-text-muted hover:text-text-primary',
+                  'relative inline-flex min-h-11 flex-col items-center justify-center gap-1 font-mono text-meta tracking-meta uppercase transition-colors duration-[var(--dur-micro)]',
+                  isActive ? 'text-text-primary' : 'text-text-muted hover:text-text-primary',
                 )}
               >
-                {t(tabDef.key)}
-                {isActive && (
+                <span className='inline-flex items-baseline gap-2'>
+                  {t(tabDef.key)}
                   <span
-                    aria-hidden
-                    className='absolute -bottom-2 left-1/2 h-2 w-0.5 -translate-x-1/2 rounded-pill bg-accent motion-safe:animate-petros-stalk-in'
-                  />
-                )}
+                    className={cn(
+                      'font-semibold',
+                      isActive ? 'text-accent' : 'text-text-faint',
+                    )}
+                  >
+                    {count}
+                  </span>
+                </span>
+                <BambooIndicator active={isActive} className='h-1.5' />
               </Tabs.Trigger>
             )
           })}
@@ -79,15 +89,21 @@ export function Projects() {
           <Tabs.Content
             key={tabDef.kind}
             value={tabDef.kind}
-            className='mt-10 focus:outline-none motion-safe:animate-petros-fade-up'
+            className='mt-10 focus:outline-none'
           >
             <div className='grid gap-5 md:grid-cols-2'>
-              {projectsByKind(tabDef.kind).map((project) => (
-                <ProjectCard
+              {projectsByKind(tabDef.kind).map((project, i) => (
+                <Reveal
                   key={project.id}
-                  project={project}
-                  onOpen={() => openProject(project)}
-                />
+                  animation='animate-petros-rise'
+                  delay={Math.min(i, 3) * 90}
+                  className='h-full'
+                >
+                  <ProjectCard
+                    project={project}
+                    onOpen={() => openProject(project)}
+                  />
+                </Reveal>
               ))}
             </div>
           </Tabs.Content>

@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { Reveal } from '@/components/common/Reveal'
 import { RichText } from '@/components/common/RichText'
 import { DotHeading, Eyebrow } from '@/components/primitives'
@@ -6,14 +6,6 @@ import { BIO } from '@/data/bio'
 import { useLocalized } from '@/i18n/useLocalized'
 import { NowPanel } from './NowPanel'
 import { StatCounter } from './StatCounter'
-
-function PhotoFallback() {
-  return (
-    <span className='flex size-full items-center justify-center rounded-md bg-gradient-to-b from-panda-from to-panda-to font-sans text-display font-medium tracking-tight text-accent'>
-      JP
-    </span>
-  )
-}
 
 export function About() {
   const { t } = useTranslation()
@@ -34,23 +26,18 @@ export function About() {
             {t('about.titleAccent')}
           </span>
         </DotHeading>
+        <p className='mt-4 max-w-2xl font-sans text-body leading-body text-text-secondary'>
+          <Trans
+            i18nKey='about.subtitle'
+            components={{ b: <strong className='font-semibold text-text-primary' /> }}
+          />
+        </p>
       </Reveal>
 
-      <div className='mt-12 grid items-start gap-10 md:grid-cols-[60fr_40fr]'>
-        <Reveal animation='animate-petros-fade-left' className='flex flex-col gap-4'>
-          {BIO.paragraphs.map((p) => (
-            <p
-              key={localize(p)}
-              className='font-sans text-body leading-body text-text-secondary'
-            >
-              <RichText>{localize(p)}</RichText>
-            </p>
-          ))}
-        </Reveal>
-
+      <div className='mt-12 grid items-start gap-10 md:grid-cols-[40fr_60fr]'>
         <Reveal
-          animation='animate-petros-fade-right'
-          className='mx-auto w-full max-w-[280px]'
+          animation='animate-petros-fade-left'
+          className='mx-auto w-full max-w-sm'
         >
           <div className='group relative aspect-[3/4] w-full'>
             <span
@@ -69,24 +56,47 @@ export function About() {
               aria-hidden
               className='absolute -bottom-2 -right-2 size-6 border-b-2 border-r-2 border-accent'
             />
-            <PhotoFallback />
-            <span className='absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-pill border-[0.5px] border-border bg-bg-elevated px-3 py-1 font-mono text-micro tracking-meta uppercase text-text-secondary'>
+            <img
+              src='/images/petros/ctrl-alt-del.jpeg'
+              alt={t('about.photoAlt')}
+              loading='lazy'
+              decoding='async'
+              className='size-full rounded-md object-cover object-[30%_center] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]'
+            />
+            <span className='absolute bottom-3 left-3 rounded-pill border-[0.5px] border-border bg-bg-elevated px-3 py-1 font-mono text-micro tracking-meta uppercase text-text-secondary'>
               {t('about.photoLabel')}
             </span>
           </div>
-          <p className='mt-6 text-center font-serif text-body italic text-accent-italic'>
+          <p className='mt-6 font-serif text-body-sm italic text-text-muted'>
             <RichText>{localize(BIO.photoCaption)}</RichText>
           </p>
         </Reveal>
+
+        <Reveal animation='animate-petros-fade-right' className='flex flex-col gap-4'>
+          {BIO.paragraphs.map((p) => (
+            <p
+              key={localize(p)}
+              className='font-sans text-body leading-body text-text-secondary'
+            >
+              <RichText>{localize(p)}</RichText>
+            </p>
+          ))}
+        </Reveal>
       </div>
 
-      <div className='mt-14 grid grid-cols-2 gap-6 md:grid-cols-4'>
+      <div className='mt-16 flex flex-wrap items-center justify-between gap-3'>
+        <Eyebrow bullet>{t('about.statsEyebrow')}</Eyebrow>
+        <span className='font-mono text-eyebrow tracking-eyebrow uppercase text-text-faint'>
+          {t('about.statsMeta')}
+        </span>
+      </div>
+      <div className='mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4'>
         {BIO.stats.map((stat) => (
           <StatCounter key={localize(stat.label)} stat={stat} />
         ))}
       </div>
 
-      <div className='mt-12 max-w-md'>
+      <div className='mt-6'>
         <NowPanel />
       </div>
     </section>

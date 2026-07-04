@@ -28,11 +28,11 @@ export const TRAJECTORY: TrajectoryEntry[] = [
       es: 'Desarrollador Full Stack',
     },
     description: {
-      pt: 'Construindo produtos web full stack com **React**, **Node.js** e nuvem.', // TODO(petros)
-      en: 'Building full stack web products with **React**, **Node.js** and cloud.',
-      es: 'Construyendo productos web full stack con **React**, **Node.js** y nube.',
+      pt: 'Construindo **plataformas SaaS** para clientes corporativos. Stack **Next.js** + **FastAPI** + **PostgreSQL**, com foco em *DX limpa* e deploy contínuo.',
+      en: 'Building **SaaS platforms** for enterprise clients. Stack: **Next.js** + **FastAPI** + **PostgreSQL**, focused on *clean DX* and continuous deployment.',
+      es: 'Construyendo **plataformas SaaS** para clientes corporativos. Stack **Next.js** + **FastAPI** + **PostgreSQL**, con foco en *DX limpia* y deploy continuo.',
     },
-    techs: ['react', 'nodejs', 'typescript', 'aws'],
+    techs: ['typescript', 'nextjs', 'fastapi', 'postgresql', 'aws'],
   },
   {
     id: 'design-liquido',
@@ -40,14 +40,14 @@ export const TRAJECTORY: TrajectoryEntry[] = [
     period: { start: '2025', end: '05/2026' },
     org: { pt: 'Design Líquido', en: 'Design Líquido', es: 'Design Líquido' },
     role: {
-      pt: 'Desenvolvedor Full Stack',
-      en: 'Full Stack Developer',
-      es: 'Desarrollador Full Stack',
+      pt: 'Contribuidor — Linguagem Delégua',
+      en: 'Contributor — Delégua Language',
+      es: 'Contribuidor — Lenguaje Delégua',
     },
     description: {
-      pt: 'Trabalho com **Delégua** e o início da pesquisa que virou a tese *StarDust*.', // TODO(petros)
-      en: 'Worked with **Delégua** and the seed of the research that became the *StarDust* thesis.',
-      es: 'Trabajo con **Delégua** y el inicio de la investigación que se volvió la tesis *StarDust*.',
+      pt: 'Contribuição direta para **Delégua**, linguagem de programação *100% em português* baseada em TypeScript. Base técnica do TCC **StarDust**.',
+      en: 'Direct contributions to **Delégua**, a *100% Portuguese* programming language built on TypeScript. Technical foundation of the **StarDust** thesis.',
+      es: 'Contribución directa a **Delégua**, lenguaje de programación *100% en portugués* basado en TypeScript. Base técnica de la tesis **StarDust**.',
     },
     techs: ['typescript', 'react', 'nodejs'],
     info: {

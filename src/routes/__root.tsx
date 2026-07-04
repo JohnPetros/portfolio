@@ -9,6 +9,13 @@ import { DEFAULTS, parseStored, resolveInitial } from '@/theme/theme'
 
 const SITE_URL = 'https://petros.dev'
 
+// Panda emoji as an inline SVG favicon (no image asset needed).
+const PANDA_FAVICON =
+  'data:image/svg+xml,' +
+  encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🐼</text></svg>',
+  )
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -22,6 +29,7 @@ export const Route = createRootRoute({
       },
     ],
     links: [
+      { rel: 'icon', type: 'image/svg+xml', href: PANDA_FAVICON },
       { rel: 'stylesheet', href: appCss },
       { rel: 'alternate', hrefLang: 'pt-BR', href: SITE_URL },
       { rel: 'alternate', hrefLang: 'en', href: `${SITE_URL}/?lang=en` },

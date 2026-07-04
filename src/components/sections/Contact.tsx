@@ -4,15 +4,16 @@ import {
   IconBrandDiscord,
   IconBrandGithub,
   IconBrandLinkedin,
+  IconClock,
   IconMail,
   type IconProps,
 } from '@tabler/icons-react'
 import type { ComponentType } from 'react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { Reveal } from '@/components/common/Reveal'
-import { DotHeading, Eyebrow, StatusPill } from '@/components/primitives'
+import { Eyebrow, StatusPill } from '@/components/primitives'
 import { CONTACT_CHANNELS } from '@/data/channels'
 import { useLocalized } from '@/i18n/useLocalized'
 import { cn } from '@/lib/utils'
@@ -79,136 +80,147 @@ export function Contact() {
     >
       <Reveal>
         <Eyebrow bullet>{t('contact.eyebrow')}</Eyebrow>
-        <DotHeading id='contact-label' className='mt-4'>
+        <h2
+          id='contact-label'
+          className='mt-4 font-sans font-medium text-h1 tracking-h1 text-text-primary'
+        >
           {t('contact.title')}{' '}
-          <span className='font-serif italic text-accent-italic'>
+          <span className='font-serif italic text-accent-italic drop-shadow-[0_0_5px_var(--accent-glow)]'>
             {t('contact.titleAccent')}
           </span>
-        </DotHeading>
-        <p className='mt-6 font-sans text-h2 font-medium tracking-tight text-text-primary'>
-          {t('contact.closer')}{' '}
-          <span className='font-sans text-body text-text-muted'>
-            {t('contact.closerNote')}
-          </span>
-        </p>
+        </h2>
         <div className='mt-6 flex flex-wrap gap-3'>
           <StatusPill pulse>{t('contact.statusOpen')}</StatusPill>
-          <StatusPill>{t('contact.statusReply')}</StatusPill>
+          <StatusPill>
+            <IconClock size={12} stroke={1.75} aria-hidden className='-mr-1' />
+            {t('contact.statusReply')}
+          </StatusPill>
         </div>
+        <p className='mt-6 max-w-2xl font-sans text-body leading-body text-text-secondary'>
+          <Trans
+            i18nKey='contact.subtitle'
+            components={{
+              b: <strong className='font-semibold text-text-primary' />,
+              i: <em className='font-serif italic text-accent-italic' />,
+            }}
+          />
+        </p>
       </Reveal>
 
       <div className='mt-12 grid items-start gap-10 md:grid-cols-2'>
         {/* form */}
-        <form
-          onSubmit={onSubmit}
-          noValidate
-          className='relative rounded-md border-l-2 border-accent bg-bg-card p-6 shadow-[var(--shadow-card)]'
-        >
-          {/* honeypot — must stay empty */}
-          <input
-            type='text'
-            tabIndex={-1}
-            autoComplete='off'
-            aria-hidden
-            className='sr-only'
-            {...register('website')}
-          />
-
-          <label className='block'>
-            <span className='font-sans text-body-sm text-text-secondary'>
-              {t('contact.nameLabel')}
-            </span>
+        <div>
+          <Eyebrow bullet>{t('contact.formEyebrow')}</Eyebrow>
+          <form
+            onSubmit={onSubmit}
+            noValidate
+            className='mt-4 relative rounded-lg border-l-2 border-accent bg-bg-card p-6 shadow-[var(--shadow-card)]'
+          >
+            {/* honeypot — must stay empty */}
             <input
               type='text'
-              autoComplete='name'
-              placeholder={t('contact.namePlaceholder')}
-              className='mt-1 w-full border-b-[0.5px] border-border bg-transparent py-2 font-sans text-body text-text-primary outline-none transition-colors focus:border-accent'
-              {...register('name')}
-            />
-            {errors.name && (
-              <span className='mt-1 block font-mono text-micro tracking-meta uppercase text-accent'>
-                {t('contact.errorName')}
-              </span>
-            )}
-          </label>
-
-          <label className='mt-5 block'>
-            <span className='font-sans text-body-sm text-text-secondary'>
-              {t('contact.emailLabel')}
-            </span>
-            <input
-              type='email'
-              autoComplete='email'
-              placeholder={t('contact.emailPlaceholder')}
-              className='mt-1 w-full border-b-[0.5px] border-border bg-transparent py-2 font-sans text-body text-text-primary outline-none transition-colors focus:border-accent'
-              {...register('email')}
-            />
-            {errors.email && (
-              <span className='mt-1 block font-mono text-micro tracking-meta uppercase text-accent'>
-                {t('contact.errorEmail')}
-              </span>
-            )}
-          </label>
-
-          <label className='mt-5 block'>
-            <span className='font-sans text-body-sm text-text-secondary'>
-              {t('contact.messageLabel')}
-            </span>
-            <textarea
-              rows={4}
-              maxLength={500}
-              placeholder={t('contact.messagePlaceholder')}
-              className='mt-1 w-full resize-none border-b-[0.5px] border-border bg-transparent py-2 font-sans text-body text-text-primary outline-none transition-colors focus:border-accent'
-              {...register('message')}
-            />
-            <div className='mt-1 flex items-center justify-between'>
-              {errors.message ? (
-                <span className='font-mono text-micro tracking-meta uppercase text-accent'>
-                  {messageLen > 500
-                    ? t('contact.errorMessageMax')
-                    : t('contact.errorMessage')}
-                </span>
-              ) : (
-                <span />
-              )}
-              <span className={cn('font-mono text-micro tracking-meta', counterTone)}>
-                {t('contact.counter', { count: messageLen })}
-              </span>
-            </div>
-          </label>
-
-          <button
-            type='submit'
-            disabled={status.state === 'sending'}
-            className='group mt-6 inline-flex min-h-11 items-center gap-2 rounded-sm bg-accent px-5 font-sans text-body font-medium text-[#0a0a0a] transition-all duration-[var(--dur-micro)] hover:gap-3 hover:brightness-110 disabled:opacity-60 max-sm:w-full'
-          >
-            {status.state === 'sending' ? t('contact.sending') : t('contact.submit')}
-            <IconArrowRight
-              size={18}
-              stroke={1.5}
+              tabIndex={-1}
+              autoComplete='off'
               aria-hidden
-              className='transition-transform group-hover:translate-x-0.5'
+              className='sr-only'
+              {...register('website')}
             />
-          </button>
 
-          <p
-            aria-live='polite'
-            className='mt-3 min-h-5 font-mono text-micro tracking-meta uppercase text-text-secondary'
-          >
-            {status.state === 'done' ? t(status.key) : ''}
-          </p>
+            <label className='block'>
+              <span className='font-serif text-body italic text-accent-italic'>
+                {t('contact.nameLabel')}
+              </span>
+              <input
+                type='text'
+                autoComplete='name'
+                placeholder={t('contact.namePlaceholder')}
+                className='mt-1 w-full border-b-[0.5px] border-border bg-transparent py-2 font-sans text-body text-text-primary outline-none transition-colors focus:border-accent'
+                {...register('name')}
+              />
+              {errors.name && (
+                <span className='mt-1 block font-mono text-micro tracking-meta uppercase text-accent'>
+                  {t('contact.errorName')}
+                </span>
+              )}
+            </label>
 
-          <p className='mt-2 font-serif text-body-sm italic text-accent-italic'>
-            {t('contact.spamNote')}
-          </p>
-        </form>
+            <label className='mt-5 block'>
+              <span className='font-serif text-body italic text-accent-italic'>
+                {t('contact.emailLabel')}
+              </span>
+              <input
+                type='email'
+                autoComplete='email'
+                placeholder={t('contact.emailPlaceholder')}
+                className='mt-1 w-full border-b-[0.5px] border-border bg-transparent py-2 font-sans text-body text-text-primary outline-none transition-colors focus:border-accent'
+                {...register('email')}
+              />
+              {errors.email && (
+                <span className='mt-1 block font-mono text-micro tracking-meta uppercase text-accent'>
+                  {t('contact.errorEmail')}
+                </span>
+              )}
+            </label>
+
+            <label className='mt-5 block'>
+              <span className='font-serif text-body italic text-accent-italic'>
+                {t('contact.messageLabel')}
+              </span>
+              <textarea
+                rows={4}
+                maxLength={500}
+                placeholder={t('contact.messagePlaceholder')}
+                className='mt-1 w-full resize-none border-b-[0.5px] border-border bg-transparent py-2 font-sans text-body text-text-primary outline-none transition-colors focus:border-accent'
+                {...register('message')}
+              />
+              <div className='mt-1 flex items-center justify-between'>
+                {errors.message ? (
+                  <span className='font-mono text-micro tracking-meta uppercase text-accent'>
+                    {messageLen > 500
+                      ? t('contact.errorMessageMax')
+                      : t('contact.errorMessage')}
+                  </span>
+                ) : (
+                  <span />
+                )}
+                <span className={cn('font-mono text-micro tracking-meta', counterTone)}>
+                  {t('contact.counter', { count: messageLen })}
+                </span>
+              </div>
+            </label>
+
+            <div className='mt-6 flex flex-wrap items-center justify-between gap-3'>
+              <button
+                type='submit'
+                disabled={status.state === 'sending'}
+                className='group inline-flex min-h-11 items-center gap-2 rounded-md bg-accent px-5 font-sans text-body font-medium text-[#0a0a0a] transition-all duration-[var(--dur-micro)] hover:gap-3 hover:brightness-110 disabled:opacity-60'
+              >
+                {status.state === 'sending' ? t('contact.sending') : t('contact.submit')}
+                <IconArrowRight
+                  size={18}
+                  stroke={1.5}
+                  aria-hidden
+                  className='transition-transform group-hover:translate-x-0.5'
+                />
+              </button>
+              <p className='font-serif text-body-sm italic text-accent-italic'>
+                {t('contact.spamNote')}
+              </p>
+            </div>
+
+            <p
+              aria-live='polite'
+              className='mt-3 min-h-5 font-mono text-micro tracking-meta uppercase text-text-secondary'
+            >
+              {status.state === 'done' ? t(status.key) : ''}
+            </p>
+          </form>
+        </div>
 
         {/* channels */}
         <div>
-          <p className='font-mono text-meta tracking-meta uppercase text-text-muted'>
-            {t('contact.channelsTitle')}
-          </p>
-          <div className='mt-4 grid gap-3'>
+          <Eyebrow bullet>{t('contact.channelsEyebrow')}</Eyebrow>
+          <div className='mt-4 flex flex-col gap-3'>
             {CONTACT_CHANNELS.map((c) => {
               const Icon = CHANNEL_ICONS[c.icon] ?? IconMail
               const external = !c.href.startsWith('mailto:')
@@ -218,27 +230,29 @@ export function Contact() {
                   href={c.href}
                   target={external ? '_blank' : undefined}
                   rel={external ? 'noopener noreferrer' : undefined}
-                  className='group flex items-center gap-4 rounded-md border-l-2 border-transparent bg-bg-card p-4 shadow-[var(--shadow-card)] transition-all duration-[var(--dur-micro)] hover:-translate-y-0.5 hover:border-accent'
+                  className='group flex items-center gap-4 rounded-lg border-[0.5px] border-border bg-bg-card p-4 shadow-[var(--shadow-card)] transition-all duration-[var(--dur-micro)] hover:-translate-y-0.5 hover:border-accent-tint-20'
                 >
-                  <Icon
-                    size={22}
-                    stroke={1.5}
+                  <span
                     aria-hidden
-                    className='text-text-secondary group-hover:text-accent'
-                  />
-                  <span className='flex flex-1 flex-col'>
-                    <span className='font-sans text-body text-text-primary'>
-                      {c.handle}
+                    className='flex size-10 shrink-0 items-center justify-center rounded-md'
+                    style={{ background: `${c.color}1f`, color: c.color }}
+                  >
+                    <Icon size={20} stroke={1.6} />
+                  </span>
+                  <span className='flex min-w-0 flex-1 flex-col'>
+                    <span className='font-sans text-body font-medium text-text-primary'>
+                      {c.platform}{' '}
+                      <span className='text-text-muted'>· {localize(c.label)}</span>
                     </span>
-                    <span className='font-mono text-micro tracking-meta uppercase text-text-muted'>
-                      {localize(c.label)}
+                    <span className='truncate font-mono text-meta tracking-meta text-text-muted'>
+                      {c.handle}
                     </span>
                   </span>
                   <IconArrowRight
                     size={16}
                     stroke={1.5}
                     aria-hidden
-                    className='text-text-faint transition-transform group-hover:translate-x-0.5 group-hover:text-accent'
+                    className='shrink-0 -rotate-45 text-text-faint transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent'
                   />
                 </a>
               )

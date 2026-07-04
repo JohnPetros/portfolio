@@ -40,14 +40,9 @@ export function Footer() {
       data-themed
       className='mx-auto max-w-6xl px-section-pad-sm py-section-gap md:px-section-pad'
     >
-      <div className='flex flex-col items-center gap-6 text-center md:flex-row md:items-end md:justify-between md:text-left'>
+      <div className='flex flex-col items-center gap-6 text-center md:flex-row md:items-start md:justify-between md:text-left'>
         <div>
-          <div className='flex items-center justify-center gap-2 md:justify-start'>
-            <span aria-hidden className='text-title'>
-              🐼
-            </span>
-            <Brand size='text-h3' />
-          </div>
+          <Brand withMascot size='text-h3' className='justify-center md:justify-start' />
           <p className='mt-3 font-mono text-meta tracking-meta uppercase text-text-muted'>
             {t('footer.tagline')}
           </p>
@@ -64,7 +59,7 @@ export function Footer() {
                 target={href.startsWith('mailto:') ? undefined : '_blank'}
                 rel='noopener noreferrer'
                 aria-label={t(labelKey)}
-                className='flex size-9 items-center justify-center rounded-sm border-[0.5px] border-border bg-bg-card text-text-secondary shadow-[var(--shadow-card)] transition-all duration-[var(--dur-micro)] hover:border-accent-tint-20 hover:text-accent'
+                className='flex size-10 items-center justify-center rounded-md border-[0.5px] border-border bg-bg-card text-text-secondary transition-all duration-[var(--dur-micro)] hover:border-accent-tint-20 hover:text-accent'
               >
                 <Icon size={18} stroke={1.5} aria-hidden />
               </a>

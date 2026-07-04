@@ -15,3 +15,12 @@ todos.json
 
 # typescript
 *.tsbuildinfo
+
+
+# Agents
+.mcp.json
+.playwright-mcp
+CLAUDE.md
+AGENTS.md
+.claude
+.agents

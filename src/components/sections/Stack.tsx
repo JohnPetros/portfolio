@@ -2,7 +2,13 @@ import { useTranslation } from 'react-i18next'
 import { DotHeading, Eyebrow } from '@/components/primitives'
 import { Reveal } from '@/components/common/Reveal'
 import { Tooltip } from '@/components/common/Tooltip'
-import { type Category, type Tech, TECHS, groupByCategory } from '@/data/stack'
+import {
+  type Category,
+  type Tech,
+  TECHS,
+  groupByCategory,
+  techIconPath,
+} from '@/data/stack'
 import { cn } from '@/lib/utils'
 
 const CATEGORY_KEY: Record<Category, string> = {
@@ -11,10 +17,11 @@ const CATEGORY_KEY: Record<Category, string> = {
   mobile: 'stack.categoryMobile',
   databases: 'stack.categoryDatabases',
   cloud: 'stack.categoryCloud',
-  ai: 'stack.categoryAi',
+  tests: 'stack.categoryTests',
 }
 
 function TechItem({ tech, docsLabel }: { tech: Tech; docsLabel: string }) {
+  const iconPath = techIconPath(tech.id)
   return (
     <Tooltip label={docsLabel}>
       <a
@@ -23,13 +30,24 @@ function TechItem({ tech, docsLabel }: { tech: Tech; docsLabel: string }) {
         rel='noopener noreferrer'
         className='group flex min-h-11 items-center gap-3 rounded-md border-[0.5px] border-border bg-bg-card px-3 py-2 shadow-[var(--shadow-card)] transition-all duration-[var(--dur-micro)] hover:-translate-y-0.5 hover:border-accent-tint-20'
       >
-        <span
-          aria-hidden
-          className='flex size-8 shrink-0 items-center justify-center rounded-sm font-mono text-body-sm font-medium transition-transform duration-[var(--dur-micro)] group-hover:scale-105'
-          style={{ background: `${tech.brandColor}14`, color: tech.brandColor }}
-        >
-          {tech.monogram}
-        </span>
+        {iconPath ? (
+          <img
+            aria-hidden
+            src={iconPath}
+            alt=''
+            loading='lazy'
+            decoding='async'
+            className='size-20 shrink-0 object-contain transition-transform duration-[var(--dur-micro)] group-hover:scale-105'
+          />
+        ) : (
+          <span
+            aria-hidden
+            className='flex size-8 shrink-0 items-center justify-center rounded-sm font-mono text-body-sm font-medium transition-transform duration-[var(--dur-micro)] group-hover:scale-105'
+            style={{ background: `${tech.brandColor}14`, color: tech.brandColor }}
+          >
+            {tech.monogram}
+          </span>
+        )}
         <span className='truncate font-sans text-body-sm text-text-primary'>
           {tech.name}
         </span>
@@ -57,6 +75,9 @@ export function Stack() {
             {t('stack.titleAccent')}
           </span>
         </DotHeading>
+        <p className='mt-4 max-w-2xl font-sans text-body leading-body text-text-secondary'>
+          {t('stack.subtitle')}
+        </p>
       </Reveal>
 
       <div className='mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-3'>

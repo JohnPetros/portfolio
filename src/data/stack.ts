@@ -1,4 +1,4 @@
-export type Category = 'frontend' | 'backend' | 'mobile' | 'databases' | 'cloud' | 'ai'
+export type Category = 'frontend' | 'backend' | 'mobile' | 'databases' | 'cloud' | 'tests'
 
 export type Tech = {
   id: string
@@ -15,7 +15,7 @@ export const CATEGORIES: Category[] = [
   'mobile',
   'databases',
   'cloud',
-  'ai',
+  'tests',
 ]
 
 export const TECHS: Tech[] = [
@@ -61,19 +61,19 @@ export const TECHS: Tech[] = [
     category: 'frontend',
   },
   {
-    id: 'vue',
-    name: 'Vue',
-    brandColor: '#42B883',
-    monogram: 'Vue',
-    docsUrl: 'https://vuejs.org/guide/introduction.html',
-    category: 'frontend',
-  },
-  {
     id: 'sass',
     name: 'Sass',
     brandColor: '#CC6699',
     monogram: 'Sa',
     docsUrl: 'https://sass-lang.com/documentation/',
+    category: 'frontend',
+  },
+  {
+    id: 'vite',
+    name: 'Vite',
+    brandColor: '#646CFF',
+    monogram: 'Vt',
+    docsUrl: 'https://vitejs.dev/',
     category: 'frontend',
   },
   // ── Backend (7) ──
@@ -200,19 +200,19 @@ export const TECHS: Tech[] = [
     category: 'databases',
   },
   {
-    id: 'firebase',
-    name: 'Firebase',
-    brandColor: '#FFCA28',
-    monogram: 'Fb',
-    docsUrl: 'https://firebase.google.com/docs',
-    category: 'databases',
-  },
-  {
     id: 'turso',
     name: 'Turso',
     brandColor: '#4FF8D2',
     monogram: 'Tu',
     docsUrl: 'https://docs.turso.tech/',
+    category: 'databases',
+  },
+  {
+    id: 'qdrant',
+    name: 'Qdrant',
+    brandColor: '#DC244C',
+    monogram: 'Qd',
+    docsUrl: 'https://qdrant.tech/documentation/',
     category: 'databases',
   },
   // ── Cloud / DevOps (6) ──
@@ -241,14 +241,6 @@ export const TECHS: Tech[] = [
     category: 'cloud',
   },
   {
-    id: 'pulumi',
-    name: 'Pulumi',
-    brandColor: '#8A3391',
-    monogram: 'Pu',
-    docsUrl: 'https://www.pulumi.com/docs/',
-    category: 'cloud',
-  },
-  {
     id: 'gcp',
     name: 'GCP',
     brandColor: '#4285F4',
@@ -256,59 +248,102 @@ export const TECHS: Tech[] = [
     docsUrl: 'https://cloud.google.com/docs',
     category: 'cloud',
   },
+  // ── Tests (3) ──
   {
-    id: 'vercel',
-    name: 'Vercel',
-    brandColor: '#A0A0A0',
-    monogram: 'Vc',
-    docsUrl: 'https://vercel.com/docs',
-    category: 'cloud',
-  },
-  // ── AI & Automation (5) ──
-  {
-    id: 'agno',
-    name: 'Agno',
-    brandColor: '#00BFA5',
-    monogram: 'Ag',
-    docsUrl: 'https://docs.agno.com/',
-    category: 'ai',
+    id: 'jest',
+    name: 'Jest',
+    brandColor: '#C21325',
+    monogram: 'Je',
+    docsUrl: 'https://jestjs.io/docs/getting-started',
+    category: 'tests',
   },
   {
-    id: 'gemini',
-    name: 'Gemini',
-    brandColor: '#8E75F8',
-    monogram: 'Ge',
-    docsUrl: 'https://ai.google.dev/gemini-api/docs',
-    category: 'ai',
+    id: 'playwright',
+    name: 'Playwright',
+    brandColor: '#2EAD33',
+    monogram: 'Pw',
+    docsUrl: 'https://playwright.dev/docs/intro',
+    category: 'tests',
   },
   {
-    id: 'google-adk',
-    name: 'Google ADK',
-    brandColor: '#4285F4',
-    monogram: 'ADK',
-    docsUrl: 'https://google.github.io/adk-docs/',
-    category: 'ai',
+    id: 'pytest',
+    name: 'Pytest',
+    brandColor: '#0A9EDC',
+    monogram: 'Pt',
+    docsUrl: 'https://docs.pytest.org/',
+    category: 'tests',
   },
   {
-    id: 'qdrant',
-    name: 'Qdrant',
-    brandColor: '#DC244C',
-    monogram: 'Qd',
-    docsUrl: 'https://qdrant.tech/documentation/',
-    category: 'ai',
-  },
-  {
-    id: 'inngest',
-    name: 'Inngest',
-    brandColor: '#A0A0A0',
-    monogram: 'In',
-    docsUrl: 'https://www.inngest.com/docs',
-    category: 'ai',
+    id: 'vitest',
+    name: 'Vitest',
+    brandColor: '#6E9F18',
+    monogram: 'Vi',
+    docsUrl: 'https://vitest.dev/',
+    category: 'tests',
   },
 ]
 
 export function getTech(id: string): Tech | undefined {
   return TECHS.find((t) => t.id === id)
+}
+
+/**
+ * Maps a tech id to its brand icon under /public/images/techs. Most ids match
+ * the filename verbatim — this map only covers the mismatches. Returns null
+ * when there's no icon so the caller can fall back to the monogram badge.
+ */
+const ICON_FILENAME: Record<string, string> = {
+  astro: 'astrojs',
+  mongodb: 'mongo',
+  playwright: 'playright',
+}
+const ICON_SET = new Set([
+  'astrojs',
+  'aws',
+  'bun',
+  'css',
+  'discord',
+  'docker',
+  'expo',
+  'express',
+  'fastapi',
+  'fastify',
+  'figma',
+  'flask',
+  'gcp',
+  'github',
+  'html',
+  'javascript',
+  'jest',
+  'linkedin',
+  'mongo',
+  'mysql',
+  'nestjs',
+  'nextjs',
+  'nodejs',
+  'playright',
+  'postgresql',
+  'pytest',
+  'python',
+  'qdrant',
+  'react',
+  'react-native',
+  'redis',
+  'sass',
+  'spring',
+  'styled-components',
+  'supabase',
+  'tailwind',
+  'terraform',
+  'turso',
+  'typescript',
+  'vite',
+  'vitest',
+])
+
+export function techIconPath(id: string): string | null {
+  const filename = ICON_FILENAME[id] ?? id
+  return ICON_SET.has(filename) ? `/images/techs/${filename}.svg` : null
 }
 
 export function groupByCategory(techs: Tech[]): { category: Category; techs: Tech[] }[] {
