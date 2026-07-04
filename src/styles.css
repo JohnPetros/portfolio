@@ -12,20 +12,21 @@
   --font-weight-body: 400;
   --font-weight-display: 500;
 
-  /* Escala de fonte */
-  --text-hero: 108px;
-  --text-display: 88px;
-  --text-h1: 54px;
-  --text-h2: 40px;
-  --text-h3: 28px;
-  --text-title: 22px;
-  --text-lead: 16px;
-  --text-body: 14px;
-  --text-body-sm: 13px;
-  --text-nav: 13.5px;
-  --text-eyebrow: 11px;
-  --text-meta: 10px;
-  --text-micro: 9.5px;
+  /* Escala de fonte — todos os tamanhos escalam pelo multiplicador --text-scale
+     (definido em @layer base html) para crescer/encolher o site inteiro de uma vez. */
+  --text-hero: calc(108px * var(--text-scale));
+  --text-display: calc(88px * var(--text-scale));
+  --text-h1: calc(54px * var(--text-scale));
+  --text-h2: calc(40px * var(--text-scale));
+  --text-h3: calc(28px * var(--text-scale));
+  --text-title: calc(22px * var(--text-scale));
+  --text-lead: calc(16px * var(--text-scale));
+  --text-body: calc(14px * var(--text-scale));
+  --text-body-sm: calc(13px * var(--text-scale));
+  --text-nav: calc(13.5px * var(--text-scale));
+  --text-eyebrow: calc(11px * var(--text-scale));
+  --text-meta: calc(10px * var(--text-scale));
+  --text-micro: calc(9.5px * var(--text-scale));
 
   /* Tracking */
   --tracking-hero: -3.5px;
@@ -97,21 +98,35 @@
   --dur-micro: 220ms;
   --dur-theme: 400ms;
   --dur-entrance: 600ms;
+  --dur-rise: 900ms;
   --dur-loop: 2400ms;
   --animate-petros-stalk-in: petros-stalk-in var(--dur-entrance) var(--ease-spring) both;
   --animate-petros-pulse: petros-pulse var(--dur-loop) ease-in-out infinite;
   --animate-petros-fade-up: petros-fade-up var(--dur-entrance) var(--ease-spring) both;
+  --animate-petros-rise: petros-rise var(--dur-rise) var(--ease-spring) both;
   --animate-petros-swing: petros-swing 1600ms ease-in-out infinite;
+  --animate-petros-float: petros-float 4s ease-in-out infinite;
   --animate-petros-fade-left: petros-fade-left var(--dur-entrance) ease-out both;
   --animate-petros-fade-right: petros-fade-right var(--dur-entrance) ease-out both;
   --animate-petros-equalizer: petros-equalizer var(--dur-loop) ease-in-out infinite;
+  --animate-petros-cta-pulse: petros-cta-pulse 1.6s ease-in-out infinite;
+  --animate-petros-splash-in: petros-splash-in 520ms ease-out both;
+  --animate-petros-splash-out: petros-splash-out 420ms ease-out forwards;
+  --animate-petros-bubble-in: petros-bubble-in 480ms var(--ease-spring) both;
+  --animate-petros-panda-pop: petros-panda-pop 640ms var(--ease-spring) both;
+  --animate-petros-cta-rise: petros-cta-rise 500ms ease-out both;
 }
 
 @layer base {
   html {
+    /* Multiplicador global da escala tipográfica (1 = tamanhos originais). */
+    --text-scale: 1.15;
     font-family: var(--font-sans);
     background-color: var(--bg-base);
     color: var(--text-primary);
+    /* Smooth anchor scrolling; offset for the sticky header. */
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
   body {
     background-color: var(--bg-base);
@@ -131,6 +146,9 @@
     outline-offset: 2px;
   }
   @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
     *,
     *::before,
     *::after {

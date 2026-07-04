@@ -39,6 +39,14 @@
     opacity: 0.55;
   }
 }
+@keyframes petros-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @keyframes petros-fade-up {
   from {
     transform: translateY(16px);
@@ -47,6 +55,33 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@keyframes petros-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+/* Panda mascot: subtle cream halo in dark mode so the black ink parts
+   (arms, ears, patches) stay legible against the near-black background. */
+[data-mode="dark"] .petros-panda {
+  filter: drop-shadow(0 0 0.6px #f5f2e8) drop-shadow(0 0 0.6px #f5f2e8);
+}
+
+@keyframes petros-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
   }
 }
 @keyframes petros-swing {
@@ -83,6 +118,10 @@ html.theme-ready [data-reveal="pending"] {
   html.theme-ready [data-reveal="pending"] {
     opacity: 1;
   }
+  /* Neutralize staggered entrances — no motion means no fill-mode hiding */
+  .animate-petros-rise {
+    animation: none !important;
+  }
 }
 
 /* Project dialog: overlay fade + panel zoom-in (motion-safe; snap under reduced-motion) */
@@ -104,12 +143,23 @@ html.theme-ready [data-reveal="pending"] {
     transform: scale(1);
   }
 }
+@keyframes petros-drawer-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 @media (prefers-reduced-motion: no-preference) {
   [data-petros-overlay][data-state="open"] {
     animation: petros-overlay-in var(--dur-micro) ease-out;
   }
   [data-petros-dialog][data-state="open"] {
     animation: petros-dialog-in var(--dur-micro) ease-out;
+  }
+  [data-petros-drawer][data-state="open"] {
+    animation: petros-drawer-in var(--dur-micro) var(--ease-spring);
   }
 }
 
@@ -143,5 +193,89 @@ html.theme-ready [data-reveal="pending"] {
   }
   50% {
     transform: scaleY(1);
+  }
+}
+
+/* Splash intro CTA — scale + ring pulse to draw the eye to the "click me" button. */
+@keyframes petros-cta-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--accent-tint-20);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 14px transparent;
+  }
+}
+
+/* Freeze descendant animations while the splash intro covers the Hero.
+   Uses `both` fill mode already declared on the entrance keyframes, so paused
+   elements sit at their "from" state until the flag is removed. */
+[data-petros-hero-frozen='true'] * {
+  animation-play-state: paused !important;
+}
+
+/* Splash intro entrance — fade + subtle zoom-out settle so the overlay
+   feels like it "lands" from a slight forward push. */
+@keyframes petros-splash-in {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Splash intro exit — fade + gentle upward drift as we hand over to the site. */
+@keyframes petros-splash-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+}
+
+/* Panda pop-in — bouncy scale entrance so the mascot feels alive on arrival. */
+@keyframes petros-panda-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.6);
+  }
+  60% {
+    transform: translateY(-6px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* CTA rise + fade — comes in after the panda, cueing the next action. */
+@keyframes petros-cta-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Speech bubble entrance from the tip anchor point above the panda. */
+@keyframes petros-bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
