@@ -15,7 +15,9 @@ export function Carousel({
   alt: string
 }) {
   const { t } = useTranslation()
-  const { index, next, prev, goTo, pause, resume } = useCarousel(images.length)
+  const { index, next, prev, goTo } = useCarousel(images.length, {
+    intervalMs: 2500,
+  })
   const startX = useRef<number | null>(null)
   const multiple = images.length > 1
 
@@ -35,13 +37,7 @@ export function Carousel({
   }
 
   return (
-    <div
-      className='flex flex-col gap-3'
-      onPointerEnter={pause}
-      onPointerLeave={resume}
-      onFocusCapture={pause}
-      onBlurCapture={resume}
-    >
+    <div className='flex flex-col gap-3'>
       <div
         role='group'
         aria-roledescription='carousel'
@@ -54,7 +50,7 @@ export function Carousel({
         className={cn(
           'relative overflow-hidden rounded-md border-[0.5px] border-border bg-bg-card',
           layout === 'mobile'
-            ? 'mx-auto aspect-[9/16] w-full max-w-[260px]'
+            ? 'mx-auto aspect-[9/16] w-full max-w-[340px]'
             : 'aspect-video w-full',
         )}
       >
@@ -68,7 +64,7 @@ export function Carousel({
               src={src}
               alt={`${alt} — ${i + 1}`}
               loading={i === 0 ? 'eager' : 'lazy'}
-              className='size-full shrink-0 object-cover'
+              className='size-full shrink-0 object-contain'
             />
           ))}
         </div>

@@ -1,10 +1,23 @@
 import {
+  IconBolt,
+  IconBrain,
   IconBulb,
+  IconChartBar,
   IconChevronLeft,
   IconChevronRight,
+  IconClock,
+  IconCloud,
   IconCode,
   IconDatabase,
+  IconEye,
+  IconHeart,
+  IconMessageCircle,
   type IconProps,
+  IconRobot,
+  IconRocket,
+  IconServer,
+  IconStack2,
+  IconTarget,
   IconUsers,
   IconX,
 } from '@tabler/icons-react'
@@ -20,10 +33,23 @@ import type { L } from '@/i18n/useLocalized'
 import { Carousel } from './Carousel'
 
 const SKILL_ICONS: Record<string, ComponentType<IconProps>> = {
+  IconBolt,
+  IconBrain,
+  IconBulb,
+  IconChartBar,
+  IconClock,
+  IconCloud,
   IconCode,
   IconDatabase,
+  IconEye,
+  IconHeart,
+  IconMessageCircle,
+  IconRobot,
+  IconRocket,
+  IconServer,
+  IconStack2,
+  IconTarget,
   IconUsers,
-  IconBulb,
 }
 
 function SectionHeading({ children }: { children: string }) {
@@ -80,7 +106,7 @@ export function ProjectDialog({
         <Dialog.Content
           data-petros-dialog
           data-themed
-          className='fixed inset-0 z-50 mx-auto flex h-full w-full max-w-4xl flex-col overflow-y-auto bg-bg-card focus:outline-none'
+          className='fixed inset-0 z-50 mx-auto flex h-full w-full max-w-5xl flex-col overflow-y-auto bg-bg-card focus:outline-none'
         >
           <div className='sticky top-0 z-10 flex items-center justify-between border-b-[0.5px] border-border bg-bg-card px-section-pad-sm py-4 md:px-section-pad'>
             <Eyebrow bullet>{localize(project.eyebrow)}</Eyebrow>
