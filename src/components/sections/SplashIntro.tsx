@@ -70,6 +70,14 @@ function readInitialMode(): Mode {
   return window.sessionStorage.getItem(SESSION_KEY) === '1' ? 'quick' : 'full'
 }
 
+// Timestamp of the last SplashIntro mount. StrictMode double-mounts in dev
+// happen within milliseconds, so a rapid remount inside this window is
+// treated as a StrictMode cycle and the entrance animation is suppressed to
+// avoid the visible "runs twice" symptom. Real remounts (via "Ver meu panda")
+// happen way outside this window and animate normally.
+let lastMountAt = -Infinity
+const STRICT_MODE_WINDOW_MS = 200
+
 export function SplashIntro({
   onDismiss,
   onExitStart,
@@ -84,6 +92,16 @@ export function SplashIntro({
   const startIndex = useMemo(() => Math.floor(Math.random() * PHRASES.length), [])
   const [phraseIndex, setPhraseIndex] = useState(startIndex)
   const phrase = PHRASES[phraseIndex]
+  // Detect StrictMode double-mount: if the previous mount was < 200ms ago,
+  // this is the second half of a dev double-mount cycle — render in the final
+  // state instantly instead of replaying the entrance animation.
+  const [skipEnter] = useState(() => {
+    if (typeof performance === 'undefined') return false
+    const now = performance.now()
+    const rapid = now - lastMountAt < STRICT_MODE_WINDOW_MS
+    lastMountAt = now
+    return rapid
+  })
 
   const dismiss = useCallback(() => {
     if (isExiting) return
@@ -136,9 +154,14 @@ export function SplashIntro({
       role='dialog'
       aria-modal='true'
       aria-label='Petros — intro'
+      data-petros-splash-instant={skipEnter ? 'true' : undefined}
       className={cn(
         'fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden bg-bg-base',
-        isExiting ? 'animate-petros-splash-out' : 'animate-petros-splash-in',
+        isExiting
+          ? 'animate-petros-splash-out'
+          : skipEnter
+            ? ''
+            : 'animate-petros-splash-in',
       )}
     >
       {/* Wavy accent band behind the panda. Fills the viewport and scales to fit. */}

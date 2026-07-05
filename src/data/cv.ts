@@ -1,20 +1,19 @@
 import type { Lang } from '@/theme/theme'
 
 const FILE: Record<Lang, string> = {
-  'pt-BR': 'petros-cv-pt.pdf',
+  'pt-BR': 'petros-cv-ptbr.pdf',
   en: 'petros-cv-en.pdf',
   es: 'petros-cv-es.pdf',
 }
 
-// TODO(petros): add 'en' / 'es' once those PDFs exist in /public.
-export const CV_AVAILABLE: Lang[] = ['pt-BR']
+export const CV_AVAILABLE: Lang[] = ['pt-BR', 'en', 'es']
 
 export function cvFilename(lang: Lang): string {
   return CV_AVAILABLE.includes(lang) ? FILE[lang] : FILE['pt-BR']
 }
 
 export function cvHref(lang: Lang): string {
-  return `/${cvFilename(lang)}`
+  return `/pdfs/${cvFilename(lang)}`
 }
 
 export function isCvFallback(lang: Lang): boolean {

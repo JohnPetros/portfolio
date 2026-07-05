@@ -21,9 +21,9 @@ export function MobileNav({
         <button
           type='button'
           aria-label={t('nav.menu')}
-          className='flex size-9 items-center justify-center rounded-sm border-[0.5px] border-border text-text-secondary transition-all duration-[var(--dur-micro)] hover:border-accent-tint-20 hover:text-accent md:hidden'
+          className='flex size-9 items-center justify-center rounded-pill text-text-secondary transition-colors duration-[var(--dur-micro)] hover:text-accent aria-expanded:text-accent md:hidden'
         >
-          <IconMenu2 size={18} stroke={1.5} aria-hidden />
+          <IconMenu2 size={20} stroke={1.5} aria-hidden />
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
@@ -41,9 +41,9 @@ export function MobileNav({
             <Brand />
             <Dialog.Close
               aria-label={t('easter.close')}
-              className='flex size-9 items-center justify-center rounded-sm border-[0.5px] border-border text-text-secondary transition-all duration-[var(--dur-micro)] hover:border-accent-tint-20 hover:text-accent'
+              className='flex size-9 items-center justify-center rounded-pill text-text-secondary transition-colors duration-[var(--dur-micro)] hover:text-accent'
             >
-              <IconX size={18} stroke={1.5} aria-hidden />
+              <IconX size={20} stroke={1.5} aria-hidden />
             </Dialog.Close>
           </div>
           <nav aria-label='Primary' className='flex flex-col gap-1 p-4'>

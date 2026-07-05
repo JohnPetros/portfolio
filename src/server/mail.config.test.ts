@@ -17,9 +17,9 @@ describe('resolveMailConfig', () => {
   it('uses env values when provided', () => {
     expect(
       resolveMailConfig({
-        RESEND_FROM: 'Petros <hi@petros.dev>',
-        CONTACT_TO: 'inbox@petros.dev',
+        RESEND_FROM: 'Petros <hi@john-petros.com>',
+        CONTACT_TO: 'inbox@john-petros.com',
       }),
-    ).toEqual({ from: 'Petros <hi@petros.dev>', to: 'inbox@petros.dev' })
+    ).toEqual({ from: 'Petros <hi@john-petros.com>', to: 'inbox@john-petros.com' })
   })
 })

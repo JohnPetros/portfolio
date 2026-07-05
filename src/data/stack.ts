@@ -310,6 +310,7 @@ const ICON_SET = new Set([
   'fastify',
   'figma',
   'flask',
+  'flutter',
   'gcp',
   'github',
   'html',

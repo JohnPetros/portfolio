@@ -7,7 +7,7 @@ import appCss from '../styles.css?url'
 import { THEME_BOOTSTRAP, ThemeProvider } from '@/theme/ThemeProvider'
 import { DEFAULTS, parseStored, resolveInitial } from '@/theme/theme'
 
-const SITE_URL = 'https://petros.dev'
+const SITE_URL = 'https://john-petros.com'
 
 // Panda emoji as an inline SVG favicon (no image asset needed).
 const PANDA_FAVICON =

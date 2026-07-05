@@ -216,6 +216,14 @@ html.theme-ready [data-reveal="pending"] {
   animation-play-state: paused !important;
 }
 
+/* StrictMode double-mount guard: when the splash mounts again within a few
+   milliseconds of the previous mount (dev-only StrictMode cycle), suppress the
+   entrance keyframes on every child so the panel appears in its final state
+   instead of replaying the animation. */
+[data-petros-splash-instant='true'] * {
+  animation: none !important;
+}
+
 /* Splash intro entrance — fade + subtle zoom-out settle so the overlay
    feels like it "lands" from a slight forward push. */
 @keyframes petros-splash-in {

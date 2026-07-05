@@ -6,6 +6,11 @@
 </p>
 
 <p align="center">
+  <a href="https://john-petros.com"><b>🌐 john-petros.com</b></a>
+</p>
+
+<p align="center">
+  <a href="https://john-petros.com"><img alt="Live" src="https://img.shields.io/badge/live-john--petros.com-5b8c3e?logo=vercel&logoColor=white" /></a>
   <a href="https://github.com/JohnPetros"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-JohnPetros-181717?logo=github&logoColor=white" /></a>
   <a href="https://www.linkedin.com/in/joão-pedro-carvalho-dos-santos-42a0ab222/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Petros-0a66c2?logo=linkedin&logoColor=white" /></a>
   <a href="mailto:joaopcarvalho.cds@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-joaopcarvalho.cds%40gmail.com-e04a4a?logo=gmail&logoColor=white" /></a>
