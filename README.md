@@ -72,26 +72,26 @@ src/
 
 ## ⚙️ Rodando local
 
-Pré-requisitos: **Node 22+** e **npm**.
+Pré-requisitos: **Node 22+** e **pnpm**.
 
 ```bash
 git clone https://github.com/JohnPetros/portfolio.git
 cd portfolio
-npm install
-cp .env.example .env      # preencha RESEND_API_KEY, RESEND_FROM, RESEND_TO
-npm run dev               # http://localhost:3000
+pnpm install
+cp .env.example .env      # preencha RESEND_API_KEY, RESEND_FROM, CONTACT_TO, VITE_DISCORD_ID
+pnpm dev                  # http://localhost:3000
 ```
 
 Scripts principais:
 
 ```bash
-npm run dev         # dev server (Vite)
-npm run build       # build de produção (Nitro/Vercel preset)
-npm run preview     # serve o bundle produtivo localmente
-npm run test        # testes com Vitest
-npm run typecheck   # tsc --noEmit
-npm run lint        # biome lint
-npm run check       # biome check + auto-fix
+pnpm dev             # dev server (Vite)
+pnpm build           # build de produção (Nitro/Vercel preset)
+pnpm preview         # serve o bundle produtivo localmente
+pnpm test            # testes com Vitest
+pnpm typecheck       # tsc --noEmit
+pnpm lint            # biome lint
+pnpm check           # biome check + auto-fix
 ```
 
 ## 🧪 Testes
@@ -103,22 +103,23 @@ Cobertura focada em:
 - Servidor (`mail.config.test.ts`) — configuração de Resend a partir de envs.
 
 ```bash
-npm run test
+pnpm test
 ```
 
 ## 🚢 Deploy
 
 Alvo de build: **Vercel** via preset Nitro. O `vite.config.ts` já entrega o bundle no formato esperado pela Vercel. Só apontar o projeto na dashboard e configurar as envs.
 
-Envs obrigatórias em produção:
+Envs de produção:
 
 ```
 RESEND_API_KEY=re_xxx
-RESEND_FROM=onboarding@resend.dev
-RESEND_TO=joaopcarvalho.cds@gmail.com
+RESEND_FROM=Petros Portfolio <hi@john-petros.com>  # remetente de domínio verificado no Resend
+CONTACT_TO=joaopcarvalho.cds@gmail.com              # opcional
+VITE_DISCORD_ID=905944456472195123                 # opcional, pill do Lanyard
 ```
 
-Consulte [`documentation/deploy.md`](documentation/deploy.md) para o passo a passo completo (inclui a nota sobre rate-limit do endpoint de contato).
+Consulte [`DEPLOY.md`](DEPLOY.md) para o passo a passo completo (inclui a nota sobre rate-limit do endpoint de contato).
 
 ## 🎨 Design tokens
 

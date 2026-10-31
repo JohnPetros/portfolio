@@ -21,7 +21,7 @@ export function MobileNav({
         <button
           type='button'
           aria-label={t('nav.menu')}
-          className='flex size-9 items-center justify-center rounded-pill text-text-secondary transition-colors duration-[var(--dur-micro)] hover:text-accent aria-expanded:text-accent md:hidden'
+          className='flex size-11 shrink-0 items-center justify-center rounded-pill text-text-secondary transition-colors duration-[var(--dur-micro)] hover:text-accent aria-expanded:text-accent lg:hidden'
         >
           <IconMenu2 size={20} stroke={1.5} aria-hidden />
         </button>
@@ -29,19 +29,19 @@ export function MobileNav({
       <Dialog.Portal>
         <Dialog.Overlay
           data-petros-overlay
-          className='fixed inset-0 z-40 bg-[var(--dialog-overlay)] backdrop-blur-[6px] md:hidden'
+          className='fixed inset-0 z-40 bg-[var(--dialog-overlay)] backdrop-blur-[6px] lg:hidden'
         />
         <Dialog.Content
           data-themed
           data-petros-drawer
           aria-label={t('nav.menu')}
-          className='fixed right-0 top-0 z-50 flex h-full w-[85vw] max-w-xs flex-col border-l-[0.5px] border-border bg-bg-card focus:outline-none md:hidden'
+          className='fixed right-0 top-0 z-50 flex h-dvh w-[85vw] max-w-xs flex-col overflow-y-auto border-l-[0.5px] border-border bg-bg-card focus:outline-none lg:hidden'
         >
           <div className='flex items-center justify-between border-b-[0.5px] border-border px-5 py-3'>
             <Brand />
             <Dialog.Close
               aria-label={t('easter.close')}
-              className='flex size-9 items-center justify-center rounded-pill text-text-secondary transition-colors duration-[var(--dur-micro)] hover:text-accent'
+              className='flex size-11 shrink-0 items-center justify-center rounded-pill text-text-secondary transition-colors duration-[var(--dur-micro)] hover:text-accent'
             >
               <IconX size={20} stroke={1.5} aria-hidden />
             </Dialog.Close>

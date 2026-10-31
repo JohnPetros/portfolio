@@ -95,7 +95,7 @@ export function LanyardPill() {
             style={{ background: ACTIVITY_COLOR[shown.kind] }}
           />
           <Icon size={14} stroke={1.5} aria-hidden />
-          <span className='hidden max-w-[160px] truncate md:inline'>{label}</span>
+          <span className='hidden max-w-[160px] truncate md:inline lg:hidden xl:inline'>{label}</span>
         </button>
       </Popover.Trigger>
       <Popover.Portal>

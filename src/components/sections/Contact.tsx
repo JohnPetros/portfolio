@@ -107,7 +107,7 @@ export function Contact() {
         </p>
       </Reveal>
 
-      <div className='mt-12 grid items-start gap-10 md:grid-cols-2'>
+      <div className='mt-12 grid grid-cols-1 items-start gap-10 md:grid-cols-2'>
         {/* form */}
         <div>
           <Eyebrow bullet>{t('contact.formEyebrow')}</Eyebrow>

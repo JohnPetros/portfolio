@@ -29,7 +29,7 @@ export function Hero({
       aria-labelledby='home-label'
       data-themed
       data-petros-hero-frozen={active ? undefined : 'true'}
-      className='relative flex min-h-[90vh] flex-col justify-center overflow-hidden px-section-pad-sm py-section-gap md:px-section-pad'
+      className='relative flex min-h-[90svh] flex-col justify-center overflow-hidden px-section-pad-sm py-section-gap md:px-section-pad'
     >
       {/* subtle accent grid */}
       <div
@@ -45,26 +45,26 @@ export function Hero({
         {/* top metadata */}
         <div className='flex flex-wrap items-center justify-between gap-3 animate-petros-rise'>
           <StatusPill pulse>{t('hero.statusPill')}</StatusPill>
-          <div className='flex items-center gap-3 font-mono text-meta tracking-meta uppercase text-text-muted'>
-            <IconMapPin className='size-3.5 text-accent' stroke={1.5} aria-hidden />
+          <div className='flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-meta tracking-meta uppercase text-text-muted'>
+            <IconMapPin className='size-3.5 shrink-0 text-accent' stroke={1.5} aria-hidden />
             <span>{t('hero.location')}</span>
             <span aria-hidden>/</span>
-            <span aria-live='polite' className='text-text-secondary'>
+            <span aria-live='polite' className='whitespace-nowrap text-text-secondary'>
               {clock} BRT
             </span>
           </div>
         </div>
 
         {/* main block */}
-        <div className='mt-12 grid items-center gap-10 md:grid-cols-[60fr_40fr]'>
-          <div>
+        <div className='mt-12 grid grid-cols-1 items-center gap-10 md:grid-cols-[minmax(0,60fr)_minmax(0,40fr)]'>
+          <div className='min-w-0'>
             <h1
               id='home-label'
               className='animate-petros-rise font-sans font-medium leading-tight [animation-delay:120ms]'
             >
-              <Brand size='text-hero' className='tracking-hero' />
+              <Brand size='text-hero md:text-display lg:text-hero' className='tracking-hero' />
             </h1>
-            <p className='mt-4 animate-petros-rise font-serif text-h3 italic text-accent-italic [animation-delay:220ms]'>
+            <p className='mt-4 animate-petros-rise font-serif text-title leading-tight italic text-accent-italic [animation-delay:220ms] sm:text-h3'>
               {t('hero.byline')}
             </p>
             <p className='mt-6 max-w-md animate-petros-rise font-sans text-lead leading-body text-text-secondary [animation-delay:380ms]'>

@@ -14,6 +14,7 @@ const NAV = [
   { id: 'services', key: 'nav.services' },
   { id: 'projects', key: 'nav.projects' },
   { id: 'about', key: 'nav.about' },
+  { id: 'contact', key: 'nav.contact' },
 ] as const
 
 const IDS = NAV.map((n) => n.id)
@@ -42,7 +43,7 @@ export function Header() {
         <Brand withMascot />
       </a>
 
-      <nav aria-label='Primary' className='hidden items-center gap-6 md:flex'>
+      <nav aria-label='Primary' className='hidden items-center gap-4 lg:flex xl:gap-6'>
         {NAV.map((item) => (
           <a
             key={item.id}

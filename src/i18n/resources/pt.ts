@@ -7,6 +7,7 @@ const pt = {
     services: 'Serviços',
     projects: 'Projetos',
     trajectory: 'Trajetória',
+    contact: 'Contato',
     menu: 'Menu',
   },
   settings: {

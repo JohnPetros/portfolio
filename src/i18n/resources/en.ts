@@ -9,6 +9,7 @@ const en: UIStrings = {
     services: 'Services',
     projects: 'Projects',
     trajectory: 'Trajectory',
+    contact: 'Contact',
     menu: 'Menu',
   },
   settings: {

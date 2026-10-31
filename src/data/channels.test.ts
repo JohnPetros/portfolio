@@ -23,6 +23,11 @@ describe('CONTACT_CHANNELS', () => {
       expect(c.label.es).toBeTruthy()
     }
   })
+  it('no channel ships a placeholder href', () => {
+    for (const c of CONTACT_CHANNELS) {
+      expect(c.href).not.toBe('#')
+    }
+  })
   it('email channel uses a mailto href', () => {
     const email = CONTACT_CHANNELS.find((c) => c.id === 'email')
     expect(email?.href.startsWith('mailto:')).toBe(true)

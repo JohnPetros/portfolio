@@ -14,9 +14,9 @@
 
   /* Escala de fonte — todos os tamanhos escalam pelo multiplicador --text-scale
      (definido em @layer base html) para crescer/encolher o site inteiro de uma vez. */
-  --text-hero: calc(108px * var(--text-scale));
+  --text-hero: calc(clamp(60px, 18vw, 108px) * var(--text-scale));
   --text-display: calc(88px * var(--text-scale));
-  --text-h1: calc(54px * var(--text-scale));
+  --text-h1: calc(clamp(32px, 6vw, 54px) * var(--text-scale));
   --text-h2: calc(40px * var(--text-scale));
   --text-h3: calc(28px * var(--text-scale));
   --text-title: calc(22px * var(--text-scale));
@@ -79,8 +79,8 @@
   --spacing-8: 64px;
   --spacing-9: 96px;
   --spacing-section-pad: 48px;
-  --spacing-section-pad-sm: 28px;
-  --spacing-section-gap: 96px;
+  --spacing-section-pad-sm: clamp(20px, 4vw, 28px);
+  --spacing-section-gap: clamp(64px, 12vw, 96px);
 
   /* Radius */
   --radius-sm: 8px;

@@ -9,29 +9,22 @@ import type { ComponentType } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Brand } from '@/components/primitives'
 import { Tooltip } from '@/components/common/Tooltip'
+import { CONTACT_CHANNELS } from '@/data/channels'
 
-// TODO(petros): replace '#' with real profile URLs before launch
-const SOCIALS: {
-  id: string
-  labelKey: string
-  href: string
-  Icon: ComponentType<IconProps>
-}[] = [
+const FOOTER_META: Record<string, { labelKey: string; Icon: ComponentType<IconProps> }> =
   {
-    id: 'email',
-    labelKey: 'footer.socialEmail',
-    href: 'mailto:joaopcarvalho.cds@gmail.com',
-    Icon: IconMail,
-  },
-  {
-    id: 'linkedin',
-    labelKey: 'footer.socialLinkedin',
-    href: '#',
-    Icon: IconBrandLinkedin,
-  },
-  { id: 'github', labelKey: 'footer.socialGithub', href: '#', Icon: IconBrandGithub },
-  { id: 'discord', labelKey: 'footer.socialDiscord', href: '#', Icon: IconBrandDiscord },
-]
+    email: { labelKey: 'footer.socialEmail', Icon: IconMail },
+    linkedin: { labelKey: 'footer.socialLinkedin', Icon: IconBrandLinkedin },
+    github: { labelKey: 'footer.socialGithub', Icon: IconBrandGithub },
+    discord: { labelKey: 'footer.socialDiscord', Icon: IconBrandDiscord },
+  }
+
+// Hrefs come from CONTACT_CHANNELS so the footer and Contact never drift apart.
+const SOCIALS = CONTACT_CHANNELS.filter((c) => c.id in FOOTER_META).map((c) => ({
+  id: c.id,
+  href: c.href,
+  ...FOOTER_META[c.id],
+}))
 
 export function Footer() {
   const { t } = useTranslation()

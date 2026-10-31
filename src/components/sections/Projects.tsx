@@ -54,7 +54,7 @@ export function Projects() {
       >
         <Tabs.List
           aria-label={t('projects.eyebrow')}
-          className='flex gap-8 overflow-x-auto'
+          className='flex gap-4 overflow-x-auto sm:gap-8'
         >
           {TABS.map((tabDef) => {
             const isActive = tab === tabDef.kind
@@ -91,7 +91,7 @@ export function Projects() {
             value={tabDef.kind}
             className='mt-10 focus:outline-none'
           >
-            <div className='grid gap-5 md:grid-cols-2'>
+            <div className='grid grid-cols-1 gap-5 md:grid-cols-2'>
               {projectsByKind(tabDef.kind).map((project, i) => (
                 <Reveal
                   key={project.id}

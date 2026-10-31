@@ -80,7 +80,7 @@ export function Stack() {
         </p>
       </Reveal>
 
-      <div className='mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-3'>
+      <div className='mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3'>
         {groups.map((group, gi) => (
           <Reveal key={group.category} delay={gi * 80}>
             <h3 className='font-mono text-meta tracking-meta uppercase text-text-muted'>

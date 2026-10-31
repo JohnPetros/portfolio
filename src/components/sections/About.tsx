@@ -34,7 +34,7 @@ export function About() {
         </p>
       </Reveal>
 
-      <div className='mt-12 grid items-start gap-10 md:grid-cols-[40fr_60fr]'>
+      <div className='mt-12 grid grid-cols-1 items-start gap-10 md:grid-cols-[minmax(0,40fr)_minmax(0,60fr)]'>
         <Reveal
           animation='animate-petros-fade-left'
           className='mx-auto w-full max-w-sm'

@@ -11,7 +11,7 @@ export function ClosingBanner() {
       <div className='mx-auto max-w-4xl px-section-pad-sm text-center md:px-section-pad'>
         <h2
           id='closer-label'
-          className='whitespace-nowrap font-sans font-medium text-h2 tracking-hero text-text-primary md:text-h1 lg:text-hero'
+          className='font-sans font-medium text-h2 leading-tight tracking-h1 text-text-primary md:text-h1 lg:text-hero'
         >
           {t('closer.title')}{' '}
           <span className='font-serif italic text-accent-italic drop-shadow-[0_0_12px_var(--accent-glow)]'>

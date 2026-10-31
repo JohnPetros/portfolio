@@ -33,11 +33,8 @@ overrides.
 ## Content still to supply (`TODO(petros)`)
 
 Not deploy blockers, but needed for a real launch:
-- Real Discord id (`VITE_DISCORD_ID`) — else the Lanyard pill stays offline.
+- Real Discord id (`VITE_DISCORD_ID`) set in Vercel — else the Lanyard pill stays offline.
 - Verified Resend sender domain (`RESEND_FROM`).
-- Contact channel URLs in `src/data/channels.ts` (currently `#`).
-- CV PDFs `petros-cv-en.pdf` / `petros-cv-es.pdf` in `/public` (add each lang to
-  `CV_AVAILABLE` in `src/data/cv.ts` once present).
 - `panda.gif` in `/public` for the EasterEgg (falls back to the 🐼 emoji).
 
 ## Known limitation — contact rate limit

@@ -43,7 +43,7 @@ function EntryCard({ entry, index }: { entry: TrajectoryEntry; index: number }) 
     <Reveal
       animation='animate-petros-rise'
       delay={Math.min(index, 4) * 90}
-      className='relative pl-10'
+      className='relative pl-6 sm:pl-10'
     >
       {/* timeline node — pulses while the entry is current */}
       <span
@@ -53,7 +53,7 @@ function EntryCard({ entry, index }: { entry: TrajectoryEntry; index: number }) 
           entry.current && 'animate-petros-pulse',
         )}
       />
-      <div className='rounded-lg border-[0.5px] border-border bg-bg-card p-6 shadow-[var(--shadow-card)] transition-all duration-[var(--dur-micro)] hover:-translate-y-0.5 hover:border-accent-tint-20 hover:shadow-[0_10px_28px_-12px_var(--accent-glow)]'>
+      <div className='rounded-lg border-[0.5px] border-border bg-bg-card p-4 shadow-[var(--shadow-card)] transition-all duration-[var(--dur-micro)] hover:-translate-y-0.5 hover:border-accent-tint-20 hover:shadow-[0_10px_28px_-12px_var(--accent-glow)] sm:p-6'>
         <div className='flex flex-wrap items-center gap-x-3 gap-y-1'>
           <Eyebrow className='text-text-muted'>
             {periodLabel(entry, t('trajectory.present'))}

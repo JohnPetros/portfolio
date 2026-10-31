@@ -10,7 +10,6 @@ export type Channel = {
   href: string
 }
 
-// TODO(petros): replace '#' hrefs with real profile URLs before launch.
 export const CONTACT_CHANNELS: Channel[] = [
   {
     id: 'email',
@@ -32,7 +31,7 @@ export const CONTACT_CHANNELS: Channel[] = [
       es: 'red profesional',
     },
     handle: 'in/joaopedro-carvalho',
-    href: '#',
+    href: 'https://www.linkedin.com/in/jo%C3%A3o-pedro-carvalho-dos-santos-42a0ab222/',
   },
   {
     id: 'github',
@@ -45,7 +44,7 @@ export const CONTACT_CHANNELS: Channel[] = [
       es: 'código abierto',
     },
     handle: '@JohnPetros',
-    href: '#',
+    href: 'https://github.com/JohnPetros',
   },
   {
     id: 'discord',
@@ -58,6 +57,6 @@ export const CONTACT_CHANNELS: Channel[] = [
       es: 'charla informal',
     },
     handle: '@johnpetros',
-    href: '#',
+    href: 'https://discord.com/users/905944456472195123',
   },
 ]
