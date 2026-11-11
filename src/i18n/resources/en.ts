@@ -2,6 +2,7 @@ import type { UIStrings } from './pt'
 
 const en: UIStrings = {
   skipToContent: 'Skip to content',
+  backToTop: 'Back to top',
   nav: {
     home: 'Home',
     about: 'About',
@@ -19,7 +20,6 @@ const en: UIStrings = {
     modeLight: 'Light',
     scheme: 'Scheme',
     language: 'Language',
-    hint: '⌘+, to open · ESC to close',
   },
   schemes: {
     bambuzal: 'Bambuzal',
@@ -34,7 +34,7 @@ const en: UIStrings = {
     byline: 'João Pedro Carvalho dos Santos',
     description:
       'I build applications ranging from <b>weekend MVPs</b> to systems with <b>enterprise clients</b>. Stack centered on <b>TypeScript</b>, <b>Python</b> and <b>clean architecture</b> — chosen for what it delivers, <i>not for the latest trend</i>.',
-    tagFatec: 'FATEC · 5TH SEM',
+    tagFatec: 'FATEC · 6TH SEM',
     tagAka: 'a.k.a. Petros',
     tagYears: '{{years}}+ YEARS DEV',
     downloadCv: 'Download CV',
@@ -123,10 +123,10 @@ const en: UIStrings = {
     continueReading: 'Read more',
     photoPlaceholder: '{ photo · panda }',
     browseFiles: 'or browse files',
-    photoLabel: 'JP & 🐼',
-    photoAlt: 'Petros with the ctrl-alt-del crew outside FATEC',
+    skipStory: 'Skip story',
+    storyNav: 'Story milestones',
     statsEyebrow: 'CONSISTENCY',
-    statsMeta: 'IN NUMBERS',
+    statsMeta: 'GITHUB DATA',
   },
   now: {
     title: 'NOW',
@@ -178,6 +178,26 @@ const en: UIStrings = {
     meta: 'GIF · LOOP · 0:02',
     close: 'Close',
     alt: 'Dancing pixel-art panda',
+  },
+  chat: {
+    open: 'Ask about the portfolio',
+    close: 'Close chat',
+    title: 'Ask about Petros',
+    unsupported: 'This chat uses the AI built into the browser, available in recent desktop Google Chrome. Open the site in Chrome to chat.',
+    consentBody: 'This chat uses the AI built into Chrome, which runs on your computer. Chrome needs to download the model the first time. Your questions never leave your device.',
+    consentAccept: 'Download and start',
+    loading: 'Preparing the AI… {{percent}}%',
+    empty: 'Ask about projects, experience, technologies or how to get in touch.',
+    placeholder: 'E.g. What did he do on StarDust?',
+    send: 'Send',
+    stop: 'Stop',
+    thinking: 'Thinking…',
+    stopped: 'Answer stopped.',
+    noInfo: 'I don’t have that information in the portfolio.',
+    disclaimer: 'Local AI, it can make mistakes.',
+    errorLoad: 'Chrome’s AI couldn’t be started. Please try again.',
+    errorGenerate: 'I couldn’t answer right now. Please try again.',
+    retry: 'Try again',
   },
   cv: {
     fallbackTooltip: 'CV currently available only in Portuguese',

@@ -21,6 +21,13 @@ export function tokenizeRich(input: string): RichToken[] {
   return tokens
 }
 
+// Plain-text form, for attributes such as alt that can't hold markup.
+export function stripRich(input: string): string {
+  return tokenizeRich(input)
+    .map((tok) => tok.value)
+    .join('')
+}
+
 export function RichText({
   children,
   className,

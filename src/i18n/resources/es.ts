@@ -2,6 +2,7 @@ import type { UIStrings } from './pt'
 
 const es: UIStrings = {
   skipToContent: 'Saltar al contenido',
+  backToTop: 'Volver arriba',
   nav: {
     home: 'Inicio',
     about: 'Sobre mí',
@@ -19,7 +20,6 @@ const es: UIStrings = {
     modeLight: 'Claro',
     scheme: 'Esquema',
     language: 'Idioma',
-    hint: '⌘+, para abrir · ESC para cerrar',
   },
   schemes: {
     bambuzal: 'Bambuzal',
@@ -34,7 +34,7 @@ const es: UIStrings = {
     byline: 'João Pedro Carvalho dos Santos',
     description:
       'Construyo aplicaciones que van desde <b>MVPs de fin de semana</b> hasta sistemas con <b>clientes corporativos</b>. Stack centrado en <b>TypeScript</b>, <b>Python</b> y <b>arquitectura limpia</b> — elegido por lo que entrega, <i>no por la última moda</i>.',
-    tagFatec: 'FATEC · 5º SEM',
+    tagFatec: 'FATEC · 6º SEM',
     tagAka: 'a.k.a. Petros',
     tagYears: '{{years}}+ AÑOS DEV',
     downloadCv: 'Descargar CV',
@@ -123,10 +123,10 @@ const es: UIStrings = {
     continueReading: 'Leer más',
     photoPlaceholder: '{ foto · panda }',
     browseFiles: 'or browse files',
-    photoLabel: 'JP & 🐼',
-    photoAlt: 'Petros con los amigos de ctrl-alt-del frente a FATEC',
+    skipStory: 'Saltar historia',
+    storyNav: 'Hitos de la historia',
     statsEyebrow: 'CONSISTENCIA',
-    statsMeta: 'EN NÚMEROS',
+    statsMeta: 'DATOS DE GITHUB',
   },
   now: {
     title: 'AHORA',
@@ -178,6 +178,26 @@ const es: UIStrings = {
     meta: 'GIF · LOOP · 0:02',
     close: 'Cerrar',
     alt: 'Panda pixel-art bailando',
+  },
+  chat: {
+    open: 'Preguntar sobre el portafolio',
+    close: 'Cerrar chat',
+    title: 'Pregunta sobre Petros',
+    unsupported: 'Este chat usa la IA integrada en el navegador, disponible en Google Chrome reciente para computadora. Abre el sitio en Chrome para conversar.',
+    consentBody: 'Este chat usa la IA integrada en Chrome, que se ejecuta en tu computadora. La primera vez Chrome necesita descargar el modelo. Tus preguntas no salen de tu dispositivo.',
+    consentAccept: 'Descargar e iniciar',
+    loading: 'Preparando la IA… {{percent}}%',
+    empty: 'Pregunta sobre proyectos, experiencia, tecnologías o cómo ponerte en contacto.',
+    placeholder: 'Ej.: ¿Qué hizo en StarDust?',
+    send: 'Enviar',
+    stop: 'Detener',
+    thinking: 'Pensando…',
+    stopped: 'Respuesta interrumpida.',
+    noInfo: 'No tengo esa información en el portafolio.',
+    disclaimer: 'IA local, puede equivocarse.',
+    errorLoad: 'No se pudo iniciar la IA de Chrome. Inténtalo de nuevo.',
+    errorGenerate: 'No pude responder ahora. Inténtalo de nuevo.',
+    retry: 'Intentar de nuevo',
   },
   cv: {
     fallbackTooltip: 'CV disponible por ahora solo en portugués',

@@ -55,6 +55,7 @@
 
   /* Accent / panda (trocados por data-scheme) */
   --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
   --color-accent-italic: var(--accent-italic);
   --color-accent-tint-06: var(--accent-tint-06);
   --color-accent-tint-12: var(--accent-tint-12);

@@ -217,7 +217,7 @@ export function SplashIntro({
               type='button'
               onClick={dismiss}
               autoFocus
-              className='animate-petros-cta-pulse rounded-sm bg-accent px-8 py-3 font-sans text-body font-medium text-[#0a0a0a] transition-transform duration-[var(--dur-micro)] hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base [animation-delay:820ms]'
+              className='animate-petros-cta-pulse rounded-sm bg-accent px-8 py-3 font-sans text-body font-medium text-on-accent transition-transform duration-[var(--dur-micro)] hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base [animation-delay:820ms]'
             >
               {localize(CTA)}
             </button>

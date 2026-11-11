@@ -1,0 +1,12 @@
+{
+  "contributions": 24337,
+  "contributionsLastYear": 7569,
+  "activeDaysLastYear": 347,
+  "longestStreak": {
+    "days": 275,
+    "from": "2023-06-16",
+    "to": "2024-03-16"
+  },
+  "mergedPullRequests": 665,
+  "mergedOutsideOwnRepos": 241
+}

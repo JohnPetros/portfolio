@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { tokenizeRich } from './RichText'
+import { stripRich, tokenizeRich } from './RichText'
 
 describe('tokenizeRich', () => {
   it('returns a single text token for plain input', () => {
@@ -31,5 +31,14 @@ describe('tokenizeRich', () => {
   })
   it('returns empty array for empty string', () => {
     expect(tokenizeRich('')).toEqual([])
+  })
+})
+
+describe('stripRich', () => {
+  it('removes bold and italic markers', () => {
+    expect(stripRich('App **nativo** e *rápido*.')).toBe('App nativo e rápido.')
+  })
+  it('leaves plain text unchanged', () => {
+    expect(stripRich('hello')).toBe('hello')
   })
 })

@@ -123,7 +123,7 @@ export function ProjectDialog({
               {project.title}
             </Dialog.Title>
             <Dialog.Description className='mt-1 font-sans text-body text-text-secondary'>
-              {localize(project.tagline)}
+              <RichText>{localize(project.tagline)}</RichText>
             </Dialog.Description>
 
             <div className='mt-6'>

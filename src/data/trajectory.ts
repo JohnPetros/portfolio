@@ -28,11 +28,11 @@ export const TRAJECTORY: TrajectoryEntry[] = [
       es: 'Desarrollador Full Stack',
     },
     description: {
-      pt: 'Construindo **plataformas SaaS** para clientes corporativos. Stack **Next.js** + **FastAPI** + **PostgreSQL**, com foco em *DX limpa* e deploy contínuo.',
-      en: 'Building **SaaS platforms** for enterprise clients. Stack: **Next.js** + **FastAPI** + **PostgreSQL**, focused on *clean DX* and continuous deployment.',
-      es: 'Construyendo **plataformas SaaS** para clientes corporativos. Stack **Next.js** + **FastAPI** + **PostgreSQL**, con foco en *DX limpia* y deploy continuo.',
+      pt: 'Desenvolvo de ponta a ponta a **HMS**, plataforma de **gestão jurídica** com **IA assistida** e **assinatura eletrônica**. Stack **React** + **NestJS** + **PostgreSQL**, da *arquitetura* ao deploy contínuo.',
+      en: 'Building **HMS** end to end, a **legal management** platform with **AI assistance** and **e-signatures**. Stack: **React** + **NestJS** + **PostgreSQL**, from *architecture* to continuous deployment.',
+      es: 'Desarrollo de punta a punta **HMS**, plataforma de **gestión jurídica** con **IA asistida** y **firma electrónica**. Stack **React** + **NestJS** + **PostgreSQL**, de la *arquitectura* al deploy continuo.',
     },
-    techs: ['typescript', 'nextjs', 'fastapi', 'postgresql', 'aws'],
+    techs: ['typescript', 'react', 'nestjs', 'postgresql', 'supabase', 'docker'],
   },
   {
     id: 'design-liquido',
@@ -67,9 +67,9 @@ export const TRAJECTORY: TrajectoryEntry[] = [
       es: 'FATEC São José dos Campos',
     },
     role: {
-      pt: 'Tecnólogo em Desenvolvimento de Software — 5º semestre',
-      en: 'Software Development Technologist — 5th semester',
-      es: 'Tecnólogo en Desarrollo de Software — 5º semestre',
+      pt: 'Tecnólogo em Desenvolvimento de Software — 6º semestre',
+      en: 'Software Development Technologist — 6th semester',
+      es: 'Tecnólogo en Desarrollo de Software — 6º semestre',
     },
     description: {
       pt: 'Graduação em desenvolvimento de software multiplataforma, com **100% de presença**.', // TODO(petros)
@@ -143,14 +143,14 @@ export const TRAJECTORY: TrajectoryEntry[] = [
       es: 'ETEC São José dos Campos',
     },
     role: {
-      pt: 'Técnico em Informática',
-      en: 'Technical Diploma in IT',
-      es: 'Técnico en Informática',
+      pt: 'Técnico em Desenvolvimento de Sistemas',
+      en: 'Technical Diploma in Systems Development',
+      es: 'Técnico en Desarrollo de Sistemas',
     },
     description: {
-      pt: 'Formação técnica em informática — onde a **programação** começou.', // TODO(petros)
-      en: 'Technical IT education — where **programming** began.',
-      es: 'Formación técnica en informática — donde empezó la **programación**.',
+      pt: 'Formação técnica em desenvolvimento de sistemas, onde me aprofundei em **programação**.',
+      en: 'Technical education in systems development, where I went deeper into **programming**.',
+      es: 'Formación técnica en desarrollo de sistemas, donde profundicé en **programación**.',
     },
     techs: ['python', 'mysql'],
   },

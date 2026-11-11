@@ -103,10 +103,6 @@ export function SettingsPopover() {
               </li>
             ))}
           </ul>
-
-          <p className='mt-4 font-mono text-micro tracking-meta text-text-faint'>
-            {t('settings.hint')}
-          </p>
         </Popover.Content>
       </Popover.Portal>
     </Popover.Root>

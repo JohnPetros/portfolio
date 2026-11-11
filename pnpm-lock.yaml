@@ -6276,7 +6276,7 @@ snapshots:
   h3@2.0.1-rc.20(crossws@0.4.9(srvx@0.11.17)):
     dependencies:
       rou3: 0.8.1
-      srvx: 0.11.20
+      srvx: 0.11.22
     optionalDependencies:
       crossws: 0.4.9(srvx@0.11.17)
 

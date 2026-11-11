@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { RichText } from '@/components/common/RichText'
 import { type Stat, statTarget } from '@/data/bio'
 import { useCounter } from '@/hooks/useCounter'
@@ -5,6 +6,7 @@ import { useReveal } from '@/hooks/useReveal'
 import { useLocalized } from '@/i18n/useLocalized'
 
 export function StatCounter({ stat }: { stat: Stat }) {
+  const { i18n } = useTranslation()
   const localize = useLocalized()
   const { ref, shown } = useReveal()
   const target = statTarget(stat)
@@ -12,15 +14,15 @@ export function StatCounter({ stat }: { stat: Stat }) {
   const count = Math.round(raw)
   const useThousands = stat.value.includes(',') || stat.value.includes('.')
   const display = useThousands
-    ? count.toLocaleString('pt-BR')
+    ? count.toLocaleString(i18n.language === 'en' ? 'en-US' : 'pt-BR')
     : String(count)
 
   return (
     <div
       ref={ref}
-      className='flex flex-col rounded-lg border-[0.5px] border-border bg-bg-card p-6 shadow-[var(--shadow-card)]'
+      className='@container flex flex-col rounded-lg border-[0.5px] border-border bg-bg-card p-6 shadow-[var(--shadow-card)]'
     >
-      <p className='font-sans text-h1 font-medium leading-none tracking-tight text-text-primary'>
+      <p className='font-sans text-[min(var(--text-h1),23cqi)] font-medium leading-none tracking-tight text-text-primary'>
         {display}
         {stat.suffix ? (
           <span className='text-accent drop-shadow-[0_0_5px_var(--accent-glow)]'>

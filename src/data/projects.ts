@@ -893,13 +893,203 @@ export const PROJECTS: Project[] = [
   },
   // ── Professional (4) ──
   {
-    id: 'stardust',
+    id: 'hms',
     kind: 'professional',
     order: 1,
+    eyebrow: { pt: '2026 · Lumetis', en: '2026 · Lumetis', es: '2026 · Lumetis' },
+    title: 'HMS',
+    tagline: {
+      pt: 'Plataforma jurídica que acompanha cada demanda do **primeiro contato ao encerramento do caso**, com **IA assistida** e **assinatura eletrônica**.',
+      en: 'Legal platform that follows each matter from **first contact to case closure**, with **AI assistance** and **electronic signature**.',
+      es: 'Plataforma jurídica que acompaña cada asunto desde el **primer contacto hasta el cierre del caso**, con **IA asistida** y **firma electrónica**.',
+    },
+    layout: 'web',
+    cover: '/images/projects/hms/appointments-week-page.png',
+    gallery: [
+      '/images/projects/hms/appointments-week-page.png',
+      '/images/projects/hms/case-history-page.png',
+      '/images/projects/hms/formalization-page.png',
+      '/images/projects/hms/client-communications-page.png',
+      '/images/projects/hms/appointments-month-page.png',
+    ],
+    techs: ['typescript', 'react', 'nestjs', 'postgresql', 'supabase', 'docker'],
+    detail: {
+      about: {
+        pt: 'Plataforma de **gestão de serviços jurídicos** desenvolvida na Lumetis para um escritório de advocacia. Conecta captação, agendamento, consulta, contratação e execução do caso em uma **jornada rastreável**, reduzindo retrabalho e preservando o histórico de decisões e documentos. A **IA apoia** o time, mas a decisão jurídica permanece sempre com o profissional.',
+        en: '**Legal services management** platform built at Lumetis for a law firm. It connects intake, scheduling, consultation, engagement and case delivery in a **traceable journey**, cutting rework and preserving the history of decisions and documents. **AI supports** the team, but legal decisions always stay with the professional.',
+        es: 'Plataforma de **gestión de servicios jurídicos** desarrollada en Lumetis para un despacho de abogados. Conecta captación, agenda, consulta, contratación y ejecución del caso en un **recorrido trazable**, reduciendo el retrabajo y preservando el historial de decisiones y documentos. La **IA apoya** al equipo, pero la decisión jurídica siempre permanece con el profesional.',
+      },
+      features: [
+        {
+          pt: '**Jornada de atendimento** do Intake à consulta, com agenda de advogados, ficha dinâmica e registro de viabilidade.',
+          en: '**Client journey** from intake to consultation, with lawyer scheduling, dynamic forms and a recorded viability decision.',
+          es: '**Recorrido de atención** del Intake a la consulta, con agenda de abogados, ficha dinámica y registro de viabilidad.',
+        },
+        {
+          pt: '**Formalização da contratação** com pacote de documentos versionados, condições comerciais e coleta de **assinatura eletrônica**.',
+          en: '**Engagement formalization** with versioned document packages, commercial terms and **electronic signature** collection.',
+          es: '**Formalización de la contratación** con paquete de documentos versionados, condiciones comerciales y recolección de **firma electrónica**.',
+        },
+        {
+          pt: '**Gestão de casos** com equipe, checklist documental, tarefas, prazos e histórico cronológico de cada andamento.',
+          en: '**Case management** with team, document checklist, tasks, deadlines and a chronological history of every update.',
+          es: '**Gestión de casos** con equipo, checklist documental, tareas, plazos e historial cronológico de cada actuación.',
+        },
+        {
+          pt: '**Motor documental** que recebe arquivos por **WhatsApp** e e-mail, com análise por IA e **confirmação humana** do titular.',
+          en: '**Document engine** that receives files through **WhatsApp** and email, with AI analysis and **human confirmation** of the owner.',
+          es: '**Motor documental** que recibe archivos por **WhatsApp** y correo, con análisis por IA y **confirmación humana** del titular.',
+        },
+        {
+          pt: '**Conformidade com a LGPD**, com registro de consentimento e trilha de auditoria somente de inserção.',
+          en: '**LGPD compliance**, with consent records and an append-only audit trail.',
+          es: '**Cumplimiento de la LGPD**, con registro de consentimiento y pista de auditoría de solo inserción.',
+        },
+      ],
+      techGroups: [
+        {
+          label: { pt: 'Frontend', en: 'Frontend', es: 'Frontend' },
+          techs: ['react', 'typescript', 'tailwind'],
+        },
+        {
+          label: { pt: 'Backend', en: 'Backend', es: 'Backend' },
+          techs: ['nestjs', 'nodejs'],
+        },
+        {
+          label: { pt: 'Persistência', en: 'Persistence', es: 'Persistencia' },
+          techs: ['postgresql', 'supabase'],
+        },
+        {
+          label: {
+            pt: 'Infraestrutura e testes',
+            en: 'Infrastructure and testing',
+            es: 'Infraestructura y pruebas',
+          },
+          techs: ['docker', 'vitest', 'playwright'],
+        },
+      ],
+      contributions: [
+        {
+          pt: 'Fui o **principal contribuidor** do monorepo como desenvolvedor full stack, atuando da arquitetura do sistema à configuração da infraestrutura de deploy no Coolify.',
+          en: 'Was the **top contributor** to the monorepo as a full-stack developer, working from the system architecture to setting up the deployment infrastructure on Coolify.',
+          es: 'Fui el **principal contribuidor** del monorepo como desarrollador full stack, actuando desde la arquitectura del sistema hasta la configuración de la infraestructura de deploy en Coolify.',
+        },
+        {
+          pt: 'Construí o **módulo de Formalização** de ponta a ponta, incluindo um **gateway de assinatura eletrônica** integrado ao Documenso, com OTP, página pública de assinatura, webhooks e reconciliação com o provedor.',
+          en: 'Built the **Formalization module** end to end, including an **electronic signature gateway** integrated with Documenso, with OTP, a public signing page, webhooks and provider reconciliation.',
+          es: 'Construí el **módulo de Formalización** de punta a punta, incluyendo un **gateway de firma electrónica** integrado con Documenso, con OTP, página pública de firma, webhooks y conciliación con el proveedor.',
+        },
+        {
+          pt: 'Propus em RFC e desenvolvi o **crew**, um revisor de PRs com IA em **Mastra**, com cinco revisores em paralelo (arquitetura, performance, regressão, requisitos e segurança) e **evals** de recall, falsos positivos e custo.',
+          en: 'Proposed in an RFC and built **crew**, an AI PR reviewer on **Mastra**, with five parallel reviewers (architecture, performance, regression, requirements and security) and **evals** for recall, false positives and cost.',
+          es: 'Propuse en un RFC y desarrollé **crew**, un revisor de PRs con IA en **Mastra**, con cinco revisores en paralelo (arquitectura, rendimiento, regresión, requisitos y seguridad) y **evals** de recall, falsos positivos y costo.',
+        },
+        {
+          pt: 'Entreguei funcionalidades de **gestão de casos, agenda e Intake**, como histórico do caso, dispensas no checklist, agenda de consultas e listagem operacional de Intakes.',
+          en: 'Delivered **case management, scheduling and intake** features, such as case history, checklist waivers, the appointments calendar and the operational intake list.',
+          es: 'Entregué funcionalidades de **gestión de casos, agenda e Intake**, como historial del caso, dispensas en el checklist, agenda de consultas y listado operativo de Intakes.',
+        },
+        {
+          pt: 'Fortaleci a **entrega contínua**: testes de integração em shards na CI, correções do ambiente de staging, RFCs técnicas e post-mortems de incidentes.',
+          en: 'Strengthened **continuous delivery**: sharded integration tests in CI, staging environment fixes, technical RFCs and incident post-mortems.',
+          es: 'Fortalecí la **entrega continua**: pruebas de integración en shards en la CI, correcciones del ambiente de staging, RFCs técnicos y post-mortems de incidentes.',
+        },
+      ],
+      lessons: [
+        {
+          pt: '**Evals** permitem medir qualidade e custo de um agente de IA antes de colocá-lo em produção, trocando impressões por números.',
+          en: '**Evals** make it possible to measure an AI agent’s quality and cost before it reaches production, replacing impressions with numbers.',
+          es: 'Los **evals** permiten medir la calidad y el costo de un agente de IA antes de llevarlo a producción, cambiando impresiones por números.',
+        },
+        {
+          pt: 'Validar com o cliente exige **roteiros guiados por cenário**: planilhas técnicas de teste servem ao time, mas não a quem usa o sistema no dia a dia.',
+          en: 'Validating with the client takes **guided, scenario-based scripts**: technical test spreadsheets serve the team, not the people who use the system every day.',
+          es: 'Validar con el cliente exige **guiones por escenario**: las planillas técnicas de prueba sirven al equipo, no a quienes usan el sistema todos los días.',
+        },
+        {
+          pt: 'O ambiente de **staging também é produto**: migrations destrutivas e seeds no deploy quebram a confiança de quem está validando, e post-mortems evitam que o erro se repita.',
+          en: '**Staging is a product too**: destructive migrations and deploy-time seeds break the trust of the people validating it, and post-mortems keep the same mistake from happening again.',
+          es: 'El ambiente de **staging también es producto**: las migraciones destructivas y los seeds en el deploy rompen la confianza de quienes validan, y los post-mortems evitan que el error se repita.',
+        },
+      ],
+      hardSkills: [
+        {
+          icon: 'IconStack2',
+          label: {
+            pt: 'DDD modular orientado a eventos',
+            en: 'Event-driven modular DDD',
+            es: 'DDD modular orientado a eventos',
+          },
+        },
+        {
+          icon: 'IconRobot',
+          label: {
+            pt: 'Agentes de IA e evals com Mastra',
+            en: 'AI agents and evals with Mastra',
+            es: 'Agentes de IA y evals con Mastra',
+          },
+        },
+        {
+          icon: 'IconServer',
+          label: {
+            pt: 'Jobs duráveis com Inngest',
+            en: 'Durable jobs with Inngest',
+            es: 'Jobs durables con Inngest',
+          },
+        },
+        {
+          icon: 'IconDatabase',
+          label: {
+            pt: 'Drizzle ORM e migrations',
+            en: 'Drizzle ORM and migrations',
+            es: 'Drizzle ORM y migraciones',
+          },
+        },
+        {
+          icon: 'IconRocket',
+          label: {
+            pt: 'CI/CD em monorepo com Turborepo',
+            en: 'CI/CD in a Turborepo monorepo',
+            es: 'CI/CD en monorepo con Turborepo',
+          },
+        },
+      ],
+      softSkills: [
+        {
+          icon: 'IconEye',
+          label: {
+            pt: 'Questionamento crítico de requisitos',
+            en: 'Critical review of requirements',
+            es: 'Cuestionamiento crítico de requisitos',
+          },
+        },
+        {
+          icon: 'IconTarget',
+          label: {
+            pt: 'Documentação de decisões técnicas',
+            en: 'Documenting technical decisions',
+            es: 'Documentación de decisiones técnicas',
+          },
+        },
+        {
+          icon: 'IconMessageCircle',
+          label: {
+            pt: 'Validação direta com o cliente',
+            en: 'Direct client validation',
+            es: 'Validación directa con el cliente',
+          },
+        },
+      ],
+    },
+  },
+  {
+    id: 'stardust',
+    kind: 'professional',
+    order: 0,
     eyebrow: {
-      pt: '2022–2024 · Tese ETEC',
-      en: '2022–2024 · ETEC Thesis',
-      es: '2022–2024 · Tesis ETEC',
+      pt: '2022–2024 · Delégua',
+      en: '2022–2024 · Delégua',
+      es: '2022–2024 · Delégua',
     },
     title: 'StarDust',
     tagline: {
@@ -1305,7 +1495,6 @@ export const PROJECTS: Project[] = [
     techs: ['flutter'],
     links: {
       code: 'https://github.com/JohnPetros/sertton',
-      live: 'https://play.google.com/store/apps/details?id=com.joaopcarvalho.sertton',
     },
     detail: {
       about: {

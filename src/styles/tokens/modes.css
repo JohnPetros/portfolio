@@ -1,5 +1,6 @@
 [data-mode="dark"] {
   color-scheme: dark;
+  --on-accent: #0a0a0a;
   --bg-base: #0a0a0a;
   --bg-card: #0d0d0c;
   --bg-input: #0f0f0e;
@@ -18,6 +19,7 @@
 
 [data-mode="light"] {
   color-scheme: light;
+  --on-accent: #ffffff;
   --bg-base: #eae3d6;
   --bg-card: #f1ebe0;
   --bg-input: #f6f1e8;

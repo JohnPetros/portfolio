@@ -6,7 +6,6 @@ import { cvFilename, cvHref, isCvFallback } from '@/data/cv'
 import { useBrtClock } from '@/hooks/useBrtClock'
 import { useTheme } from '@/theme/ThemeProvider'
 
-const TECH_LINE = ['TS', 'PYTHON', 'REACT', 'NEXT.JS', 'FLUTTER', 'AWS']
 const DEV_START_YEAR = 2023
 
 export function Hero({
@@ -85,7 +84,7 @@ export function Hero({
                   <a
                     href={cvHref(lang)}
                     download={cvFilename(lang)}
-                    className='inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-accent px-5 font-sans text-body font-medium text-[#0a0a0a] transition-all duration-[var(--dur-micro)] hover:brightness-110 max-sm:w-full'
+                    className='inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-accent px-5 font-sans text-body font-medium text-on-accent transition-all duration-[var(--dur-micro)] hover:brightness-110 max-sm:w-full'
                   >
                     <IconDownload className='size-4' stroke={1.75} aria-hidden />
                     {t('hero.downloadCv')}
@@ -95,7 +94,7 @@ export function Hero({
                 <a
                   href={cvHref(lang)}
                   download={cvFilename(lang)}
-                  className='inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-accent px-5 font-sans text-body font-medium text-[#0a0a0a] transition-all duration-[var(--dur-micro)] hover:brightness-110 max-sm:w-full'
+                  className='inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-accent px-5 font-sans text-body font-medium text-on-accent transition-all duration-[var(--dur-micro)] hover:brightness-110 max-sm:w-full'
                 >
                   <IconDownload className='size-4' stroke={1.75} aria-hidden />
                   {t('hero.downloadCv')}
@@ -146,16 +145,6 @@ export function Hero({
               {t('hero.tagYears', { years: devYears })}
             </Tag>
           </div>
-        </div>
-
-        {/* bottom tech line */}
-        <div className='mt-14 flex flex-wrap items-center gap-x-3 gap-y-2 animate-petros-rise font-mono text-meta tracking-meta uppercase text-text-faint [animation-delay:560ms]'>
-          {TECH_LINE.map((tech, i) => (
-            <span key={tech} className='flex items-center gap-3'>
-              {i > 0 && <span aria-hidden>·</span>}
-              {tech}
-            </span>
-          ))}
         </div>
       </div>
 
